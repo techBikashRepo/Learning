@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clean Architecture Basics — Part 1 of 3 | System Design | Learning</title>
+  <meta name="description" content="Technical interview preparation - Learn system design, databases, and backend concepts." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body class="site-wrapper">
+  <div class="progress-bar" style="width: 0%"></div>
+
+  <input type="checkbox" id="sidebar-toggle" aria-label="Toggle sidebar" />
+
+  <header class="topbar">
+    <label for="sidebar-toggle" class="topbar__menu-toggle" aria-label="Toggle menu">☰</label>
+    <div class="topbar__logo"><a href="../index.html">Learning</a></div>
+    <div class="topbar__divider"></div>
+    <nav class="topbar__breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">›</span>
+      <a href="../architecture/index.html">System Design</a>
+      <span class="sep">›</span>
+      <span class="current">Clean Architecture Basics — Part 1 of 3</span>
+    </nav>
+      <div class="topbar__actions">
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-toggle__icon">🌙</span>
+        </button>
+      </div>
+    </header>
+
+  <div class="body-content">
+
+<aside class="sidebar" aria-label="Course navigation">
+  <div class="sidebar__course-title">Learning Curriculum</div>
+  <details class="sidebar__section">
+    <summary><span class="sidebar__section-icon">🌐</span>01 · Networking</summary>
+    <ul class="sidebar__lessons">
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">01</span>What is a Network</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-01.html">Part 1</a></li>
+            <li><a href="../networking/lesson-01-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-01-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">02</span>LAN vs WAN vs Internet</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-02.html">Part 1</a></li>
+            <li><a href="../networking/lesson-02-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-02-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">03</span>Public IP vs Private IP</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-03.html">Part 1</a></li>
+            <li><a href="../networking/lesson-03-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-03-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">04</span>IP Address Structure (IPv4 concept)</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-04.html">Part 1</a></li>
+            <li><a href="../networking/lesson-04-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-04-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">05</span>Ports &amp; Sockets</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-05.html">Part 1</a></li>
+            <li><a href="../networking/lesson-05-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-05-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">06</span>Router vs Switch</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-06.html">Part 1</a></li>
+            <li><a href="../networking/lesson-06-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-06-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">07</span>Packet &amp; Packet Switching</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-07.html">Part 1</a></li>
+            <li><a href="../networking/lesson-07-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-07-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">08</span>DNS — what it is</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-08.html">Part 1</a></li>
+            <li><a href="../networking/lesson-08-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-08-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">09</span>DNS Resolution Flow (step by step)</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-09.html">Part 1</a></li>
+            <li><a href="../networking/lesson-09-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-09-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">10</span>Domain Name vs IP Address</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-10.html">Part 1</a></li>
+            <li><a href="../networking/lesson-10-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-10-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">11</span>TCP vs UDP</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-11.html">Part 1</a></li>
+            <li><a href="../networking/lesson-11-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-11-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">12</span>TCP 3-Way Handshake</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-12.html">Part 1</a></li>
+            <li><a href="../networking/lesson-12-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-12-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">13</span>TCP Reliability (ack, retransmission)</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-13.html">Part 1</a></li>
+            <li><a href="../networking/lesson-13-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-13-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">14</span>HTTP Protocol (request-response)</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-14.html">Part 1</a></li>
+            <li><a href="../networking/lesson-14-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-14-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">15</span>HTTP Methods</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-15.html">Part 1</a></li>
+            <li><a href="../networking/lesson-15-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-15-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">16</span>HTTP Status Codes</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-16.html">Part 1</a></li>
+            <li><a href="../networking/lesson-16-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-16-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">17</span>HTTP Headers</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-17.html">Part 1</a></li>
+            <li><a href="../networking/lesson-17-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-17-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">18</span>Cookies vs Sessions</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-18.html">Part 1</a></li>
+            <li><a href="../networking/lesson-18-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-18-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">19</span>HTTPS vs HTTP</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-19.html">Part 1</a></li>
+            <li><a href="../networking/lesson-19-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-19-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">20</span>SSL TLS Handshake</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-20.html">Part 1</a></li>
+            <li><a href="../networking/lesson-20-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-20-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">21</span>CORS</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-21.html">Part 1</a></li>
+            <li><a href="../networking/lesson-21-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-21-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">22</span>Request-Response Lifecycle</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-22.html">Part 1</a></li>
+            <li><a href="../networking/lesson-22-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-22-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">23</span>Latency vs Bandwidth vs Throughput</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-23.html">Part 1</a></li>
+            <li><a href="../networking/lesson-23-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-23-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">24</span>Round Trip Time (RTT)</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-24.html">Part 1</a></li>
+            <li><a href="../networking/lesson-24-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-24-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">25</span>Content Delivery Network (CDN)</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-25.html">Part 1</a></li>
+            <li><a href="../networking/lesson-25-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-25-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">26</span>How Web Works</summary>
+          <ul class="lesson-parts">
+            <li><a href="../networking/lesson-26.html">Part 1</a></li>
+            <li><a href="../networking/lesson-26-part2.html">Part 2</a></li>
+            <li><a href="../networking/lesson-26-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </details>
+  <details class="sidebar__section">
+    <summary><span class="sidebar__section-icon">⚙️</span>02 · Backend &amp; API Design</summary>
+    <ul class="sidebar__lessons">
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">01</span>REST Architecture</summary>
+          <ul class="lesson-parts">
+            <li><a href="../backend/lesson-01.html">Part 1</a></li>
+            <li><a href="../backend/lesson-01-part2.html">Part 2</a></li>
+            <li><a href="../backend/lesson-01-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">02</span>Resource Naming</summary>
+          <ul class="lesson-parts">
+            <li><a href="../backend/lesson-02.html">Part 1</a></li>
+            <li><a href="../backend/lesson-02-part2.html">Part 2</a></li>
+            <li><a href="../backend/lesson-02-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">03</span>Path vs Query Parameters</summary>
+          <ul class="lesson-parts">
+            <li><a href="../backend/lesson-03.html">Part 1</a></li>
+            <li><a href="../backend/lesson-03-part2.html">Part 2</a></li>
+            <li><a href="../backend/lesson-03-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">04</span>Idempotent Operations</summary>
+          <ul class="lesson-parts">
+            <li><a href="../backend/lesson-04.html">Part 1</a></li>
+            <li><a href="../backend/lesson-04-part2.html">Part 2</a></li>
+            <li><a href="../backend/lesson-04-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">05</span>Pagination (Offset vs Cursor)</summary>
+          <ul class="lesson-parts">
+            <li><a href="../backend/lesson-05.html">Part 1</a></li>
+            <li><a href="../backend/lesson-05-part2.html">Part 2</a></li>
+            <li><a href="../backend/lesson-05-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">06</span>Filtering &amp; Sorting</summary>
+          <ul class="lesson-parts">
+            <li><a href="../backend/lesson-06.html">Part 1</a></li>
+            <li><a href="../backend/lesson-06-part2.html">Part 2</a></li>
+            <li><a href="../backend/lesson-06-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">07</span>API Versioning</summary>
+          <ul class="lesson-parts">
+            <li><a href="../backend/lesson-07.html">Part 1</a></li>
+            <li><a href="../backend/lesson-07-part2.html">Part 2</a></li>
+            <li><a href="../backend/lesson-07-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">08</span>Standard Error Responses</summary>
+          <ul class="lesson-parts">
+            <li><a href="../backend/lesson-08.html">Part 1</a></li>
+            <li><a href="../backend/lesson-08-part2.html">Part 2</a></li>
+            <li><a href="../backend/lesson-08-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">09</span>File Upload Flow</summary>
+          <ul class="lesson-parts">
+            <li><a href="../backend/lesson-09.html">Part 1</a></li>
+            <li><a href="../backend/lesson-09-part2.html">Part 2</a></li>
+            <li><a href="../backend/lesson-09-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">10</span>Swagger OpenAPI Basics</summary>
+          <ul class="lesson-parts">
+            <li><a href="../backend/lesson-10.html">Part 1</a></li>
+            <li><a href="../backend/lesson-10-part2.html">Part 2</a></li>
+            <li><a href="../backend/lesson-10-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </details>
+  <details class="sidebar__section">
+    <summary><span class="sidebar__section-icon">🔒</span>03 · Authentication &amp; Security</summary>
+    <ul class="sidebar__lessons">
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">01</span>Authentication vs Authorization</summary>
+          <ul class="lesson-parts">
+            <li><a href="../security/lesson-01.html">Part 1</a></li>
+            <li><a href="../security/lesson-01-part2.html">Part 2</a></li>
+            <li><a href="../security/lesson-01-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">02</span>Session Authentication</summary>
+          <ul class="lesson-parts">
+            <li><a href="../security/lesson-02.html">Part 1</a></li>
+            <li><a href="../security/lesson-02-part2.html">Part 2</a></li>
+            <li><a href="../security/lesson-02-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">03</span>JWT Authentication</summary>
+          <ul class="lesson-parts">
+            <li><a href="../security/lesson-03.html">Part 1</a></li>
+            <li><a href="../security/lesson-03-part2.html">Part 2</a></li>
+            <li><a href="../security/lesson-03-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">04</span>Access Token vs Refresh Token</summary>
+          <ul class="lesson-parts">
+            <li><a href="../security/lesson-04.html">Part 1</a></li>
+            <li><a href="../security/lesson-04-part2.html">Part 2</a></li>
+            <li><a href="../security/lesson-04-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">05</span>Password Hashing (bcrypt)</summary>
+          <ul class="lesson-parts">
+            <li><a href="../security/lesson-05.html">Part 1</a></li>
+            <li><a href="../security/lesson-05-part2.html">Part 2</a></li>
+            <li><a href="../security/lesson-05-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">06</span>CSRF Attack</summary>
+          <ul class="lesson-parts">
+            <li><a href="../security/lesson-06.html">Part 1</a></li>
+            <li><a href="../security/lesson-06-part2.html">Part 2</a></li>
+            <li><a href="../security/lesson-06-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">07</span>XSS Attack</summary>
+          <ul class="lesson-parts">
+            <li><a href="../security/lesson-07.html">Part 1</a></li>
+            <li><a href="../security/lesson-07-part2.html">Part 2</a></li>
+            <li><a href="../security/lesson-07-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">08</span>Input Validation</summary>
+          <ul class="lesson-parts">
+            <li><a href="../security/lesson-08.html">Part 1</a></li>
+            <li><a href="../security/lesson-08-part2.html">Part 2</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">09</span>Login Rate Limiting</summary>
+          <ul class="lesson-parts">
+            <li><a href="../security/lesson-09.html">Part 1</a></li>
+            <li><a href="../security/lesson-09-part2.html">Part 2</a></li>
+            <li><a href="../security/lesson-09-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </details>
+  <details class="sidebar__section">
+    <summary><span class="sidebar__section-icon">🗄️</span>04 · Databases &amp; Data Modeling</summary>
+    <ul class="sidebar__lessons">
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">01</span>Database Basics (tables &amp; schema)</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-01.html">Part 1</a></li>
+            <li><a href="../databases/lesson-01-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-01-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">02</span>SELECT &amp; WHERE</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-02.html">Part 1</a></li>
+            <li><a href="../databases/lesson-02-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-02-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">03</span>ORDER BY</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-03.html">Part 1</a></li>
+            <li><a href="../databases/lesson-03-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-03-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">04</span>GROUP BY &amp; HAVING</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-04.html">Part 1</a></li>
+            <li><a href="../databases/lesson-04-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-04-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">05</span>Aggregations (COUNT, SUM, AVG)</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-05.html">Part 1</a></li>
+            <li><a href="../databases/lesson-05-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-05-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">06</span>Primary Key</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-06.html">Part 1</a></li>
+            <li><a href="../databases/lesson-06-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-06-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">07</span>Foreign Key</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-07.html">Part 1</a></li>
+            <li><a href="../databases/lesson-07-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-07-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">08</span>Joins (INNER, LEFT)</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-08.html">Part 1</a></li>
+            <li><a href="../databases/lesson-08-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-08-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">09</span>Many-to-Many Relationships</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-09.html">Part 1</a></li>
+            <li><a href="../databases/lesson-09-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-09-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">10</span>Constraints (NOT NULL, UNIQUE, DEFAULT)</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-10.html">Part 1</a></li>
+            <li><a href="../databases/lesson-10-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-10-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">11</span>Indexing — why queries slow</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-11.html">Part 1</a></li>
+            <li><a href="../databases/lesson-11-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-11-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">12</span>B-Tree Index</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-12.html">Part 1</a></li>
+            <li><a href="../databases/lesson-12-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-12-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">13</span>Composite Index</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-13.html">Part 1</a></li>
+            <li><a href="../databases/lesson-13-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-13-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">14</span>When NOT to Index</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-14.html">Part 1</a></li>
+            <li><a href="../databases/lesson-14-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-14-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">15</span>Transactions</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-15.html">Part 1</a></li>
+            <li><a href="../databases/lesson-15-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-15-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">16</span>ACID Properties</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-16.html">Part 1</a></li>
+            <li><a href="../databases/lesson-16-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-16-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">17</span>Race Conditions</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-17.html">Part 1</a></li>
+            <li><a href="../databases/lesson-17-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-17-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">18</span>Prevent Duplicate Payments</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-18.html">Part 1</a></li>
+            <li><a href="../databases/lesson-18-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-18-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">19</span>Normalization</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-19.html">Part 1</a></li>
+            <li><a href="../databases/lesson-19-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-19-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">20</span>Denormalization</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-20.html">Part 1</a></li>
+            <li><a href="../databases/lesson-20-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-20-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">21</span>Soft Delete</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-21.html">Part 1</a></li>
+            <li><a href="../databases/lesson-21-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-21-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">22</span>Audit Columns</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-22.html">Part 1</a></li>
+            <li><a href="../databases/lesson-22-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-22-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">23</span>Multi-Tenant Data</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-23.html">Part 1</a></li>
+            <li><a href="../databases/lesson-23-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-23-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">24</span>N+1 Query Problem</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-24.html">Part 1</a></li>
+            <li><a href="../databases/lesson-24-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-24-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">25</span>EXPLAIN ANALYZE</summary>
+          <ul class="lesson-parts">
+            <li><a href="../databases/lesson-25.html">Part 1</a></li>
+            <li><a href="../databases/lesson-25-part2.html">Part 2</a></li>
+            <li><a href="../databases/lesson-25-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </details>
+  <details class="sidebar__section" open>
+    <summary><span class="sidebar__section-icon">🏗️</span>05 · System Design &amp; Architecture</summary>
+    <ul class="sidebar__lessons">
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">01</span>Monolith vs Microservices</summary>
+          <ul class="lesson-parts">
+            <li><a href="../architecture/lesson-01.html">Part 1</a></li>
+            <li><a href="../architecture/lesson-01-part2.html">Part 2</a></li>
+            <li><a href="../architecture/lesson-01-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">02</span>Layered Architecture</summary>
+          <ul class="lesson-parts">
+            <li><a href="../architecture/lesson-02.html">Part 1</a></li>
+            <li><a href="../architecture/lesson-02-part2.html">Part 2</a></li>
+            <li><a href="../architecture/lesson-02-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">03</span>Controller-Service-Repository Pattern</summary>
+          <ul class="lesson-parts">
+            <li><a href="../architecture/lesson-03.html">Part 1</a></li>
+            <li><a href="../architecture/lesson-03-part2.html">Part 2</a></li>
+            <li><a href="../architecture/lesson-03-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details" open>
+          <summary><span class="lesson-num">04</span>Clean Architecture Basics</summary>
+          <ul class="lesson-parts">
+            <li><a href="../architecture/lesson-04.html" class="active">Part 1</a></li>
+            <li><a href="../architecture/lesson-04-part2.html">Part 2</a></li>
+            <li><a href="../architecture/lesson-04-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">05</span>Backend-for-Frontend (BFF)</summary>
+          <ul class="lesson-parts">
+            <li><a href="../architecture/lesson-05.html">Part 1</a></li>
+            <li><a href="../architecture/lesson-05-part2.html">Part 2</a></li>
+            <li><a href="../architecture/lesson-05-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="lesson-group">
+        <details class="lesson-group__details">
+          <summary><span class="lesson-num">06</span>API Gateway</summary>
+          <ul class="lesson-parts">
+            <li><a href="../architecture/lesson-06.html">Part 1</a></li>
+            <li><a href="../architecture/lesson-06-part2.html">Part 2</a></li>
+            <li><a href="../architecture/lesson-06-part3.html">Part 3</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </details>
+</aside>
+
+
+    <main class="main-content">
+      <div class="content-container">
+        <article>
+
+        <h1 id="clean-architecture-basics-part-1-of-3">Clean Architecture Basics — Part 1 of 3<a href="#clean-architecture-basics-part-1-of-3" class="anchor">#</a></h1>
+<p><em>→ Continued in: <a href="02-Clean%20Architecture%20Basics.md">02-Clean Architecture Basics.md</a></em>---<code>        └── container.ts             Composition Root — wires everything    └── di/    │   └── prisma.client.ts         PrismaClient singleton    ├── database/    │   └── server.ts                Express app setup, routes    ├── http/└── infrastructure/                  ← RING 4: Frameworks &amp; Drivers││       └── StripePaymentGateway.ts  ← implements IPaymentGateway│   └── gateways/│   │   └── PrismaOrderRepository.ts ← implements IOrderRepository│   ├── repositories/│   │   └── OrderController.ts│   ├── controllers/├── adapters/                        ← RING 3: Interface Adapters││       └── IPaymentGateway.ts│       ├── IUserRepository.ts│       ├── IOrderRepository.ts│   └── ports/                       ← Interfaces (owned by Ring 2)│   │   └── RegisterUserUseCase.ts│   │   ├── CancelOrderUseCase.ts│   │   ├── PlaceOrderUseCase.ts│   ├── use-cases/├── application/                     ← RING 2: Use Cases││       └── DomainErrors.ts          InvalidOrderError, etc.│   └── errors/│   │   └── Email.ts                 Validated email value object│   │   ├── OrderId.ts               Typed ID (wraps string UUID)│   │   ├── Money.ts                 Value object: amount + currency│   ├── value-objects/│   │   └── User.ts│   │   ├── OrderItem.ts│   │   ├── Order.ts                 Order entity with business invariants│   ├── entities/├── domain/                          ← RING 1: Entitiessrc/</code>### Folder/Module Structure Mapping---<code>  This is the Dependency Inversion Principle (DIP) in practice.  At RUNTIME, the use case calls the concrete implementation via the interface.  The source code dependency points INWARD (Ring 3 → Ring 2 interface).  The REPOSITORY IMPLEMENTATION (Ring 3) conforms to it.  The USE CASE (Ring 2) owns the interface.                              (lives in Ring 3, knows about Prisma)                              PrismaOrderRepository                                     │ implements                                     ▲  Use Case ──── defines ────► IOrderRepository (interface, lives in Ring 2)CLEAN ARCHITECTURE (dependency inversion):  ↑ Use Case depends on outer-ring implementation — wrong!                                              outer ring)  (inner ring)                               (knows about Prisma,  Use Case ──────────────────────────────────► OrderRepositoryTRADITIONAL (layered):</code>### Dependency Inversion Across the Ring Boundary---<code>Ring 1 → Ring 4:   NEVER.Ring 1 → Ring 3:   NEVER.Ring 1 → Ring 2:   NEVER. Entities know nothing about Use Cases.                   Ring 3 provides the implementation. Dependency inverted.Ring 2 → Ring 3:   NEVER. Use Case defines IOrderRepository (interface).Ring 2 → Ring 1:   PlaceOrderUseCase calls Order.create(), Order.cancel()                   PlaceOrderController instantiates PlaceOrderUseCaseRing 3 → Ring 2:   PrismaOrderRepository implements IOrderRepositoryRing 4 → Ring 3:   Express imports and calls PlaceOrderController                    ═══════════                    DEPENDENCIES╚══════════════════════════════════════════════════════════════════╝║  └──────────────────────────────────────────────────────────┘    ║║  │  └────────────────────────────────────────────────┘     │    ║║  │  │  └──────────────────────────────────────────┘  │     │    ║║  │  │  │   ZERO external imports                  │  │     │    ║║  │  │  │   Domain errors: InvalidOrderError       │  │     │    ║║  │  │  │   Value Objects: OrderId, UserId         │  │     │    ║║  │  │  │   Order, OrderItem, User, Money          │  │     │    ║║  │  │  │  RING 1: ENTITIES                        │  │     │    ║║  │  │  ┌──────────────────────────────────────────┐  │     │    ║║  │  │   IPaymentGateway  (interface — defined here)  │     │    ║║  │  │   IOrderRepository (interface — defined here)  │     │    ║║  │  │   RegisterUserUseCase                          │     │    ║║  │  │   CancelOrderUseCase                           │     │    ║║  │  │   PlaceOrderUseCase                            │     │    ║║  │  │  RING 2: USE CASES                             │     │    ║║  │  ┌────────────────────────────────────────────────┐     │    ║║  │   External Service Adapters (StripeAdapter, etc.)       │    ║║  │   Controllers, Presenters, Repository Implementations   │    ║║  │  RING 3: INTERFACE ADAPTERS                              │    ║║  ┌──────────────────────────────────────────────────────────┐    ║║   Express / Fastify    PostgreSQL    Redis    Stripe SDK         ║║  RING 4: FRAMEWORKS &amp; DRIVERS                                    ║╔══════════════════════════════════════════════════════════════════╗</code>### The Full Concentric Circle Diagram## SECTION 4 — ASCII Architecture Diagrams---<code>  app.listen(3000);  app.post('/orders', placeOrderController.handle);  app.use(express.json());  const app = express();Most of Ring 4 is configuration, not logic:provides the runtime environment for the inner rings.This is the "glue" ring. It wires everything together and   • Domain entities  • Use case logic  • Business rulesWHAT THEY DO NOT CONTAIN:  • ORM model definitions / schema files  • Database connection management  • Dependency injection container / Composition Root  • Framework configuration (Express app setup, middleware stack)WHAT THEY CONTAIN:  Jest, JUnit (test framework)  PostgreSQL, Redis, MongoDB (databases)  Stripe SDK, SendGrid SDK (external service clients)  Prisma, TypeORM, Hibernate (ORM)  Express, Fastify, NestJS (HTTP framework)WHAT THEY ARE:</code>### Ring 4: Frameworks &amp; Drivers---<code>}  }    return record ? OrderMapper.toDomain(record) : null;    });      include: { items: true }      where: { id: id.value },    const record = await this.prisma.order.findUnique({  async findById(id: OrderId): Promise&lt;Order | null&gt; {  }    return OrderMapper.toDomain(record);    });      include: { items: true }      data: OrderMapper.toPrismaModel(order),    const record = await this.prisma.order.create({  async save(order: Order): Promise&lt;Order&gt; {  constructor(private prisma: PrismaClient) {}class PrismaOrderRepository implements IOrderRepository {// Implementation lives in Ring 3 (Interface Adapters)}  findById(id: OrderId): Promise&lt;Order | null&gt;;  save(order: Order): Promise&lt;Order&gt;;interface IOrderRepository {// Interface defined in Ring 2 (Use Case ring)GATEWAY in Clean Architecture:}  }    res.status(201).json({ order<em>id: output.orderId });    }      return;      res.status(statusMap[output.error] ?? 500).json({ error: output.error });      const statusMap = { USER</em>NOT<em>FOUND: 404, INSUFFICIENT</em>STOCK: 409, PAYMENT<em>FAILED: 402 };    if (!output.success) {    // Translation: Use Case Output → HTTP Response    const output = await this.placeOrderUseCase.execute(input);    // Execute    };      })),        quantity: item.qty,        productId: item.product</em>id,      items: req.body.items.map(item =&gt; ({      userId: req.user.id,    const input: PlaceOrderInput = {    // Translation: HTTP → Use Case Input  async handle(req: Request, res: Response): Promise&lt;void&gt; {  constructor(private placeOrderUseCase: PlaceOrderUseCase) {}class PlaceOrderController {CONTROLLER in Clean Architecture:                 (Repository implementations, external service adapters)    Gateways:    Implement the interfaces defined by Use Cases    Presenters:  Convert Use Case Output → View Model                 Convert Use Case Output → HTTP Response    Controllers: Convert HTTP Request → Use Case Input  Types:    to the format the inner rings (Use Cases, Entities) can use.  Translators. They convert data from the format of the outer ringWHAT THEY ARE:</code>### Ring 3: Interface Adapters---<code>  ✅ One class = one use case = one unit of testability  ✅ Depends ONLY on interfaces (Ring 3 provides implementations)  ✅ NOT Express Request/Response  ✅ Input/Output types are own domain types (PlaceOrderInput, PlaceOrderOutput)KEY PROPERTIES:}  }    return { success: true, orderId: savedOrder.id };    const savedOrder = await this.orderRepository.save(order);    // Save the order (via interface — Use Case doesn't know it's PostgreSQL)    if (!charge.success) return { success: false, error: 'PAYMENT<em>FAILED' };    const charge = await this.paymentGateway.charge(user.paymentMethodId, order.total);    // Application-level rule: process payment    if (!available) return { success: false, error: 'INSUFFICIENT</em>STOCK' };    const available = await this.inventoryGateway.checkAvailability(input.items);    // Application-level rule: check inventory    const order = Order.create({ userId: input.userId, items: input.items });    // Application-level rule: create order entity (entity validates its own invariants)    if (!user) return { success: false, error: 'USER<em>NOT</em>FOUND' };    const user = await this.userRepository.findById(input.userId);    // Application-level rule: user must exist  async execute(input: PlaceOrderInput): Promise&lt;PlaceOrderOutput&gt; {  ) {}    private inventoryGateway: IInventoryGateway,    private paymentGateway: IPaymentGateway,    private userRepository: IUserRepository,    private orderRepository: IOrderRepository,    // ← interface (Ring 2/3 boundary)  constructor(class PlaceOrderUseCase {EXAMPLES:  They change when the APPLICATION's rules change (not when infra changes).  They orchestrate entities and define interactions with gateways.  NOT a service class with 20 methods — ONE class per use case.  Explicit objects that represent ONE specific application action.WHAT THEY ARE:</code>### Ring 2: Use Cases (Application Business Rules)---<code>  ✅ Can be shared across multiple applications/use cases  ✅ Captures invariants that must ALWAYS be true  ✅ Testable with new Order() — no mock needed  ✅ No imports from outer ringsKEY PROPERTIES:}  }    // ...    if (amount &lt; 0) throw new InvalidMoneyError("Amount cannot be negative");  static of(amount: number, currency: string): Money {  // Enterprise rule: money cannot be negative  // Value object (no identity, defined by value)class Money {}  }    // ...    }      throw new InvalidOrderError("Order must have at least one item");    if (params.items.length === 0) {  static create(params: CreateOrderParams): Order {  // Enterprise rule: validation in the entity constructor/factory  }    this.<em>cancellationReason = reason;    this.</em>status = OrderStatus.Cancelled;    }      throw new InvalidOperationError("Cannot cancel a shipped order");    if (this.<em>status === OrderStatus.Shipped) {  cancel(reason: string): void {  // Enterprise rule: encapsulated in the entity  private </em>total: Money;  private <em>status: OrderStatus;  readonly items: OrderItem[];  readonly userId: UserId;  readonly id: OrderId;class Order {EXAMPLES:  They have NO dependencies on frameworks, databases, or UI.  They change the LEAST — only if the fundamental business rules change.  Plain objects that encapsulate the most general, high-level rules.WHAT THEY ARE:</code>### Ring 1: Entities (Enterprise Business Rules)---<code>                 Nothing in an inner ring knows about an outer ring.DEPENDENCY RULE: Source code dependencies can only point INWARD.└───────────────────────────────────────────────────────────┘│  └───────────────────────────────────────────────────┘    ││  │  └──────────────────────────────────────────┘     │    ││  │  │  └──────────────────────────────────────┘│     │    ││  │  │  │  RING 1: ENTITIES (Enterprise Rules)  ││     │    ││  │  │  ┌──────────────────────────────────────┐│     │    ││  │  │  RING 2: USE CASES (Application Rules)   │     │    ││  │  ┌──────────────────────────────────────────┐     │    ││  │  RING 3: INTERFACE ADAPTERS                       │    ││  ┌───────────────────────────────────────────────────┐    ││  RING 4: FRAMEWORKS &amp; DRIVERS (outermost)                 │┌───────────────────────────────────────────────────────────┐</code>### The Four Rings of Clean Architecture## SECTION 3 — Component Responsibilities---<code>  It is necessary for applications that will grow beyond framework scope.  Clean Architecture is not necessary for every application.  For these: Controller-Service-Repository is sufficient and faster.    ❌ Short-lived project (&lt; 6 months lifespan)  ❌ The domain has no real business logic (pure data passthrough)  ❌ Team &lt; 6 engineers (cognitive overhead slows everyone down)  ❌ Writing a 3-route CRUD API for an MVP (overhead outweighs benefit)DO NOT use Clean Architecture when:  ✅ Compliance / enterprise environment where domain logic auditability matters     (the same use cases called from 4 different interfaces)  ✅ Multiple delivery mechanisms: HTTP API + gRPC + CLI + message queue handlers     (you KNOW you'll eventually migrate from Express to a newer framework)  ✅ The application will outlive its original framework   ✅ Team &gt; 15-20 engineers on the same codebase  ✅ The domain is genuinely complex (50+ business rules, multiple aggregates)USE Clean Architecture when:</code>### When Clean Architecture Is Justified---<code>  These tests are deterministic, fast (&lt; 1ms each), and comprehensive.  without starting a server, without a database, without any external service.  You can run ALL of your core business logic testsRESULT:        - Business logic is unit-testable at nanosecond speed        - External service swaps are infrastructure-only changes        - Database migrations don't affect business rules        - Framework upgrades don't touch core logic      If your core business logic is clean of these imports:              - Your test framework (Jest, JUnit)        - Your external service SDKs (Stripe, SendGrid, Twilio)        - Your ORM (Prisma, Hibernate, SQLAlchemy)        - Your HTTP framework (Express, FastAPI, Spring)      that have ZERO imports from:      as a set of plain TypeScript/Java/Python classesGOAL: The business logic of your application should be expressible</code>### What Clean Architecture Solves---- The business rules of your application are <strong>entangled</strong> with the version of a third-party library.- Upgrade Express v4 → v5 (breaking changes): grep all services for <code>Request</code> usage.- Swap PostgreSQL for MongoDB: modify every line in <code>OrderService</code> that calls <code>this.prisma</code>.- To test <code>createOrder</code>, you must have Express, a running PostgreSQL (Prisma), and a Stripe test account.<strong>What this means:</strong><code>}  }    const charge = await this.stripe.charges.create({...});  // ← Stripe SDK in service    // ...    });      where: { id: req.user.id }                      // ← req.user (Express concept) in service    const user = await this.prisma.user.findUnique({  // ← Prisma ORM in service  async createOrder(req: Request) {  // ← Express Request in the service  private stripe = new Stripe(process.env.STRIPE</em>KEY);  private prisma = new PrismaClient();  // Prisma client hardcoded in the serviceclass OrderService {import Stripe from 'stripe';import { PrismaClient } from '@prisma/client';  // ← ORM in the serviceimport { Request } from 'express';// "Service" layer that imports Express</code>typescriptAfter 3 years, most "well-structured" codebases look like this under the hood:### The Problem: Framework Dependency Infection## SECTION 2 — Problem Solved---<code>               OrderRepository (outer ring) ──implements──► IOrderRepository  In Clean:    UseCase ──imports──► IOrderRepository (interface, inner ring)  In Layered:  BLL    ──imports──► OrderRepository (concrete, SQL)  The DEPENDENCY IS INVERTED:    The repository implementation (outer ring) implements the interface (inner ring).  The Use Case does NOT know if IOrderRepository is backed by PostgreSQL or MongoDB.  Business Logic (Use Cases) defines an interface: IOrderRepository.  All outer rings depend on inner rings — never the reverse.CLEAN ARCHITECTURE:  If you add a MongoDB adapter, the BLL must import something different.  Problem: the BLL "knows about" the repository.  Business Logic → Data Access Layer → Database  Top → Bottom (one direction of calls)LAYERED ARCHITECTURE:</code>### Contrast with Layered Architecture---<strong>This is the Dependency Rule:</strong> Dependencies can only point INWARD. The outermost ring (infrastructure) depends on the inner rings. The inner rings know NOTHING about the outer rings.<strong>The key insight:</strong> The innermost ring (Constitution) knows NOTHING about the outer rings. The Constitution was written before the IRS existed. It doesn't reference any government department. It is the most stable, most fundamental layer — and it changes the least.<code>               is behind the scenes — the application rules operate the same.               These are DETAILS. The business doesn't care which database  In software: Express, Prisma, Stripe SDK, PostgreSQL, React.    stored on paper or in a computer system.  These are interchangeable. The constitution doesn't care if records are  The POST OFFICE (SendGrid), the FEDERAL COURTHOUSE DATABASE (PostgreSQL).  The buildings, post offices, computer systems, roads.LAYER 4: THE PHYSICAL INFRASTRUCTURE (Frameworks &amp; Drivers)               They translate Use Case output → HTTP response.               They translate HTTP → Use Case input.  In software: Controllers, Presenters, Gateway adapters.     the format the law requires."  "We accept paper FORMS (HTTP requests) and translate them into    and the internal federal processes.  The DMV, IRS, Post Office — they translate between citizens' needsLAYER 3: THE GOVERNMENT DEPARTMENTS (Interface Adapters)               This process doesn't change when you swap from Stripe to Braintree.  In software: "To place an order: validate cart → check inventory → charge card → create order"    The process is the same whether Immigration uses Oracle or PostgreSQL.  But they do NOT change based on what software system processes the applications.  These rules CAN change by act of Congress.    "To become a citizen, you must: [specific process]."  Laws specific to HOW the government operates.LAYER 2: THE FEDERAL LAWS (Use Cases / Application Rules)               These are enterprise-level rules that survive any tech migration.               "A User cannot have duplicate email addresses."  In software: "An Order cannot have a negative total."    This rule DOES NOT CHANGE when infrastructure changes.  This is not tied to whether the court system uses paper files or digital records.  This is not tied to the Department of Labor's software system.  Example: "All citizens have the right to liberty."    or whether the government is a democracy or republic.  which software system the government uses,  These rules exist regardless of who the president is,  The fundamental laws of the land.LAYER 1: THE CONSTITUTION (Entities / Enterprise Rules)</code>Clean Architecture (Robert C. Martin, "Uncle Bob," 2012) is often called "the architecture that makes your business logic independent of everything else." To understand why, think about how a country's laws are organized.### A Nation-State with Its Constitution## SECTION 1 — Real-World Analogy---<strong>Series:</strong> System Design &amp; Architecture → Topic 04### Sections: 1 (Real-World Analogy), 2 (Problem Solved), 3 (Component Responsibilities), 4 (ASCII Diagrams)### Sections: 1 (Real-World Analogy), 2 (Problem Solved), 3 (Component Responsibilities), 4 (ASCII Diagrams) <strong>Series:</strong> System Design &amp; Architecture → Topic 04</p>
+<hr>
+<h2 id="section-1-real-world-analogy">SECTION 1 — Real-World Analogy<a href="#section-1-real-world-analogy" class="anchor">#</a></h2>
+<h3 id="a-countrys-legal-system">A Country's Legal System<a href="#a-countrys-legal-system" class="anchor">#</a></h3>
+<p>Robert C. Martin (Uncle Bob) published Clean Architecture in 2017, but the concept predates it — it's the same principle that makes any stable institution outlive its tools.</p>
+<pre class="ascii-diagram">
+INNER RING: Constitutional Law (Entities)
+─────────────────────────────────────────
+  The fundamental rights and principles that define the country.
+  These never change based on who is in power.
+  "Murder is prohibited." "Citizens have the right to trial."
+  Independent of: which government is in charge, what technology courts use,
+                  what president signed which bill.
+
+  In software: Enterprise-wide business rules. "An Order must have at least one item."
+               "A User cannot have negative account balance." Pure domain logic.
+               Depends on NOTHING external.
+
+SECOND RING: Application Law (Use Cases)
+─────────────────────────────────────────
+  How constitutional principles are applied in specific processes.
+  "To extradite a criminal: the requesting country submits a treaty request.
+   The court reviews constitutional eligibility. The minister approves."
+  Uses: Constitutional law (inner ring). Knows: the process to execute.
+  Independent of: whether the request came by fax, email, or hand-delivered.
+
+  In software: Use Cases. "RegisterNewUser: validate email uniqueness, hash password,
+               create User entity, send verification email."
+               Orchestrates Entities (inner ring). Defines app-specific workflow.
+               Does NOT know: Express, PostgreSQL, Stripe.
+
+THIRD RING: Administrative Process (Interface Adapters)
+─────────────────────────────────────────────────────────
+  The courts, police, civil servants who translate between
+  the outer world and the inner legal system.
+  "A judge translates a citizen's testimony (HTTP request)
+   into a formal deposition (Use Case input DTO)."
+  "A clerk translates a legal ruling into a public record (DB row)."
+
+  In software: Controllers, Presenters, Repository implementations, Gateways.
+               Convert between external formats (HTTP, JSON, SQL rows)
+               and the internal domain format (Entities, Use Case DTOs).
+
+OUTER RING: The World (Frameworks &amp; Drivers)
+─────────────────────────────────────────────
+  The physical tools: courtrooms, paper forms, filing cabinets, fax machines.
+  These change constantly. Fax → email → digital portal.
+  The laws inside don't change when the filing system changes.
+
+  In software: Express, PostgreSQL, React, Stripe API, Redis, Kafka.
+               These are PLUGINS to the business logic.
+               The business logic doesn't know or care which framework is in use.
+</pre>
+<p><strong>The key insight:</strong> The Constitution (Entities) has never been rewritten because fax machines became email. Your business rules should never need to change because PostgreSQL was replaced with MongoDB or Express was replaced with Fastify.</p>
+<hr>
+<h3 id="the-plugin-analogy">The Plugin Analogy<a href="#the-plugin-analogy" class="anchor">#</a></h3>
+<pre class="ascii-diagram">
+Think of your business rules as a power outlet.
+
+The outlet (business rules, use cases) has a standard interface.
+Plugs (frameworks, databases, UIs) come in many shapes.
+
+You can plug in:
+  └── An Express REST API
+  └── A gRPC server
+  └── A CLI command
+  └── A cron job
+  └── A Kafka consumer
+  └── A test harness
+
+None of these change what the outlet IS — only how it's accessed.
+
+When you run the application:
+  WRONG: "My app is an Express app that does some business logic."
+  RIGHT: "My app is a business logic system. Express happens to be one delivery mechanism."
+
+This distinction becomes critical when:
+  • You need to expose the same logic via gRPC AND REST
+  • You want to write business logic tests at 1ms speed (no HTTP, no DB)
+  • You need to replace PostgreSQL with DynamoDB for one service
+  • You want to run business logic in a Lambda function AND a traditional server
+</pre>
+<hr>
+<h2 id="section-2-problem-solved">SECTION 2 — Problem Solved<a href="#section-2-problem-solved" class="anchor">#</a></h2>
+<h3 id="the-problem-framework-coupled-core-logic">The Problem: Framework-Coupled Core Logic<a href="#the-problem-framework-coupled-core-logic" class="anchor">#</a></h3>
+<p>Without Clean Architecture, the business logic becomes entangled with the framework:</p>
+<pre><code class="language-typescript">
+// BEFORE CLEAN ARCHITECTURE — "Express App with Business Logic"
+// The domain entities know about Sequelize
+@Table({ tableName: "orders" })
+class Order extends Model {
+  @Column userId: string;
+  @Column total: number;
+  @Column status: string; // 'pending' | 'confirmed' | 'cancelled'
+
+  // Business method mixed with ORM model
+  async cancel(): Promise&lt;void&gt; {
+    if (this.status !== "pending") {
+      throw new Error("Can only cancel pending orders");
+    }
+    this.status = "cancelled";
+    await this.save(); // ← Order entity directly calls DB. Business rule + DB coupled.
+  }
+}
+
+// The use case is scattered between the ORM model and the route handler
+router.post("/orders/:id/cancel", async (req, res) =&gt; {
+  const order = await Order.findByPk(req.params.id); // ORM in controller
+  await order.cancel(); // Business rule + DB save in one call
+  res.json(order);
+});
+</code></pre>
+<p><strong>What is wrong:</strong></p>
+<ul>
+<li>Testing <code>Order.cancel()</code> requires a database (it calls <code>this.save()</code>)</li>
+<li>Swap Sequelize for Prisma → <code>Order</code> entity must change (it extends <code>Model</code>)</li>
+<li>The "cancel an order" use case is split between the model and the route — no single place to look at the full logic</li>
+<li>Run the cancellation logic in a background job (no HTTP context): impossible cleanly</li>
+</ul>
+<hr>
+<h3 id="what-clean-architecture-solves">What Clean Architecture Solves<a href="#what-clean-architecture-solves" class="anchor">#</a></h3>
+<pre class="ascii-diagram">
+PROBLEM 1: Business rules are tightly coupled to the database ORM
+→ SOLUTION: Entities are plain objects. They know NOTHING about databases.
+            Order.cancel() updates state in memory. The Repository saves to DB.
+            Swap Sequelize for Prisma: zero impact on business rules.
+
+PROBLEM 2: Business rules are coupled to the web framework
+→ SOLUTION: Use Cases receive plain input DTOs. Return plain output DTOs.
+            They never receive Express Request objects.
+            Swap Express for Fastify: zero impact on use cases.
+
+PROBLEM 3: No single place to understand what the application does
+→ SOLUTION: Use Cases are explicit named objects.
+            Looking at the use-cases/ folder tells you exactly what the system does:
+              RegisterUser, PlaceOrder, CancelOrder, ProcessRefund, GenerateInvoice
+            No need to read routes, controllers, or SQL to understand the business logic.
+
+PROBLEM 4: The test suite requires a running server and database
+→ SOLUTION: Use Cases depend on Repository interfaces.
+            In tests: inject InMemoryUserRepository, InMemoryOrderRepository.
+            Business rule tests: 0 infrastructure, sub-millisecond execution.
+
+PROBLEM 5: Frameworks change, but business rules don't
+→ SOLUTION: The Dependency Rule: code dependencies point INWARD only.
+            Entities (innermost ring) depend on nothing external.
+            Use Cases depend only on Entities and interfaces.
+            Frameworks depend on Use Cases — not the reverse.
+</pre>
+<hr>
+<h3 id="when-clean-architecture-is-the-right-choice">When Clean Architecture Is the Right Choice<a href="#when-clean-architecture-is-the-right-choice" class="anchor">#</a></h3>
+<pre class="ascii-diagram">
+USE IT when:
+  ✅ Domain complexity is high (many business rules, many entity relationships)
+  ✅ Long-lived application (5+ years expected)
+  ✅ Multiple delivery mechanisms needed (REST + gRPC + CLI + messaging)
+  ✅ Large teams (10+ engineers) who need strict boundaries
+  ✅ Regulatory domain requiring full auditability and testability of rules
+     (fintech, healthcare, insurance)
+  ✅ Codebase will outlive the framework it was built on
+
+DO NOT USE when:
+  ❌ Simple CRUD app (CSR/Layered Architecture is sufficient and leaner)
+  ❌ Small team (2-4 engineers) — overhead to maintain explicit Use Case objects
+  ❌ Short-lived project (prototype, MVP, script)
+  ❌ The domain has no business rules — just reads/writes
+
+PRACTICAL RECOMMENDATION:
+  Start with Controller-Service-Repository (Topic 03).
+  Migrate toward Clean Architecture when ANY of these appear:
+    • Service classes exceeding 500 lines
+    • Business rules that need to run outside of HTTP context
+    • Need to add a second delivery mechanism (gRPC, CLI, queue consumer)
+    • Test suite requires a live database to test business logic
+</pre>
+<hr>
+<h2 id="section-3-component-responsibilities">SECTION 3 — Component Responsibilities<a href="#section-3-component-responsibilities" class="anchor">#</a></h2>
+<h3 id="the-four-concentric-rings">The Four Concentric Rings<a href="#the-four-concentric-rings" class="anchor">#</a></h3>
+<pre class="ascii-diagram">
+RING 1 — ENTITIES (Enterprise Business Rules)
+─────────────────────────────────────────────────────────────────────
+CONTAINS:
+  • Business objects that embody the most general and high-level rules
+  • Can be used across multiple applications in the company
+  • Encapsulate data + the business rules that operate on that data
+  • Pure objects: no framework dependency, no DB dependency
+
+EXAMPLES:
+  class Order {
+    private status: OrderStatus;
+    private items: OrderItem[];
+
+    cancel(reason: string): void {
+      if (!this.isCancellable()) throw new OrderCancellationError('Order cannot be cancelled');
+      this.status = OrderStatus.CANCELLED;
+      this.cancellationReason = reason;
+      this.addDomainEvent(new OrderCancelledEvent(this));
+    }
+
+    isCancellable(): boolean {
+      return [OrderStatus.PENDING, OrderStatus.CONFIRMED].includes(this.status)
+        &amp;&amp; !this.hasShipped();
+    }
+
+    // No .save(), no prisma.order.update, no express.send()
+    // Pure domain logic. Testable with zero infrastructure.
+  }
+
+DOES NOT KNOW ABOUT:
+  • Databases (no ORM inheritance, no .save())
+  • HTTP (no Request, no Response)
+  • Frameworks (no Express, no NestJS decorators*)
+  • External services (no Stripe, no SendGrid)
+
+  * NestJS entity decorators (@Entity, @Column) are a framework intrusion.
+    Clean Architecture proponents argue against this.
+    Pragmatic teams accept @Entity decorators but keep business methods framework-free.
+
+───────────────────────────────────────────────────────────────────────
+
+RING 2 — USE CASES (Application Business Rules)
+─────────────────────────────────────────────────────────────────────
+CONTAINS:
+  • Application-specific business rules
+  • Orchestrate the flow to and from Entities
+  • One Use Case class = one user action or system operation
+  • Carry the full audit trail: "what does this application allow users to do?"
+
+STRUCTURE:
+  class CancelOrderUseCase {
+    constructor(
+      private orderRepository: IOrderRepository,  // ← interface (not Prisma)
+      private paymentGateway: IPaymentGateway,     // ← interface (not Stripe)
+      private eventBus: IEventBus,
+    ) {}
+
+    async execute(input: CancelOrderInput): Promise&lt;CancelOrderOutput&gt; {
+      // 1. Retrieve entity
+      const order = await this.orderRepository.findById(input.orderId);
+      if (!order) return { success: false, error: 'OrderNotFound' };
+
+      // 2. Check authorization (application rule: only owner can cancel)
+      if (order.userId !== input.requestingUserId) {
+        return { success: false, error: 'Unauthorized' };
+      }
+
+      // 3. Delegate to entity (enterprise rule: is it cancellable?)
+      order.cancel(input.reason);  // throws if not cancellable
+
+      // 4. Handle refund (application orchestration)
+      if (order.isEligibleForRefund()) {
+        await this.paymentGateway.refund(order.chargeId, order.total);
+      }
+
+      // 5. Persist
+      await this.orderRepository.save(order);
+
+      // 6. Notify
+      await this.eventBus.publish(order.pullDomainEvents());
+
+      return { success: true, order: CancelOrderOutput.fromDomain(order) };
+    }
+  }
+
+DOES NOT KNOW ABOUT:
+  • HTTP (no Request/Response)
+  • Which database is used (depends on IOrderRepository interface)
+  • Which payment provider (depends on IPaymentGateway interface)
+  • How the result will be rendered (returns plain DTO)
+
+───────────────────────────────────────────────────────────────────────
+
+RING 3 — INTERFACE ADAPTERS (Controllers, Presenters, Gateways)
+─────────────────────────────────────────────────────────────────────
+CONTAINS:
+  • Controllers: Convert incoming data (HTTP, gRPC, CLI) → Use Case input DTO
+  • Presenters: Convert Use Case output → outgoing format (JSON, HTML, protobuf)
+  • Repository implementations: Convert DB rows ↔ Domain entities
+  • Gateway implementations: Wrap external APIs (Stripe, SendGrid)
+
+JOBS:
+  Controller (HTTP adapter):
+    HTTP Request → parse/validate → CancelOrderInput → execute → CancelOrderOutput → HTTP Response
+
+  Repository implementation:
+    IOrderRepository.findById(id) → Prisma query → ORM row → Order entity
+    IOrderRepository.save(order) → Order entity → Prisma entity → DB write
+
+  StripeAdapter:
+    IPaymentGateway.refund(chargeId, amount) → Stripe SDK call → RefundResult
+
+───────────────────────────────────────────────────────────────────────
+
+RING 4 — FRAMEWORKS &amp; DRIVERS (Express, PostgreSQL, React, Redis)
+─────────────────────────────────────────────────────────────────────
+  The outermost ring. Contains the glue code that makes the outside world
+  talk to the Interface Adapters.
+
+  • Express router setup
+  • Prisma client initialization
+  • Redis connection config
+  • React component tree
+  • Kafka consumer setup
+
+  This ring is replaceable. If you swap Express for Fastify, only this ring changes.
+  Entities, Use Cases, and most Interface Adapters: unchanged.
+</pre>
+<hr>
+<h2 id="section-4-ascii-architecture-diagrams">SECTION 4 — ASCII Architecture Diagrams<a href="#section-4-ascii-architecture-diagrams" class="anchor">#</a></h2>
+<h3 id="the-concentric-rings-clean-architecture-classic-view">The Concentric Rings (Clean Architecture Classic View)<a href="#the-concentric-rings-clean-architecture-classic-view" class="anchor">#</a></h3>
+<pre class="ascii-diagram">
+╔═══════════════════════════════════════════════════════════════╗
+║                 FRAMEWORKS &amp; DRIVERS                          ║
+║   Express   PostgreSQL   Redis   Stripe   React   Kafka       ║
+║                                                               ║
+║  ┌─────────────────────────────────────────────────────┐      ║
+║  │              INTERFACE ADAPTERS                     │      ║
+║  │  Controllers  Repositories  Gateways  Presenters   │      ║
+║  │                                                     │      ║
+║  │  ┌───────────────────────────────────────────┐     │      ║
+║  │  │             USE CASES                     │     │      ║
+║  │  │    Application-specific business rules    │     │      ║
+║  │  │    CancelOrder, RegisterUser, PlaceOrder  │     │      ║
+║  │  │                                           │     │      ║
+║  │  │  ┌─────────────────────────────────────┐  │     │      ║
+║  │  │  │           ENTITIES                  │  │     │      ║
+║  │  │  │  Enterprise business rules          │  │     │      ║
+║  │  │  │  Order, User, Payment, Invoice      │  │     │      ║
+║  │  │  │  Pure domain objects                │  │     │      ║
+║  │  │  └─────────────────────────────────────┘  │     │      ║
+║  │  └───────────────────────────────────────────┘     │      ║
+║  └─────────────────────────────────────────────────────┘      ║
+╚═══════════════════════════════════════════════════════════════╝
+
+THE DEPENDENCY RULE (mandatory):
+  Source code dependencies can only point INWARD.
+
+  ✅ ALLOWED:         ❌ FORBIDDEN:
+  Framework → Adapter    Entity → Use Case
+  Adapter → Use Case     Entity → Framework
+  Use Case → Entity      Use Case → Framework
+                         Use Case → Adapter (concrete)
+                         Use Case imports Prisma/Express/Stripe directly
+</pre>
+<hr>
+<h3 id="request-flow-cancel-order-clean-architecture">Request Flow: Cancel Order (Clean Architecture)<a href="#request-flow-cancel-order-clean-architecture" class="anchor">#</a></h3>
+<pre class="ascii-diagram">
+HTTP REQUEST: POST /orders/ord_123/cancel
+Body: { reason: "changed my mind" }
+
+RING 4 — FRAMEWORK:
+  Express router receives request
+  Passes to CancelOrderController.handle(req, res)
+
+RING 3 — INTERFACE ADAPTERS:
+  CancelOrderController:
+    Parses: orderId = req.params.id, reason = req.body.reason
+    Auth:   requestingUserId = req.user.id
+
+    Builds input DTO: CancelOrderInput { orderId, requestingUserId, reason }
+
+    Calls: cancelOrderUseCase.execute(cancelOrderInput)
+
+    Receives: CancelOrderOutput { success: true, order: {...} }
+
+    Presents: HTTP 200 { order_id, status: "cancelled", ... }
+
+RING 2 — USE CASES:
+  CancelOrderUseCase.execute(CancelOrderInput):
+    Calls: IOrderRepository.findById(orderId)      ← calls Ring 3 (adapter, not Prisma directly)
+    Calls: order.cancel(reason)                    ← calls Ring 1 entity
+    Calls: IPaymentGateway.refund(...)             ← calls Ring 3 (adapter)
+    Calls: IOrderRepository.save(order)            ← calls Ring 3 (adapter)
+    Returns: CancelOrderOutput
+
+RING 1 — ENTITIES:
+  Order.cancel(reason):
+    if (!this.isCancellable()) throw OrderCancellationError
+    this.status = CANCELLED
+    this.addDomainEvent(new OrderCancelledEvent(this))
+    (Pure in-memory operation. No DB. No HTTP. No Stripe.)
+
+RING 3 back to RING 4 — ADAPTERS → INFRASTRUCTURE:
+  OrderRepository (adapter):
+    IOrderRepository.findById → Prisma query → maps row to Order entity → returns entity
+    IOrderRepository.save(order) → maps entity to Prisma data → db.order.update(...)
+
+  StripeAdapter:
+    IPaymentGateway.refund → stripe.refunds.create(...)
+</pre>
+<hr>
+<p><em>→ Continued in: <a href="02-Clean%20Architecture%20Basics.md">02-Clean Architecture Basics.md</a></em></p>
+
+        <nav class="lesson-nav" aria-label="Lesson navigation">
+          <a href="lesson-03-part3.html" class="lesson-nav__btn lesson-nav__btn--prev" aria-label="Previous lesson">
+            <span class="lesson-nav__direction"><span class="lesson-nav__arrow">‹</span> Previous</span>
+            <span class="lesson-nav__title">Controller-Service-Repository Pattern — Part 3 of 3</span>
+          </a>
+          <a href="lesson-04-part2.html" class="lesson-nav__btn lesson-nav__btn--next" aria-label="Next lesson">
+            <span class="lesson-nav__direction"><span class="lesson-nav__arrow">›</span> Next</span>
+            <span class="lesson-nav__title">Clean Architecture Basics — Part 2 of 3</span>
+          </a>
+        </nav>
+
+      </article>
+      </div>
+
+      <footer class="site-footer">
+        &copy; 2026 Learning &middot; Pure HTML &amp; CSS &middot; Hosted on AWS S3
+      </footer>
+    </main>
+
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1543 @@
+/* ============================================================
+   MODERN LEARNING PLATFORM - style.css
+   Pure CSS | Minimal Design | Optimized for Reading
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (Modern & Minimal)
+   ------------------------------------------------------------ */
+:root {
+  /* Modern Color Palette */
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --sidebar-bg: #ffffff;
+  --border: #e8e8e8;
+  --border-light: #f3f3f3;
+  --text-primary: #0a0a0a;
+  --text-secondary: #525252;
+  --text-muted: #a3a3a3;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --accent-light: #eef2ff;
+  --accent-subtle: #f5f3ff;
+  --active-lesson: #eef2ff;
+  --active-border: #6366f1;
+  --code-bg: #f8f8f8;
+  --code-border: #ebebeb;
+  --pre-bg: #18181b;
+  --pre-text: #e4e4e7;
+  --table-head: #fafafa;
+  --table-stripe: #fafafa;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  /* Layout */
+  --sidebar-width: 280px;
+  --topbar-height: 60px;
+  --content-max: 780px;
+
+  /* Typography - Improved */
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono:
+    "JetBrains Mono", "Fira Code", "SF Mono", Consolas, "Liberation Mono",
+    Menlo, monospace;
+  --line-height: 1.7;
+  --line-height-tight: 1.25;
+
+  /* Spacing - More Generous */
+  --space-xs: 6px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 72px;
+
+  /* Radius - Softer */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Shadows - Subtle */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #09090b;
+    --surface: #18181b;
+    --sidebar-bg: #18181b;
+    --border: #27272a;
+    --border-light: #1f1f23;
+    --text-primary: #fafafa;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    --accent: #818cf8;
+    --accent-hover: #a5b4fc;
+    --accent-light: #312e81;
+    --accent-subtle: #1e1b4b;
+    --active-lesson: #312e81;
+    --active-border: #818cf8;
+    --code-bg: #27272a;
+    --code-border: #3f3f46;
+    --pre-bg: #0a0a0a;
+    --pre-text: #e4e4e7;
+    --table-head: #27272a;
+    --table-stripe: #18181b;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.7), 0 4px 8px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* Manual dark mode toggle */
+html.dark {
+  --bg: #09090b;
+  --surface: #18181b;
+  --sidebar-bg: #18181b;
+  --border: #27272a;
+  --border-light: #1f1f23;
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --accent: #818cf8;
+  --accent-hover: #a5b4fc;
+  --accent-light: #312e81;
+  --accent-subtle: #1e1b4b;
+  --active-lesson: #312e81;
+  --active-border: #818cf8;
+  --code-bg: #27272a;
+  --code-border: #3f3f46;
+  --pre-bg: #0a0a0a;
+  --pre-text: #e4e4e7;
+  --table-head: #27272a;
+  --table-stripe: #18181b;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.7), 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* ------------------------------------------------------------
+   2. RESET & BASE
+   ------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Accessibility + polish */
+::selection {
+  background: var(--accent-light);
+  color: var(--text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: var(--line-height);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  text-underline-offset: 2px;
+  text-decoration-thickness: from-font;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ------------------------------------------------------------
+   3. LAYOUT SHELL
+   ------------------------------------------------------------ */
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Top bar - Cleaner Design */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--topbar-height);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-lg);
+  gap: var(--space-md);
+  z-index: 100;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  .topbar {
+    background: rgba(24, 24, 27, 0.85);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+}
+
+html.dark .topbar {
+  background: rgba(24, 24, 27, 0.85);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.topbar__logo {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  letter-spacing: -0.025em;
+}
+
+.topbar__logo a {
+  color: inherit;
+}
+
+.topbar__divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.topbar__breadcrumb {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.topbar__breadcrumb a {
+  color: var(--text-secondary);
+}
+
+.topbar__breadcrumb a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.topbar__breadcrumb .sep {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.topbar__breadcrumb .current {
+  color: var(--text-primary);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar__spacer {
+  flex: 1;
+}
+
+.topbar__menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm);
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 1rem;
+  line-height: 1;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    transform 0.15s;
+}
+
+.topbar__menu-toggle:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+}
+
+.topbar__menu-toggle:active {
+  transform: translateY(1px);
+}
+
+/* Body content below topbar */
+.body-content {
+  display: flex;
+  margin-top: var(--topbar-height);
+  min-height: calc(100vh - var(--topbar-height));
+  background: var(--bg);
+}
+
+/* ------------------------------------------------------------
+   4. SIDEBAR - Modern Minimal Design
+   ------------------------------------------------------------ */
+.sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  position: sticky;
+  top: var(--topbar-height);
+  height: calc(100vh - var(--topbar-height));
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-shrink: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Course title header */
+.sidebar__course-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg) var(--space-lg) var(--space-md);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  border-bottom: 0;
+  background: transparent;
+}
+
+.sidebar__course-title::before {
+  content: "";
+  display: none;
+}
+
+/* Section group - collapsible via <details> */
+.sidebar__section {
+  padding: var(--space-xs) 0;
+  margin-bottom: var(--space-xs);
+}
+
+.sidebar__section + .sidebar__section {
+  border-top: 0;
+}
+
+/* Section header row */
+.sidebar__section summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  user-select: none;
+  transition: all 0.2s ease;
+  border-radius: var(--radius-sm);
+  margin: 0 var(--space-sm);
+}
+
+.sidebar__section summary:hover {
+  color: var(--text-primary);
+  background: var(--border-light);
+}
+
+.sidebar__section[open] > summary {
+  color: var(--text-primary);
+  background: transparent;
+}
+
+/* Kill browser's built-in marker */
+.sidebar__section summary::-webkit-details-marker {
+  display: none;
+}
+.sidebar__section summary::marker {
+  display: none;
+}
+
+/* Remove old ASCII arrow */
+.sidebar__section summary::before {
+  display: none;
+}
+
+/* CSS-drawn chevron */
+.sidebar__section summary::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg) translateY(0px);
+  margin-left: auto;
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s;
+}
+
+.sidebar__section[open] > summary::after {
+  transform: rotate(45deg) translateY(-2px);
+  opacity: 0.7;
+}
+
+/* Section emoji icon */
+.sidebar__section-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* Lesson list inside open section */
+.sidebar__lessons {
+  list-style: none;
+  padding: var(--space-xs) var(--space-sm) var(--space-sm);
+}
+
+/* Individual lesson link */
+.sidebar__lessons li a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  margin: 2px var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.15s ease;
+  border-left: none;
+  font-weight: 400;
+}
+
+.sidebar__lessons li a:hover {
+  background: var(--accent-subtle);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.sidebar__lessons li a.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 500;
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
+.sidebar__lessons li a:focus-visible {
+  background: var(--accent-light);
+}
+
+/* Lesson number badge */
+.lesson-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 var(--space-xs);
+  border-radius: var(--radius-sm);
+  background: var(--border-light);
+  color: var(--text-muted);
+  flex-shrink: 0;
+  line-height: 1;
+  transition: all 0.15s ease;
+}
+
+.sidebar__lessons li a:hover .lesson-num {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.sidebar__lessons li a.active .lesson-num {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+/* Nested topic group (lesson-group__details) */
+
+/* Remove default list bullets from the group li */
+.lesson-group {
+  list-style: none;
+}
+
+/* Topic row - the clickable summary for a multi-part lesson */
+.lesson-group__details {
+  /* no extra margin */
+}
+
+.lesson-group__details > summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  margin: 2px var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+
+.lesson-group__details > summary::-webkit-details-marker {
+  display: none;
+}
+.lesson-group__details > summary::marker {
+  display: none;
+}
+
+/* CSS chevron on topic summary */
+.lesson-group__details > summary::after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg) translateY(0px);
+  margin-left: auto;
+  opacity: 0.4;
+  flex-shrink: 0;
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s;
+}
+
+.lesson-group__details[open] > summary::after {
+  transform: rotate(45deg) translateY(-2px);
+  opacity: 0.6;
+}
+
+.lesson-group__details > summary:hover {
+  background: var(--accent-subtle);
+  color: var(--text-primary);
+}
+
+.lesson-group__details > summary:focus-visible {
+  background: var(--accent-light);
+}
+
+/* When this topic is the active one, highlight its summary */
+.lesson-group__details[open] > summary {
+  color: var(--text-primary);
+  font-weight: 500;
+  background: transparent;
+}
+
+/* Part links indented under the topic */
+.lesson-parts {
+  list-style: none;
+  padding: var(--space-xs) 0 var(--space-xs) 36px;
+}
+
+.lesson-parts li a {
+  display: block;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.lesson-parts li a:hover {
+  background: var(--accent-subtle);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.lesson-parts li a.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 500;
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
+/* ------------------------------------------------------------
+   5. MAIN CONTENT AREA
+   ------------------------------------------------------------ */
+.main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2xl) var(--space-xl) var(--space-2xl);
+}
+
+.lesson-content {
+  flex: 1;
+  padding: var(--space-2xl) var(--space-2xl) var(--space-2xl);
+  max-width: calc(var(--content-max) + var(--space-2xl) * 2);
+  margin: 0 auto;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ------------------------------------------------------------
+   6. TYPOGRAPHY - HEADINGS
+   ------------------------------------------------------------ */
+.lesson-body h1,
+.lesson-body h2,
+.lesson-body h3,
+.lesson-body h4,
+.lesson-body h5,
+.lesson-body h6 {
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+}
+
+.lesson-body h1 {
+  font-size: 2.25rem;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+  font-weight: 700;
+}
+
+.lesson-body h2 {
+  font-size: 1.625rem;
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-lg);
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.lesson-body h3 {
+  font-size: 1.25rem;
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+.lesson-body h4 {
+  font-size: 1.0625rem;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.lesson-body h5,
+.lesson-body h6 {
+  font-size: 0.9rem;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+  color: var(--text-muted);
+}
+
+/* Anchor link on hover */
+.lesson-body h1 .anchor,
+.lesson-body h2 .anchor,
+.lesson-body h3 .anchor,
+.lesson-body h4 .anchor {
+  opacity: 0;
+  margin-left: var(--space-sm);
+  font-size: 0.75em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.lesson-body h1:hover .anchor,
+.lesson-body h2:hover .anchor,
+.lesson-body h3:hover .anchor,
+.lesson-body h4:hover .anchor {
+  opacity: 1;
+}
+
+.lesson-body h1 .anchor:focus-visible,
+.lesson-body h2 .anchor:focus-visible,
+.lesson-body h3 .anchor:focus-visible,
+.lesson-body h4 .anchor:focus-visible {
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------
+   7. TYPOGRAPHY - BODY
+   ------------------------------------------------------------ */
+.lesson-body p {
+  margin-bottom: var(--space-lg);
+  font-size: 1.0625rem;
+  line-height: var(--line-height);
+  color: var(--text-secondary);
+}
+
+.lesson-body > :first-child {
+  margin-top: 0;
+}
+
+.lesson-body > :last-child {
+  margin-bottom: 0;
+}
+
+.lesson-body a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-underline-offset: 2px;
+}
+
+.lesson-body a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.lesson-body strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.lesson-body em {
+  font-style: italic;
+}
+
+.lesson-body ul,
+.lesson-body ol {
+  margin-left: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.lesson-body li {
+  margin-bottom: var(--space-sm);
+  line-height: var(--line-height);
+  color: var(--text-secondary);
+}
+
+.lesson-body ul li::marker {
+  color: var(--accent);
+}
+
+.lesson-body ol li::marker {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.lesson-body ul ul,
+.lesson-body ol ol,
+.lesson-body ul ol,
+.lesson-body ol ul {
+  margin-top: var(--space-xs);
+  margin-bottom: 0;
+}
+
+.lesson-body blockquote {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-subtle);
+  padding: var(--space-lg) var(--space-xl);
+  margin: var(--space-xl) 0;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-style: normal;
+}
+
+.lesson-body blockquote p {
+  margin: 0;
+}
+
+.lesson-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: var(--space-2xl) 0;
+}
+
+/* Inline code */
+.lesson-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+  color: var(--accent);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* ------------------------------------------------------------
+   8. CODE BLOCKS & ASCII DIAGRAMS
+   ------------------------------------------------------------ */
+.lesson-body pre {
+  background: var(--pre-bg);
+  color: var(--pre-text);
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin: var(--space-xl) 0;
+  tab-size: 4;
+  white-space: pre;
+  word-wrap: normal;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  box-shadow: var(--shadow-sm);
+}
+
+.lesson-body pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre;
+  border-radius: 0;
+}
+
+/* ASCII diagrams - same as pre but with visible border */
+.lesson-body pre.ascii-diagram {
+  background: var(--code-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--code-border);
+  font-size: 0.82rem;
+}
+
+/* Scrollbar for code blocks */
+.lesson-body pre::-webkit-scrollbar {
+  height: 5px;
+}
+
+.lesson-body pre::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+/* ------------------------------------------------------------
+   9. TABLES
+   ------------------------------------------------------------ */
+.lesson-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-xl) 0;
+  font-size: 0.9375rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.lesson-body thead {
+  background: var(--table-head);
+}
+
+.lesson-body th {
+  text-align: left;
+  padding: var(--space-md) var(--space-lg);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.lesson-body td {
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.lesson-body tr:last-child td {
+  border-bottom: none;
+}
+
+.lesson-body tbody tr:nth-child(even) {
+  background: var(--table-stripe);
+}
+
+.lesson-body tbody tr:hover {
+  background: var(--accent-subtle);
+}
+
+/* ------------------------------------------------------------
+   10. LESSON HEADER
+   ------------------------------------------------------------ */
+.lesson-header {
+  margin-bottom: var(--space-xl);
+}
+
+.lesson-header__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.lesson-header__part {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  background: var(--accent-subtle);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 100px;
+}
+
+.lesson-header__num {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+}
+
+.lesson-header__title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-sm);
+}
+
+.lesson-header__divider {
+  height: 3px;
+  width: 48px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-top: var(--space-md);
+}
+
+/* ------------------------------------------------------------
+   11. PREVIOUS / NEXT NAVIGATION
+   ------------------------------------------------------------ */
+.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--border);
+}
+
+.lesson-nav__btn {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg) var(--space-xl);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--text-primary);
+  background: var(--surface);
+  transition: all 0.2s ease;
+  min-width: 200px;
+  max-width: 48%;
+  box-shadow: var(--shadow-sm);
+}
+
+.lesson-nav__btn:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+  background: var(--accent-subtle);
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.lesson-nav__btn:active {
+  transform: translateY(0);
+}
+
+.lesson-nav__btn--prev {
+  align-items: flex-start;
+}
+
+.lesson-nav__btn--next {
+  align-items: flex-end;
+  margin-left: auto;
+}
+
+.lesson-nav__direction {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.lesson-nav__title {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+  text-align: inherit;
+}
+
+.lesson-nav__arrow {
+  font-size: 0.9rem;
+}
+
+/* Empty slot */
+.lesson-nav__empty {
+  min-width: 200px;
+  max-width: 48%;
+}
+
+/* ------------------------------------------------------------
+   12. INDEX / HOME PAGE
+   ------------------------------------------------------------ */
+.home-hero {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-xl) var(--space-2xl);
+  max-width: 720px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.home-hero__eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: var(--space-md);
+}
+
+.home-hero__title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.home-hero__subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* Part cards grid */
+.parts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.part-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  text-decoration: none;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.part-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.part-card__icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.part-card__num {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.part-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.part-card__count {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: auto;
+  font-weight: 400;
+}
+
+.part-card__bar {
+  height: 4px;
+  background: var(--border-light);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.part-card__bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  border-radius: 100px;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* ------------------------------------------------------------
+   13. PART INDEX PAGE
+   ------------------------------------------------------------ */
+.part-index {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--space-xl);
+}
+
+.part-index__header {
+  margin-bottom: var(--space-xl);
+}
+
+.part-index__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+}
+
+.part-index__title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.part-index__desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.lesson-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.lesson-list__item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s,
+    transform 0.15s;
+}
+
+.lesson-list__item:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.lesson-list__link {
+  display: flex;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  text-decoration: none;
+  color: var(--text-primary);
+  gap: var(--space-md);
+}
+
+.lesson-list__link:hover {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.lesson-list__num {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  min-width: 28px;
+}
+
+.lesson-list__title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+.lesson-list__arrow {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  transition: transform 0.15s;
+}
+
+.lesson-list__item:hover .lesson-list__arrow {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* ------------------------------------------------------------
+   14. READING PROGRESS BAR
+   ------------------------------------------------------------ */
+.progress-bar {
+  position: fixed;
+  top: var(--topbar-height);
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--border);
+  z-index: 99;
+}
+
+/* Static decorative fill - JS would animate this, we leave it as styling hook */
+.progress-bar__fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* ------------------------------------------------------------
+   15. UTILITY CLASSES
+   ------------------------------------------------------------ */
+.text-muted {
+  color: var(--text-muted);
+}
+.text-accent {
+  color: var(--accent);
+}
+.text-sm {
+  font-size: 0.85rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+.font-bold {
+  font-weight: 700;
+}
+.mt-0 {
+  margin-top: 0;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.hidden {
+  display: none;
+}
+
+/* Tag / badge */
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 20px;
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+/* Callout boxes */
+.callout {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  margin: var(--space-lg) 0;
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+.callout--info {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+}
+
+.callout--warning {
+  background: #fffbeb;
+  border-left: 4px solid var(--warning);
+}
+
+.callout--danger {
+  background: #fef2f2;
+  border-left: 4px solid var(--danger);
+}
+
+.callout--success {
+  background: #f0fdf4;
+  border-left: 4px solid var(--success);
+}
+
+.callout__icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* ------------------------------------------------------------
+   16. FOOTER
+   ------------------------------------------------------------ */
+.site-footer {
+  background: transparent;
+  border-top: 0;
+  padding: var(--space-2xl) 0 var(--space-lg);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* ------------------------------------------------------------
+   Motion Preferences
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   17. RESPONSIVE - TABLET (≤ 1024px)
+   ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 250px;
+  }
+}
+
+/* ------------------------------------------------------------
+   18. RESPONSIVE - MOBILE (≤ 768px)
+   ------------------------------------------------------------ */
+@media (max-width: 768px) {
+  :root {
+    --topbar-height: 56px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+  }
+
+  .topbar__menu-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: var(--topbar-height);
+    height: calc(100vh - var(--topbar-height));
+    z-index: 90;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Pure CSS sidebar toggle: checkbox hack */
+  #sidebar-toggle {
+    display: none;
+  }
+
+  #sidebar-toggle:checked ~ .body-content .sidebar {
+    transform: translateX(0);
+  }
+
+  .body-content {
+    flex-direction: column;
+  }
+
+  .main {
+    padding: var(--space-lg) var(--space-md) var(--space-2xl);
+  }
+
+  .lesson-content {
+    padding: var(--space-xl) var(--space-lg) var(--space-2xl);
+    border-radius: var(--radius-md);
+  }
+
+  .lesson-header__title {
+    font-size: 1.75rem;
+  }
+
+  .lesson-body h1 {
+    font-size: 1.875rem;
+  }
+  .lesson-body h2 {
+    font-size: 1.375rem;
+  }
+  .lesson-body h3 {
+    font-size: 1.125rem;
+  }
+
+  .lesson-body p,
+  .lesson-body li {
+    font-size: 1rem;
+  }
+
+  .lesson-nav {
+    flex-direction: column;
+  }
+
+  .lesson-nav__btn {
+    max-width: 100%;
+    min-width: unset;
+  }
+
+  .lesson-nav__empty {
+    display: none;
+  }
+
+  .home-hero__title {
+    font-size: 2.25rem;
+  }
+
+  .home-hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .parts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar__breadcrumb {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------
+   19. PRINT STYLES
+   ------------------------------------------------------------ */
+@media print {
+  .topbar,
+  .sidebar,
+  .lesson-nav,
+  .progress-bar {
+    display: none !important;
+  }
+
+  .body-content {
+    display: block;
+    margin-top: 0;
+  }
+
+  .lesson-content {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .lesson-body pre {
+    background: #f4f4f2;
+    color: #1a1a18;
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+
+  .lesson-body h2,
+  .lesson-body h3 {
+    page-break-after: avoid;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #666;
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript"]::after {
+    content: "";
+  }
+}

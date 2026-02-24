@@ -1,0 +1,1734 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is a Network — Part 3 of 3 | Networking | Learning</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="site-wrapper">
+    <input type="checkbox" id="sidebar-toggle" aria-label="Toggle sidebar" />
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <label
+        for="sidebar-toggle"
+        class="topbar__menu-toggle"
+        aria-label="Toggle menu"
+        >☰</label
+      >
+      <div class="topbar__logo"><a href="../index.html">Learning</a></div>
+      <div class="topbar__divider"></div>
+      <nav class="topbar__breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <a href="../networking/index.html">Networking</a>
+        <span class="sep">›</span>
+        <span class="current">What is a Network — Part 3 of 3</span>
+      </nav>
+    </header>
+
+    <div class="body-content">
+      <!-- SIDEBAR -->
+      <aside class="sidebar" aria-label="Course navigation">
+        <div class="sidebar__course-title">Networking Fundamentals</div>
+
+        <details class="sidebar__section" open>
+          <summary>
+            <span class="sidebar__section-icon">🌐</span>01 · Networking
+          </summary>
+          <ul class="sidebar__lessons">
+            <li>
+              <a href="lesson-01.html"
+                ><span class="lesson-num">01</span>What is a Network — Part 1</a
+              >
+            </li>
+            <li>
+              <a href="lesson-01-part2.html"
+                ><span class="lesson-num">01</span>What is a Network — Part 2</a
+              >
+            </li>
+            <li>
+              <a href="lesson-01-part3.html" class="active"
+                ><span class="lesson-num">01</span>What is a Network — Part 3</a
+              >
+            </li>
+            <li>
+              <a href="lesson-02.html"
+                ><span class="lesson-num">02</span>LAN vs WAN vs Internet</a
+              >
+            </li>
+            <li>
+              <a href="lesson-03.html"
+                ><span class="lesson-num">03</span>Public IP vs Private IP</a
+              >
+            </li>
+            <li>
+              <a href="lesson-04.html"
+                ><span class="lesson-num">04</span>IP Address Structure
+                (IPv4)</a
+              >
+            </li>
+            <li>
+              <a href="lesson-05.html"
+                ><span class="lesson-num">05</span>Ports &amp; Sockets</a
+              >
+            </li>
+            <li>
+              <a href="lesson-06.html"
+                ><span class="lesson-num">06</span>Router vs Switch</a
+              >
+            </li>
+            <li>
+              <a href="lesson-07.html"
+                ><span class="lesson-num">07</span>Packet &amp; Packet
+                Switching</a
+              >
+            </li>
+            <li>
+              <a href="lesson-08.html"
+                ><span class="lesson-num">08</span>DNS — What It Is</a
+              >
+            </li>
+            <li>
+              <a href="lesson-09.html"
+                ><span class="lesson-num">09</span>DNS Resolution Flow</a
+              >
+            </li>
+            <li>
+              <a href="lesson-10.html"
+                ><span class="lesson-num">10</span>Domain Name vs IP Address</a
+              >
+            </li>
+            <li>
+              <a href="lesson-11.html"
+                ><span class="lesson-num">11</span>TCP vs UDP</a
+              >
+            </li>
+            <li>
+              <a href="lesson-12.html"
+                ><span class="lesson-num">12</span>TCP 3-Way Handshake</a
+              >
+            </li>
+            <li>
+              <a href="lesson-13.html"
+                ><span class="lesson-num">13</span>TCP Reliability</a
+              >
+            </li>
+            <li>
+              <a href="lesson-14.html"
+                ><span class="lesson-num">14</span>HTTP Protocol</a
+              >
+            </li>
+            <li>
+              <a href="lesson-15.html"
+                ><span class="lesson-num">15</span>HTTP Methods</a
+              >
+            </li>
+            <li>
+              <a href="lesson-16.html"
+                ><span class="lesson-num">16</span>HTTP Status Codes</a
+              >
+            </li>
+            <li>
+              <a href="lesson-17.html"
+                ><span class="lesson-num">17</span>HTTP Headers</a
+              >
+            </li>
+            <li>
+              <a href="lesson-18.html"
+                ><span class="lesson-num">18</span>Cookies vs Sessions</a
+              >
+            </li>
+            <li>
+              <a href="lesson-19.html"
+                ><span class="lesson-num">19</span>HTTPS vs HTTP</a
+              >
+            </li>
+            <li>
+              <a href="lesson-20.html"
+                ><span class="lesson-num">20</span>SSL/TLS Handshake</a
+              >
+            </li>
+            <li>
+              <a href="lesson-21.html"
+                ><span class="lesson-num">21</span>CORS</a
+              >
+            </li>
+            <li>
+              <a href="lesson-22.html"
+                ><span class="lesson-num">22</span>Request-Response Lifecycle</a
+              >
+            </li>
+            <li>
+              <a href="lesson-23.html"
+                ><span class="lesson-num">23</span>Latency vs Bandwidth vs
+                Throughput</a
+              >
+            </li>
+            <li>
+              <a href="lesson-24.html"
+                ><span class="lesson-num">24</span>Round Trip Time (RTT)</a
+              >
+            </li>
+            <li>
+              <a href="lesson-25.html"
+                ><span class="lesson-num">25</span>Content Delivery Network
+                (CDN)</a
+              >
+            </li>
+            <li>
+              <a href="lesson-26.html"
+                ><span class="lesson-num">26</span>How Web Works</a
+              >
+            </li>
+          </ul>
+        </details>
+
+        <details class="sidebar__section">
+          <summary>
+            <span class="sidebar__section-icon">⚙️</span>02 · Backend &amp; API
+            Design
+          </summary>
+          <ul class="sidebar__lessons">
+            <li>
+              <a href="../backend/lesson-01.html"
+                ><span class="lesson-num">01</span>REST Architecture</a
+              >
+            </li>
+            <li>
+              <a href="../backend/lesson-02.html"
+                ><span class="lesson-num">02</span>Resource Naming</a
+              >
+            </li>
+            <li>
+              <a href="../backend/lesson-03.html"
+                ><span class="lesson-num">03</span>Path vs Query Parameters</a
+              >
+            </li>
+            <li>
+              <a href="../backend/lesson-04.html"
+                ><span class="lesson-num">04</span>Idempotent Operations</a
+              >
+            </li>
+            <li>
+              <a href="../backend/lesson-05.html"
+                ><span class="lesson-num">05</span>Pagination</a
+              >
+            </li>
+            <li>
+              <a href="../backend/lesson-06.html"
+                ><span class="lesson-num">06</span>Filtering &amp; Sorting</a
+              >
+            </li>
+            <li>
+              <a href="../backend/lesson-07.html"
+                ><span class="lesson-num">07</span>API Versioning</a
+              >
+            </li>
+            <li>
+              <a href="../backend/lesson-08.html"
+                ><span class="lesson-num">08</span>Standard Error Responses</a
+              >
+            </li>
+            <li>
+              <a href="../backend/lesson-09.html"
+                ><span class="lesson-num">09</span>File Upload Flow</a
+              >
+            </li>
+            <li>
+              <a href="../backend/lesson-10.html"
+                ><span class="lesson-num">10</span>Swagger / OpenAPI Basics</a
+              >
+            </li>
+          </ul>
+        </details>
+
+        <details class="sidebar__section">
+          <summary>
+            <span class="sidebar__section-icon">🔒</span>03 · Authentication
+            &amp; Security
+          </summary>
+          <ul class="sidebar__lessons">
+            <li>
+              <a href="../security/lesson-01.html"
+                ><span class="lesson-num">01</span>Authentication vs
+                Authorization</a
+              >
+            </li>
+            <li>
+              <a href="../security/lesson-02.html"
+                ><span class="lesson-num">02</span>Session Authentication</a
+              >
+            </li>
+            <li>
+              <a href="../security/lesson-03.html"
+                ><span class="lesson-num">03</span>JWT Authentication</a
+              >
+            </li>
+            <li>
+              <a href="../security/lesson-04.html"
+                ><span class="lesson-num">04</span>Access Token vs Refresh
+                Token</a
+              >
+            </li>
+            <li>
+              <a href="../security/lesson-05.html"
+                ><span class="lesson-num">05</span>Password Hashing (bcrypt)</a
+              >
+            </li>
+            <li>
+              <a href="../security/lesson-06.html"
+                ><span class="lesson-num">06</span>CSRF Attack</a
+              >
+            </li>
+            <li>
+              <a href="../security/lesson-07.html"
+                ><span class="lesson-num">07</span>XSS Attack</a
+              >
+            </li>
+            <li>
+              <a href="../security/lesson-08.html"
+                ><span class="lesson-num">08</span>Input Validation</a
+              >
+            </li>
+            <li>
+              <a href="../security/lesson-09.html"
+                ><span class="lesson-num">09</span>Login Rate Limiting</a
+              >
+            </li>
+          </ul>
+        </details>
+
+        <details class="sidebar__section">
+          <summary>
+            <span class="sidebar__section-icon">🗄️</span>04 · Databases &amp;
+            Data Modeling
+          </summary>
+          <ul class="sidebar__lessons">
+            <li>
+              <a href="../databases/lesson-01.html"
+                ><span class="lesson-num">01</span>Database Basics</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-02.html"
+                ><span class="lesson-num">02</span>SELECT &amp; WHERE</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-03.html"
+                ><span class="lesson-num">03</span>ORDER BY</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-04.html"
+                ><span class="lesson-num">04</span>GROUP BY &amp; HAVING</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-05.html"
+                ><span class="lesson-num">05</span>Aggregations</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-06.html"
+                ><span class="lesson-num">06</span>Primary Key</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-07.html"
+                ><span class="lesson-num">07</span>Foreign Key</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-08.html"
+                ><span class="lesson-num">08</span>Joins</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-09.html"
+                ><span class="lesson-num">09</span>Many-to-Many Relationships</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-10.html"
+                ><span class="lesson-num">10</span>Constraints</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-11.html"
+                ><span class="lesson-num">11</span>Indexing</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-12.html"
+                ><span class="lesson-num">12</span>B-Tree Index</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-13.html"
+                ><span class="lesson-num">13</span>Composite Index</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-14.html"
+                ><span class="lesson-num">14</span>When NOT to Index</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-15.html"
+                ><span class="lesson-num">15</span>Transactions</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-16.html"
+                ><span class="lesson-num">16</span>ACID Properties</a
+              >
+            </li>
+            <li>
+              <a href="../databases/lesson-17.html"
+                ><span class="lesson-num">17</span>Race Conditions</a
+              >
+            </li>
+          </ul>
+        </details>
+
+        <details class="sidebar__section">
+          <summary>
+            <span class="sidebar__section-icon">🏗️</span>05 · System Design
+            &amp; Architecture
+          </summary>
+          <ul class="sidebar__lessons">
+            <li>
+              <a href="../architecture/lesson-01.html"
+                ><span class="lesson-num">01</span>Coming soon…</a
+              >
+            </li>
+          </ul>
+        </details>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main">
+        <article class="lesson-content">
+          <header class="lesson-header">
+            <div class="lesson-header__meta">
+              <span class="lesson-header__part">Networking</span>
+              <span class="lesson-header__num">Lesson 01 · Part 3 of 3</span>
+            </div>
+            <h1 class="lesson-header__title">
+              What is a Network — Part 3 of 3
+            </h1>
+            <div class="lesson-header__divider"></div>
+          </header>
+
+          <div class="lesson-body">
+            <h3 id="topic">
+              Topic: AWS Certification Focus, Comparison Tables, Quick Revision
+              &amp; Architect Exercise<a href="#topic" class="anchor">#</a>
+            </h3>
+
+            <p>
+              <strong>Series:</strong> Networking Fundamentals → System Design →
+              AWS Solutions Architect<br />
+              <strong>Audience:</strong> 14-Year Experienced Full-Stack
+              Developer → Becoming an Architect<br />
+              <strong>Sections Covered:</strong> 9, 10, 11, 12
+            </p>
+
+            <hr />
+
+            <!-- SECTION 9 -->
+            <h2 id="section-9">
+              SECTION 9 — Certification Focus: AWS Solutions Architect Associate
+              (SAA-C03)<a href="#section-9" class="anchor">#</a>
+            </h2>
+
+            <p>
+              This section focuses on what the AWS SAA exam specifically tests
+              about networking concepts, including common traps and confusing
+              points. These are not theoretical — they are patterns that appear
+              repeatedly in real exam questions.
+            </p>
+
+            <hr />
+
+            <h3 id="exam-fact-1">
+              Exam-Critical Fact 1 — VPC is the Foundation of Everything<a
+                href="#exam-fact-1"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <p>
+              Every AWS resource — EC2 instances, RDS databases, Lambda
+              functions, ECS containers — lives inside a VPC. The exam assumes
+              you know how to design a VPC from scratch. You must know:
+            </p>
+
+            <ul>
+              <li>A VPC spans all Availability Zones in a region</li>
+              <li>A Subnet is scoped to ONE Availability Zone only</li>
+              <li>
+                To deploy across multiple AZs for fault tolerance, you need
+                multiple subnets in different AZs
+              </li>
+              <li>
+                You can have multiple VPCs per region (soft limit: 5 default,
+                can request more)
+              </li>
+              <li>
+                VPCs are region-specific — a VPC in us-east-1 is completely
+                separate from one in ap-southeast-1
+              </li>
+            </ul>
+
+            <hr />
+
+            <h3 id="exam-fact-2">
+              Exam-Critical Fact 2 — Internet Gateway vs NAT Gateway<a
+                href="#exam-fact-2"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <p>This is a heavily tested distinction:</p>
+
+            <p><strong>Internet Gateway (IGW)</strong></p>
+            <ul>
+              <li>Attached to the VPC (not to a subnet)</li>
+              <li>Required for any resource to have direct internet access</li>
+              <li>
+                Both inbound AND outbound traffic — resources must also have a
+                public IP (Elastic IP or auto-assigned public IP)
+              </li>
+              <li>Resources in <strong>public subnets</strong> use the IGW</li>
+            </ul>
+
+            <p><strong>NAT Gateway</strong></p>
+            <ul>
+              <li>Deployed in a PUBLIC subnet</li>
+              <li>
+                Allows resources in <strong>private subnets</strong> to initiate
+                outbound internet connections (example: EC2 downloading software
+                updates)
+              </li>
+              <li>
+                Does NOT allow inbound connections initiated from the internet —
+                private resources stay private
+              </li>
+              <li>Managed service — AWS handles availability and scaling</li>
+              <li>You pay per hour AND per GB of data processed</li>
+            </ul>
+
+            <p>
+              <strong>Common Trap:</strong> Students confuse "a private subnet
+              with a NAT Gateway" with "a public subnet." The private subnet's
+              resources don't have public IPs. The NAT Gateway sits in the
+              public subnet and translates private IPs to its own public IP for
+              outbound traffic.
+            </p>
+
+            <pre class="ascii-diagram">
+Private Subnet (EC2 wants to download a patch)
+    │
+    └─ Route Table: 0.0.0.0/0 → NAT Gateway (in public subnet)
+                                      │
+                               NAT Gateway (has public IP)
+                                      │
+                               Internet Gateway
+                                      │
+                                  Internet
+</pre
+            >
+
+            <hr />
+
+            <h3 id="exam-fact-3">
+              Exam-Critical Fact 3 — Security Groups vs NACLs<a
+                href="#exam-fact-3"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <p>
+              This is one of the most commonly confused topics, and the exam
+              loves to test it.
+            </p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Property</th>
+                  <th>Security Group</th>
+                  <th>NACL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Level</td>
+                  <td>Instance level (attached to NIC)</td>
+                  <td>Subnet level</td>
+                </tr>
+                <tr>
+                  <td>State</td>
+                  <td>Stateful</td>
+                  <td>Stateless</td>
+                </tr>
+                <tr>
+                  <td>Rules</td>
+                  <td>Allow rules only</td>
+                  <td>Allow AND Deny rules</td>
+                </tr>
+                <tr>
+                  <td>Rule evaluation</td>
+                  <td>All rules evaluated together</td>
+                  <td>Rules evaluated in number order, first match wins</td>
+                </tr>
+                <tr>
+                  <td>Default behavior</td>
+                  <td>All inbound denied, all outbound allowed</td>
+                  <td>All traffic allowed</td>
+                </tr>
+                <tr>
+                  <td>Return traffic</td>
+                  <td>Automatically allowed (stateful)</td>
+                  <td>Must explicitly allow return traffic</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              <strong>The Statefulness Trap:</strong> With Security Groups, if
+              you allow inbound HTTP on port 80, the response traffic
+              automatically flows back out — you don't need an outbound rule for
+              port 80 responses. With NACLs, you must explicitly allow the
+              <strong>ephemeral port range</strong> (1024–65535) in the outbound
+              direction so that response packets can leave the subnet.
+            </p>
+
+            <p>
+              <strong>The Deny Trap:</strong> Security Groups cannot create deny
+              rules. You cannot say "block this specific IP." If you need to
+              block traffic from specific IPs or CIDR ranges, you must use a
+              NACL (or AWS WAF for HTTP traffic).
+            </p>
+
+            <hr />
+
+            <h3 id="exam-fact-4">
+              Exam-Critical Fact 4 — VPC Peering<a
+                href="#exam-fact-4"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <p>
+              VPC Peering allows two VPCs to communicate as if they are on the
+              same private network, without routing through the internet.
+            </p>
+
+            <p>Important rules:</p>
+
+            <ul>
+              <li>
+                <strong>Non-transitive</strong>: If VPC-A is peered with VPC-B,
+                and VPC-B is peered with VPC-C, then VPC-A CANNOT communicate
+                with VPC-C through VPC-B. You need a direct peer between A and
+                C.
+              </li>
+              <li>IP address ranges cannot overlap between peered VPCs</li>
+              <li>
+                Peering works cross-region and cross-account (with permissions)
+              </li>
+            </ul>
+
+            <p>
+              <strong>The Transit Gateway Alternative (Exam Favorite):</strong>
+              For connecting many VPCs (imagine 20 VPCs across teams), VPC
+              Peering becomes messy — you need N*(N-1)/2 peering connections.
+              <strong>Transit Gateway</strong> acts as a central hub: all VPCs
+              connect to the Transit Gateway, which routes traffic between them.
+              One Transit Gateway instead of dozens of peering connections. This
+              is a hub-and-spoke model.
+            </p>
+
+            <hr />
+
+            <h3 id="exam-fact-5">
+              Exam-Critical Fact 5 — Elastic IP vs Public IP<a
+                href="#exam-fact-5"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <ul>
+              <li>
+                A <strong>Public IP</strong> assigned to an EC2 instance is
+                dynamic — it changes every time you stop and restart the
+                instance. This breaks DNS records that point to it.
+              </li>
+              <li>
+                An <strong>Elastic IP (EIP)</strong> is a static public IP that
+                you allocate and associate to an EC2 instance. It persists
+                through stop/start cycles.
+              </li>
+              <li>
+                EIPs are free as long as they are
+                <strong>associated with a running instance</strong>. If you
+                allocate an EIP and don't use it (or attach it to a stopped
+                instance), AWS charges you per hour — to discourage hoarding
+                scarce IPv4 addresses.
+              </li>
+            </ul>
+
+            <hr />
+
+            <h3 id="exam-fact-6">
+              Exam-Critical Fact 6 — Route 53 Routing Policies<a
+                href="#exam-fact-6"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <p>The exam tests which routing policy fits which scenario:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Policy</th>
+                  <th>Use Case</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Simple</strong></td>
+                  <td>Single resource, no health checks possible</td>
+                </tr>
+                <tr>
+                  <td><strong>Weighted</strong></td>
+                  <td>
+                    Split traffic between versions: 90% production, 10% canary
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Failover</strong></td>
+                  <td>
+                    Primary-secondary setup: if primary fails health check,
+                    switch to secondary
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Latency</strong></td>
+                  <td>Route users to the region with lowest latency to them</td>
+                </tr>
+                <tr>
+                  <td><strong>Geolocation</strong></td>
+                  <td>
+                    Route based on user's geographic location
+                    (country/continent)
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Geoproximity</strong></td>
+                  <td>
+                    Like geolocation but with a bias to expand/shrink regions
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Multivalue Answer</strong></td>
+                  <td>
+                    Return multiple IPs (basic health-checked round-robin)
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              <strong>Exam Trap:</strong> Geolocation is NOT the same as
+              latency. If you have strict data residency requirements (EU users
+              must only hit EU servers — GDPR), use Geolocation. If you just
+              want the best performance, use Latency-based routing.
+            </p>
+
+            <hr />
+
+            <h3 id="exam-fact-7">
+              Exam-Critical Fact 7 — CloudFront Behaviours and Origin Types<a
+                href="#exam-fact-7"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <p>CloudFront is a CDN but the exam tests its nuances:</p>
+
+            <ul>
+              <li>
+                CloudFront can have multiple origins (S3, ALB, EC2, external
+                HTTP)
+              </li>
+              <li>
+                <strong>Cache behaviors</strong> control which URL patterns go
+                to which origin. Example: <code>/static/*</code> goes to S3,
+                <code>/api/*</code> goes to ALB
+              </li>
+              <li>
+                <strong>OAI (Origin Access Identity)</strong> and its
+                replacement
+                <strong>OAC (Origin Access Control)</strong> restrict direct S3
+                access — only CloudFront can fetch from the S3 bucket, not users
+                directly
+              </li>
+              <li>
+                CloudFront supports
+                <strong>custom SSL/TLS certificates</strong> via AWS Certificate
+                Manager (ACM) — but the certificate MUST be in
+                <code>us-east-1</code> regardless of where your application is
+                deployed. This is a famous exam trap.
+              </li>
+              <li>
+                <strong>CloudFront Functions</strong> and
+                <strong>Lambda@Edge</strong> run code at edge locations — use
+                for request/response manipulation at low latency
+              </li>
+            </ul>
+
+            <hr />
+
+            <h3 id="exam-fact-8">
+              Exam-Critical Fact 8 — Direct Connect vs VPN<a
+                href="#exam-fact-8"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>VPN (Site-to-Site)</th>
+                  <th>Direct Connect</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Connection type</td>
+                  <td>Encrypted tunnel over public internet</td>
+                  <td>Dedicated private fiber</td>
+                </tr>
+                <tr>
+                  <td>Latency</td>
+                  <td>Variable (depends on internet)</td>
+                  <td>Consistent, low</td>
+                </tr>
+                <tr>
+                  <td>Setup time</td>
+                  <td>Hours</td>
+                  <td>Weeks to months</td>
+                </tr>
+                <tr>
+                  <td>Cost</td>
+                  <td>Low</td>
+                  <td>High</td>
+                </tr>
+                <tr>
+                  <td>Bandwidth</td>
+                  <td>Up to ~1.25 Gbps (IPSec limit)</td>
+                  <td>1 Gbps to 100 Gbps</td>
+                </tr>
+                <tr>
+                  <td>Use case</td>
+                  <td>Quick setup, moderate bandwidth</td>
+                  <td>High throughput, consistent latency, compliance</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              <strong>The hybrid scenario exam question:</strong> "Company needs
+              to connect their 50TB on-premises data center to AWS. They need
+              consistent low latency for real-time reporting and cannot route
+              sensitive data through the public internet." → Answer:
+              <strong>AWS Direct Connect</strong>
+            </p>
+
+            <hr />
+
+            <!-- SECTION 10 -->
+            <h2 id="section-10">
+              SECTION 10 — Comparison Table: Commonly Confused Networking
+              Concepts<a href="#section-10" class="anchor">#</a>
+            </h2>
+
+            <h3 id="table-1">
+              Table 1 — Switch vs Router vs Gateway<a
+                href="#table-1"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Concept</th>
+                  <th>Works At</th>
+                  <th>Uses</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Switch</td>
+                  <td>Layer 2 (Data Link)</td>
+                  <td>MAC address</td>
+                  <td>Connect devices in the same LAN</td>
+                </tr>
+                <tr>
+                  <td>Router</td>
+                  <td>Layer 3 (Network)</td>
+                  <td>IP address</td>
+                  <td>Connect different networks</td>
+                </tr>
+                <tr>
+                  <td>Gateway</td>
+                  <td>Layer 3-7 (Multiple)</td>
+                  <td>IP + Protocol</td>
+                  <td>Entry/exit point between different systems</td>
+                </tr>
+                <tr>
+                  <td>Load Balancer</td>
+                  <td>Layer 4 or Layer 7</td>
+                  <td>Port / HTTP headers</td>
+                  <td>Distribute traffic across servers</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <hr />
+
+            <h3 id="table-2">
+              Table 2 — Public IP vs Private IP vs Elastic IP<a
+                href="#table-2"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Scope</th>
+                  <th>Changes?</th>
+                  <th>Cost</th>
+                  <th>When to Use</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Private IP</td>
+                  <td>Internal VPC only</td>
+                  <td>No</td>
+                  <td>Free</td>
+                  <td>Internal service communication</td>
+                </tr>
+                <tr>
+                  <td>Public IP</td>
+                  <td>Internet-routable</td>
+                  <td>Yes (on restart)</td>
+                  <td>Free (while instance runs)</td>
+                  <td>Temporary internet access</td>
+                </tr>
+                <tr>
+                  <td>Elastic IP</td>
+                  <td>Internet-routable</td>
+                  <td>No (static)</td>
+                  <td>Free while in use; charged when idle</td>
+                  <td>DNS, NAT instances, stable endpoints</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <hr />
+
+            <h3 id="table-3">
+              Table 3 — TCP vs UDP Protocol Comparison<a
+                href="#table-3"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Property</th>
+                  <th>TCP</th>
+                  <th>UDP</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Connection</td>
+                  <td>Connection-oriented (handshake)</td>
+                  <td>Connectionless</td>
+                </tr>
+                <tr>
+                  <td>Delivery guarantee</td>
+                  <td>Yes (ACK + retransmit)</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Ordering</td>
+                  <td>Yes (sequence numbers)</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Speed overhead</td>
+                  <td>Higher</td>
+                  <td>Lower</td>
+                </tr>
+                <tr>
+                  <td>Use cases</td>
+                  <td>HTTP, database, email, file transfer</td>
+                  <td>VoIP, gaming, DNS, video streaming</td>
+                </tr>
+                <tr>
+                  <td>Failure behavior</td>
+                  <td>Retransmits → can cause delay spikes</td>
+                  <td>Drops packet → caller decides action</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <hr />
+
+            <h3 id="table-4">
+              Table 4 — VPC Peering vs Transit Gateway vs PrivateLink<a
+                href="#table-4"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>VPC Peering</th>
+                  <th>Transit Gateway</th>
+                  <th>PrivateLink</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Purpose</td>
+                  <td>Connect two VPCs</td>
+                  <td>Connect many VPCs centrally</td>
+                  <td>Expose a service privately</td>
+                </tr>
+                <tr>
+                  <td>Transitivity</td>
+                  <td>Non-transitive</td>
+                  <td>Transitive (hub-and-spoke)</td>
+                  <td>N/A</td>
+                </tr>
+                <tr>
+                  <td>Scale</td>
+                  <td>Good for few VPCs</td>
+                  <td>Good for many VPCs</td>
+                  <td>Service exposure to many consumers</td>
+                </tr>
+                <tr>
+                  <td>Cost</td>
+                  <td>Low (just data transfer)</td>
+                  <td>Per attachment + data transfer</td>
+                  <td>Per endpoint hour + data</td>
+                </tr>
+                <tr>
+                  <td>Cross-account</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes (primary use case)</td>
+                </tr>
+                <tr>
+                  <td>Cross-region</td>
+                  <td>Yes</td>
+                  <td>Yes (via inter-region peering)</td>
+                  <td>No (same region)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <hr />
+
+            <h3 id="table-5">
+              Table 5 — Security Group vs NACL (Exam Favorite)<a
+                href="#table-5"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Property</th>
+                  <th>Security Group</th>
+                  <th>Network ACL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Attached to</td>
+                  <td>EC2 instance / ENI</td>
+                  <td>Subnet</td>
+                </tr>
+                <tr>
+                  <td>Statefulness</td>
+                  <td>Stateful</td>
+                  <td>Stateless</td>
+                </tr>
+                <tr>
+                  <td>Rule types</td>
+                  <td>Allow only</td>
+                  <td>Allow and Deny</td>
+                </tr>
+                <tr>
+                  <td>Rule evaluation</td>
+                  <td>All rules together</td>
+                  <td>Ordered (lowest number first)</td>
+                </tr>
+                <tr>
+                  <td>Default</td>
+                  <td>Deny all inbound</td>
+                  <td>Allow all</td>
+                </tr>
+                <tr>
+                  <td>Return traffic</td>
+                  <td>Automatically allowed</td>
+                  <td>Must be explicitly allowed</td>
+                </tr>
+                <tr>
+                  <td>Good for</td>
+                  <td>Fine-grained per-instance control</td>
+                  <td>Broad subnet-level blocking / IP blocking</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <hr />
+
+            <h3 id="table-6">
+              Table 6 — OSI Model Layers (Quick Reference)<a
+                href="#table-6"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Layer</th>
+                  <th>Name</th>
+                  <th>What it does</th>
+                  <th>Examples</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>7</td>
+                  <td>Application</td>
+                  <td>User-facing protocols</td>
+                  <td>HTTP, HTTPS, DNS, SMTP, FTP</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Presentation</td>
+                  <td>Data formatting/encryption</td>
+                  <td>TLS/SSL, JPEG compression</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Session</td>
+                  <td>Connection sessions</td>
+                  <td>Authentication sessions</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Transport</td>
+                  <td>End-to-end delivery</td>
+                  <td>TCP, UDP</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Network</td>
+                  <td>Logical addressing + routing</td>
+                  <td>IP, ICMP, BGP</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Data Link</td>
+                  <td>Physical addressing + frames</td>
+                  <td>Ethernet, MAC, Switches</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Physical</td>
+                  <td>Bits over medium</td>
+                  <td>Cables, Fiber, Wi-Fi signals</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              <strong>Memory Trick:</strong> "<strong>P</strong>lease
+              <strong>D</strong>o <strong>N</strong>ot <strong>T</strong>hrow
+              <strong>S</strong>ausage <strong>P</strong>izza
+              <strong>A</strong>way" (Physical → Data Link → Network → Transport
+              → Session → Presentation → Application)
+            </p>
+
+            <hr />
+
+            <!-- SECTION 11 -->
+            <h2 id="section-11">
+              SECTION 11 — Quick Revision<a href="#section-11" class="anchor"
+                >#</a
+              >
+            </h2>
+
+            <h3 id="10-key-points">
+              10 Key Points to Remember Always<a
+                href="#10-key-points"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <ol>
+              <li>
+                A <strong>network</strong> is two or more connected devices that
+                communicate to share data and resources.
+              </li>
+              <li>
+                <strong>Switches</strong> work within a LAN using MAC addresses.
+                <strong>Routers</strong> connect networks using IP addresses.
+              </li>
+              <li>
+                Data travels in <strong>packets</strong> — not as one blob. Each
+                packet independently routes through the network.
+              </li>
+              <li>
+                <strong>TCP</strong> guarantees delivery and order.
+                <strong>UDP</strong> is fast but unreliable — choose based on
+                whether correctness or speed matters more.
+              </li>
+              <li>
+                <strong>DNS</strong> is the phone book of the internet — it
+                converts human-readable domain names into machine-readable IP
+                addresses. If DNS fails, nothing works.
+              </li>
+              <li>
+                In AWS, a <strong>VPC</strong> is your private isolated network.
+                A <strong>Subnet</strong> is a subdivision of the VPC scoped to
+                one Availability Zone.
+              </li>
+              <li>
+                <strong>Security Groups</strong> are stateful instance-level
+                firewalls with Allow rules only. <strong>NACLs</strong> are
+                stateless subnet-level firewalls that support Deny rules.
+              </li>
+              <li>
+                <strong>NAT Gateway</strong> in a public subnet enables private
+                subnet resources to access the internet outbound — without ever
+                being reachable from the internet inbound.
+              </li>
+              <li>
+                <strong>Route 53 routing policies</strong> control how user
+                traffic is distributed: Latency (performance), Failover
+                (disaster recovery), Geolocation (compliance), Weighted (canary
+                deploys).
+              </li>
+              <li>
+                <strong>Network design decisions</strong> — number of round
+                trips, geographic distribution of servers, choice of TCP vs UDP,
+                caching strategy — are the difference between a 50ms response
+                and a 2-second response at scale.
+              </li>
+            </ol>
+
+            <hr />
+
+            <h3 id="30-second-explanation">
+              30-Second Interview Explanation<a
+                href="#30-second-explanation"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <p>
+              <em
+                >"A computer network is a system where devices are connected and
+                can communicate with each other using agreed-upon rules called
+                protocols. Data doesn't travel as one block — it's broken into
+                packets that independently route through switches and routers,
+                then get reassembled. TCP gives you guaranteed delivery for
+                correctness-critical traffic; UDP gives you speed for
+                latency-critical traffic like video calls. In AWS, your network
+                is a VPC — an isolated cloud network divided into subnets,
+                protected by Security Groups and NACLs, and exposed to the
+                internet through an Internet Gateway. The key insight for system
+                design is that every network call carries a latency cost and a
+                failure risk — good architects minimize remote calls, choose the
+                right protocols, distribute data geographically, and design for
+                network failure from day one."</em
+              >
+            </p>
+
+            <hr />
+
+            <h3 id="memory-tricks">
+              Memory Tricks<a href="#memory-tricks" class="anchor">#</a>
+            </h3>
+
+            <p>
+              <strong>For OSI Layers (bottom to top):</strong>
+              "<strong>P</strong>lease <strong>D</strong>o <strong>N</strong>ot
+              <strong>T</strong>hrow <strong>S</strong>ausage
+              <strong>P</strong>izza <strong>A</strong>way"<br />
+              Physical → Data Link → Network → Transport → Session →
+              Presentation → Application
+            </p>
+
+            <p><strong>For Security Group vs NACL:</strong></p>
+
+            <ul>
+              <li>
+                Security Group = <strong>S</strong>tateful = think of
+                <strong>S</strong>ession that remembers
+              </li>
+              <li>
+                NACL = <strong>N</strong>ACL = <strong>N</strong>ever remembers
+                (stateless)
+              </li>
+            </ul>
+
+            <p><strong>For TCP vs UDP:</strong></p>
+
+            <ul>
+              <li>
+                <strong>T</strong>CP = <strong>T</strong>rustworthy (guaranteed
+                delivery, like registered mail)
+              </li>
+              <li>
+                <strong>U</strong>DP = <strong>U</strong>nreliable but
+                <strong>U</strong>ltrafast (like shouting in a crowd)
+              </li>
+            </ul>
+
+            <p><strong>For VPC CIDR blocks:</strong></p>
+
+            <ul>
+              <li>
+                /16 = 65,536 addresses (entire VPC — large enough to never run
+                out)
+              </li>
+              <li>
+                /24 = 256 addresses (typical subnet — AWS reserves 5, leaving
+                251 usable)
+              </li>
+              <li>
+                /32 = 1 specific IP address (used in security group rules to
+                allow one IP)
+              </li>
+            </ul>
+
+            <hr />
+
+            <!-- SECTION 12 -->
+            <h2 id="section-12">
+              SECTION 12 — Architect Thinking Exercise<a
+                href="#section-12"
+                class="anchor"
+                >#</a
+              >
+            </h2>
+
+            <h3 id="the-scenario">
+              The Scenario<a href="#the-scenario" class="anchor">#</a>
+            </h3>
+
+            <p>
+              Read this carefully and spend 2-3 minutes thinking before reading
+              the solution below.
+            </p>
+
+            <hr />
+
+            <p>
+              <strong
+                >You are the Lead Solutions Architect at a fintech startup. The
+                company processes credit card transactions.</strong
+              >
+            </p>
+
+            <p><strong>Current setup:</strong></p>
+
+            <ul>
+              <li>Single EC2 web server with a public IP address</li>
+              <li>MySQL database on the same EC2 server</li>
+              <li>Average 1,000 transactions/day</li>
+              <li>No backup, no redundancy</li>
+            </ul>
+
+            <p><strong>New business requirement:</strong></p>
+
+            <ul>
+              <li>
+                The company just partnered with a major retailer. Traffic is
+                expected to hit <strong>500,000 transactions/day</strong> within
+                3 months.
+              </li>
+              <li>
+                The payment processor (third-party API) mandates that all
+                communication must happen
+                <strong>over private network connections only</strong> — no
+                public internet for card data transmission.
+              </li>
+              <li>
+                PCI-DSS compliance requires that card data at rest is isolated
+                from the web tier.
+              </li>
+              <li>Zero-downtime requirement during peak hours.</li>
+            </ul>
+
+            <p><strong>Questions to think about:</strong></p>
+
+            <ol>
+              <li>
+                What's the first thing that will break in the current
+                architecture when traffic increases 500x?
+              </li>
+              <li>
+                How do you meet the "private network only" requirement for the
+                payment processor communication?
+              </li>
+              <li>
+                How do you isolate card data from the web tier using network
+                architecture?
+              </li>
+              <li>How do you achieve zero-downtime deployments?</li>
+            </ol>
+
+            <hr />
+
+            <h3 id="solution-and-reasoning">
+              Solution and Reasoning<a
+                href="#solution-and-reasoning"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <p>
+              <strong>Problem 1 — What breaks first at 500x traffic?</strong>
+            </p>
+
+            <p>Everything breaks simultaneously, but in this order:</p>
+
+            <ul>
+              <li>
+                The
+                <strong>database and web server sharing the same EC2</strong>
+                means they compete for CPU, memory, and I/O. At 500x load, the
+                server collapses before you can diagnose which component failed.
+              </li>
+              <li>
+                The <strong>single server = single point of failure</strong>.
+                One hardware issue and you're down.
+              </li>
+              <li>
+                A <strong>public IP on the server</strong> means every time you
+                redeploy, the IP changes — clients may lose connectivity.
+              </li>
+            </ul>
+
+            <p><strong>Solution:</strong></p>
+
+            <ul>
+              <li>
+                Separate web server and database onto different EC2/RDS
+                instances immediately.
+              </li>
+              <li>
+                Move to <strong>RDS Multi-AZ</strong> for the database —
+                automatic failover to a standby in a different AZ in under 2
+                minutes.
+              </li>
+              <li>
+                Put an <strong>Application Load Balancer</strong> in front of
+                multiple web servers. The ALB IP stays constant while server IPs
+                change behind it.
+              </li>
+            </ul>
+
+            <hr />
+
+            <p>
+              <strong
+                >Problem 2 — Private network for payment processor
+                communication</strong
+              >
+            </p>
+
+            <p>
+              The payment processor's requirement means you cannot send card
+              data over the public internet, even encrypted. There are two
+              options:
+            </p>
+
+            <p>
+              <strong>Option A — AWS VPN (Site-to-Site VPN):</strong> Establish
+              an IPSec VPN tunnel from your VPC to the payment processor's
+              network. Traffic stays encrypted inside a dedicated tunnel rather
+              than traveling as public internet packets. Setup takes hours to
+              days.
+            </p>
+
+            <p>
+              <strong
+                >Option B — AWS Direct Connect + Virtual Private
+                Gateway:</strong
+              >
+              If the payment processor also has an AWS presence (many do), you
+              can peer VPCs directly. If they're on-premises, you establish a
+              Direct Connect connection to their facility. This provides
+              dedicated bandwidth with consistent latency — ideal for
+              high-volume transaction traffic.
+            </p>
+
+            <p>
+              <strong>For a fintech startup at this stage:</strong> Start with
+              Site-to-Site VPN (fast to set up, lower cost), plan migration to
+              Direct Connect as transaction volume justifies the cost.
+            </p>
+
+            <hr />
+
+            <p>
+              <strong
+                >Problem 3 — Isolate card data using network
+                architecture</strong
+              >
+            </p>
+
+            <p>
+              This is a classic <strong>network segmentation</strong> pattern,
+              required by PCI-DSS:
+            </p>
+
+            <pre class="ascii-diagram">
+VPC: 10.0.0.0/16
+│
+├── PUBLIC SUBNET (10.0.1.0/24)
+│      └── Application Load Balancer
+│      └── NAT Gateway
+│
+├── PRIVATE SUBNET — WEB TIER (10.0.2.0/24)
+│      └── EC2 Web Servers (Auto Scaling Group)
+│      Security Group: Allow inbound from ALB SG only
+│
+├── PRIVATE SUBNET — APP TIER (10.0.3.0/24)
+│      └── Payment Processing Service
+│      Security Group: Allow inbound from Web Tier SG only
+│      └── VPN connection to payment processor
+│
+└── PRIVATE SUBNET — DATA TIER (10.0.4.0/24)
+       └── RDS (Cardholder Data Environment)
+       Security Group: Allow inbound from App Tier SG only
+       └── Encryption at rest: AES-256 (RDS encryption on)
+</pre
+            >
+
+            <p>
+              The key principle: each tier can ONLY communicate with the
+              adjacent tier. Web servers cannot directly reach the database.
+              This is enforced at the network level through Security Group rules
+              — not at the application level (which can have bugs). Even if the
+              web server is compromised, an attacker cannot query the database
+              directly.
+            </p>
+
+            <hr />
+
+            <p><strong>Problem 4 — Zero-downtime deployments</strong></p>
+
+            <p>
+              Network architecture enables this through an
+              <strong>ALB + Auto Scaling + Blue-Green deployment</strong>
+              pattern:
+            </p>
+
+            <ol>
+              <li>
+                Create a new "green" fleet of EC2 instances with the new
+                application version.
+              </li>
+              <li>Register the green fleet with the ALB target group.</li>
+              <li>
+                Use <strong>weighted target groups</strong> in the ALB: send 10%
+                of traffic to green, 90% to blue.
+              </li>
+              <li>
+                Monitor error rates and latency. If healthy, shift to 50/50,
+                then 100% green.
+              </li>
+              <li>Deregister and terminate the old "blue" fleet.</li>
+            </ol>
+
+            <p>
+              At no point is the application unavailable. The ALB handles the
+              transition seamlessly. This is impossible without understanding
+              how load balancers and target groups work at the network level.
+            </p>
+
+            <hr />
+
+            <h3 id="architects-takeaway">
+              Architect's Takeaway<a href="#architects-takeaway" class="anchor"
+                >#</a
+              >
+            </h3>
+
+            <p>
+              Notice that every solution in this exercise was a
+              <strong>network design decision</strong>:
+            </p>
+
+            <ul>
+              <li>Separation of tiers using subnet segmentation</li>
+              <li>Security enforcement using Security Groups</li>
+              <li>Zero downtime through ALB routing</li>
+              <li>Private connectivity through VPN/Direct Connect</li>
+              <li>High availability through Multi-AZ</li>
+            </ul>
+
+            <p>
+              This is why networking knowledge is not optional for architects.
+              It is the foundation on which every scalable, secure, and reliable
+              system is built.
+            </p>
+
+            <hr />
+
+            <!-- Complete Series Summary -->
+            <h2 id="complete-series-summary">
+              Complete Series Summary<a
+                href="#complete-series-summary"
+                class="anchor"
+                >#</a
+              >
+            </h2>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>File</th>
+                  <th>Sections</th>
+                  <th>Core Learning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>File 01</td>
+                  <td>1–4</td>
+                  <td>
+                    What a network is, how it works, architecture diagram,
+                    step-by-step request flow
+                  </td>
+                </tr>
+                <tr>
+                  <td>File 02</td>
+                  <td>5–8</td>
+                  <td>
+                    Real-world systems, system design impact, AWS networking
+                    stack, interview questions
+                  </td>
+                </tr>
+                <tr>
+                  <td>File 03</td>
+                  <td>9–12</td>
+                  <td>
+                    AWS SAA certification facts and traps, comparison tables,
+                    quick revision, architect exercise
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              <strong>Series: Networking Fundamentals</strong><br />
+              <strong>Next Topic:</strong> OSI Model — The 7 Layers of the
+              Network Stack
+            </p>
+
+            <hr />
+
+            <p>
+              <em
+                >You now have both the intuition and the depth to answer every
+                networking question — in an AWS exam, in a system design
+                interview, and in real production architecture decisions.</em
+              >
+            </p>
+          </div>
+          <!-- /lesson-body -->
+
+          <nav class="lesson-nav" aria-label="Lesson navigation">
+            <a
+              href="lesson-01-part2.html"
+              class="lesson-nav__btn lesson-nav__btn--prev"
+              aria-label="Previous lesson"
+            >
+              <span class="lesson-nav__direction"
+                ><span class="lesson-nav__arrow">‹</span> Previous</span
+              >
+              <span class="lesson-nav__title"
+                >What is a Network — Part 2 of 3</span
+              >
+            </a>
+            <a
+              href="lesson-02.html"
+              class="lesson-nav__btn lesson-nav__btn--next"
+              aria-label="Next lesson"
+            >
+              <span class="lesson-nav__direction"
+                ><span class="lesson-nav__arrow">›</span> Next</span
+              >
+              <span class="lesson-nav__title">LAN vs WAN vs Internet</span>
+            </a>
+          </nav>
+        </article>
+
+        <footer class="site-footer">
+          &copy; 2026 Learning · Built with pure HTML &amp; CSS · Hosted on AWS
+          S3
+        </footer>
+      </main>
+    </div>
+    <!-- /body-content -->
+  </body>
+</html>

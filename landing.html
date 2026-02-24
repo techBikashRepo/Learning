@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focused Dev Academy - Master Backend Engineering</title>
+    <meta name="description" content="Master Backend Engineering through bite-sized daily lessons. Build real systems, earn achievements, and land your dream developer job.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+    <!-- Navigation (Glassmorphism) -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="landing.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"/>
+                    <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                            <stop stop-color="#6366F1"/>
+                            <stop offset="1" stop-color="#818CF8"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">Focused Dev</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#paths">Learning Paths</a>
+                <a href="#testimonials">Success Stories</a>
+                <a href="dashboard.html" class="btn btn-ghost">Login</a>
+                <a href="dashboard.html" class="btn btn-primary">Start Learning Free</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="floating-code code-1">const learn = () => success;</div>
+            <div class="floating-code code-2">async function master() { ... }</div>
+            <div class="floating-code code-3">{ backend: "mastered" }</div>
+            <div class="floating-code code-4">class Developer { level: 99 }</div>
+            <div class="gradient-blob blob-1"></div>
+            <div class="gradient-blob blob-2"></div>
+            <div class="gradient-blob blob-3"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge fade-in">
+                <span class="badge-dot"></span>
+                <span>Join 2,847+ learning developers</span>
+            </div>
+            
+            <h1 class="hero-title slide-in-up">
+                Master Backend Engineering,<br>
+                <span class="hero-title-gradient">15 Minutes Daily</span>
+            </h1>
+            
+            <p class="hero-subtitle slide-in-up">
+                Learn through bite-sized lessons, build real systems, and level up your skills with gamified progress tracking. No 3-hour boring videos.
+            </p>
+            
+            <div class="hero-cta slide-in-up">
+                <a href="dashboard.html" class="btn btn-primary btn-lg">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 4L16 10M16 10L10 16M16 10H4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Start Your Journey
+                </a>
+                <a href="#features" class="btn btn-secondary btn-lg">
+                    See How It Works
+                </a>
+            </div>
+            
+            <div class="hero-stats slide-in-up">
+                <div class="stat">
+                    <div class="stat-value">15 min</div>
+                    <div class="stat-label">Daily lessons</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-value">4.2 mo</div>
+                    <div class="stat-label">Avg. to job-ready</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-value">97%</div>
+                    <div class="stat-label">Completion rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Propositions -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Developers Choose Us</h2>
+                <p class="section-subtitle">A smarter way to learn backend engineering</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card card">
+                    <div class="feature-icon gradient-indigo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Bite-Sized Lessons</h3>
+                    <p class="feature-description">
+                        Learn complex concepts in 15-minute focused sessions. Perfect for busy schedules and better retention.
+                    </p>
+                    <div class="feature-benefit">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>No more 3-hour video fatigue</span>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card card">
+                    <div class="feature-icon gradient-emerald">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M22 12H18L15 21L9 3L6 12H2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Project-Based Learning</h3>
+                    <p class="feature-description">
+                        Build real systems from day one. Every lesson includes hands-on practice with real-world applications.
+                    </p>
+                    <div class="feature-benefit">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Portfolio-ready projects</span>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card card">
+                    <div class="feature-icon gradient-cyan">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Gamified Progress</h3>
+                    <p class="feature-description">
+                        Earn XP, maintain streaks, unlock badges, and level up. Stay motivated with psychology-backed engagement.
+                    </p>
+                    <div class="feature-benefit">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Daily habit formation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Paths -->
+    <section id="paths" class="paths">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Choose Your Learning Path</h2>
+                <p class="section-subtitle">Structured curriculum from zero to job-ready</p>
+            </div>
+            
+            <div class="paths-grid">
+                <!-- Path 1: Networking -->
+                <div class="path-card card">
+                    <div class="path-header">
+                        <div class="path-icon">🌐</div>
+                        <div class="path-meta">
+                            <h3 class="path-title">Networking Fundamentals</h3>
+                            <div class="path-info">
+                                <span>26 lessons</span>
+                                <span>•</span>
+                                <span>~8 hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="path-description">
+                        Master TCP/IP, HTTP, DNS, and how the internet actually works. Essential foundation for every backend developer.
+                    </p>
+                    
+                    <div class="path-topics">
+                        <span class="topic-tag">TCP/UDP</span>
+                        <span class="topic-tag">HTTP/HTTPS</span>
+                        <span class="topic-tag">DNS</span>
+                        <span class="topic-tag">WebSockets</span>
+                    </div>
+                    
+                    <div class="path-progress-bar">
+                        <div class="xp-bar">
+                            <div class="xp-bar-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="path-progress-text">Not started</span>
+                    </div>
+                    
+                    <a href="dashboard.html" class="btn btn-primary" style="width: 100%; margin-top: 16px;">Start Path</a>
+                </div>
+                
+                <!-- Path 2: Backend -->
+                <div class="path-card card">
+                    <div class="path-header">
+                        <div class="path-icon">⚙️</div>
+                        <div class="path-meta">
+                            <h3 class="path-title">Backend & API Design</h3>
+                            <div class="path-info">
+                                <span>32 lessons</span>
+                                <span>•</span>
+                                <span>~12 hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="path-description">
+                        Build REST APIs, handle authentication, design scalable services. Everything you need to ship production-ready backends.
+                    </p>
+                    
+                    <div class="path-topics">
+                        <span class="topic-tag">REST APIs</span>
+                        <span class="topic-tag">Authentication</span>
+                        <span class="topic-tag">Databases</span>
+                        <span class="topic-tag">Caching</span>
+                    </div>
+                    
+                    <div class="path-progress-bar">
+                        <div class="xp-bar">
+                            <div class="xp-bar-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="path-progress-text">Not started</span>
+                    </div>
+                    
+                    <a href="dashboard.html" class="btn btn-primary" style="width: 100%; margin-top: 16px;">Start Path</a>
+                </div>
+                
+                <!-- Path 3: System Design -->
+                <div class="path-card card">
+                    <div class="path-header">
+                        <div class="path-icon">🏗️</div>
+                        <div class="path-meta">
+                            <h3 class="path-title">System Design</h3>
+                            <div class="path-info">
+                                <span>24 lessons</span>
+                                <span>•</span>
+                                <span>~10 hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="path-description">
+                        Design scalable systems, understand distributed architecture, ace system design interviews at top companies.
+                    </p>
+                    
+                    <div class="path-topics">
+                        <span class="topic-tag">Load Balancing</span>
+                        <span class="topic-tag">Microservices</span>
+                        <span class="topic-tag">Caching</span>
+                        <span class="topic-tag">CDN</span>
+                    </div>
+                    
+                    <div class="path-progress-bar">
+                        <div class="xp-bar">
+                            <div class="xp-bar-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="path-progress-text">Not started</span>
+                    </div>
+                    
+                    <a href="dashboard.html" class="btn btn-primary" style="width: 100%; margin-top: 16px;">Start Path</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="section-subtitle">Real results from real developers</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Landed my first backend role at a startup after 4 months. The bite-sized format made it easy to stay consistent. Best $0 I ever spent!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah Kim</div>
+                            <div class="author-role">Backend Engineer @ TechCorp</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "The gamification kept me coming back. 127-day streak and I've built 6 full projects. Finally understand how systems actually work."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MP</div>
+                        <div class="author-info">
+                            <div class="author-name">Marcus Peterson</div>
+                            <div class="author-role">Full-Stack Developer</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Cleared 3 system design interviews thanks to this platform. The real-world examples and hands-on approach made complex topics click."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AR</div>
+                        <div class="author-info">
+                            <div class="author-name">Aisha Rahman</div>
+                            <div class="author-role">Senior SWE @ FAANG</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card card-glass">
+                <h2 class="cta-title">Ready to Level Up?</h2>
+                <p class="cta-subtitle">Join thousands of developers mastering backend engineering daily</p>
+                <div class="cta-buttons">
+                    <a href="dashboard.html" class="btn btn-primary btn-lg">Start Learning Free</a>
+                    <p class="cta-note">No credit card required • Full access forever</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="8" fill="url(#logo-gradient-footer)"/>
+                            <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="logo-gradient-footer" x1="0" y1="0" x2="32" y2="32">
+                                    <stop stop-color="#6366F1"/>
+                                    <stop offset="1" stop-color="#818CF8"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="logo-text">Focused Dev</span>
+                    </div>
+                    <p class="footer-tagline">Master backend engineering, 15 minutes daily.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <a href="#features">Features</a>
+                        <a href="#paths">Learning Paths</a>
+                        <a href="dashboard.html">Dashboard</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">Community</a>
+                        <a href="#">Blog</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Focused Dev Academy. All rights reserved.</p>
+                <button id="theme-toggle" class="btn btn-ghost btn-sm">
+                    <svg id="theme-icon-moon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M14 8.5C13.5 10.5 11.5 12 9 12C6 12 4 10 4 7C4 4.5 5.5 2.5 7.5 2C7 2 6.5 2 6 2.5C4 4 4 7 6 9C8 11 11 11 12.5 9C13 8.5 13.5 8 14 8.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg id="theme-icon-sun" width="16" height="16" viewBox="0 0 16 16" fill="none" style="display: none;">
+                        <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M8 1V2M8 14V15M15 8H14M2 8H1M12.5 12.5L11.8 11.8M4.2 4.2L3.5 3.5M12.5 3.5L11.8 4.2M4.2 11.8L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/landing.js"></script>
+</body>
+</html>

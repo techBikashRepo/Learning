@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Focused Dev Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="landing.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"/>
+                    <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                            <stop stop-color="#6366F1"/>
+                            <stop offset="1" stop-color="#818CF8"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">Focused Dev</span>
+            </a>
+            
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-ghost">Browse Courses</a>
+                <button id="theme-toggle" class="btn btn-ghost" aria-label="Toggle theme">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M17 10C16.5 13 14 15 11 15C7.5 15 5 12.5 5 9C5 6 6.5 3.5 8.5 3C8 3 7.5 3 6.5 3.5C4 5.5 4 9 6.5 11.5C9 14 13 14 15 11.5C16 10.5 16.5 10 17 10Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="profile-dropdown">
+                    <button class="profile-button">
+                        <div class="profile-avatar">SK</div>
+                        <span>Sarah Kim</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+        <div class="dashboard-container">
+            
+            <!-- Welcome Header -->
+            <div class="welcome-section">
+                <div class="welcome-text">
+                    <h1 class="welcome-title">Welcome back, Sarah! 👋</h1>
+                    <p class="welcome-subtitle">You've learned for 127 days straight. Keep the momentum going!</p>
+                </div>
+                <div class="streak-banner">
+                    <div class="streak-badge">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 2L12.5 7.5L18 8.5L14 12.5L15 18L10 15.5L5 18L6 12.5L2 8.5L7.5 7.5L10 2Z" fill="currentColor"/>
+                        </svg>
+                        <span>127-day streak 🔥</span>
+                    </div>
+                    <div class="user-level">
+                        <div class="level-badge">
+                            <span class="level-number">Level 18</span>
+                        </div>
+                        <div class="xp-info">
+                            <span class="xp-text">2,840 / 3,000 XP</span>
+                            <div class="xp-bar">
+                                <div class="xp-bar-fill" style="width: 94.6%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions Grid -->
+            <div class="quick-actions-grid">
+                
+                <!-- Continue Learning Card -->
+                <div class="continue-card card gradient-border">
+                    <div class="continue-header">
+                        <div>
+                            <h3 class="card-title">Continue Learning</h3>
+                            <p class="card-subtitle">Pick up where you left off</p>
+                        </div>
+                        <div class="lesson-progress">
+                            <div class="progress-circle" style="--progress: 85%">
+                                <span class="progress-circle-text">85%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="current-lesson">
+                        <div class="lesson-icon">🌐</div>
+                        <div class="lesson-info">
+                            <div class="lesson-path">Networking · Lesson 22/26</div>
+                            <div class="lesson-title">HTTP Status Codes</div>
+                            <div class="lesson-meta">
+                                <span>📖 8 min left</span>
+                                <span>•</span>
+                                <span>+20 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="networking/lesson-16.html" class="btn btn-primary" style="width: 100%;">
+                        Continue Lesson
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Daily Challenge Card -->
+                <div class="challenge-card card">
+                    <div class="challenge-badge">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#F59E0B"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Daily Challenge</h3>
+                    <p class="challenge-description">
+                        Complete the "TCP 3-Way Handshake" lesson to earn bonus XP
+                    </p>
+                    <div class="challenge-reward">
+                        <div class="reward-badge">
+                            <span class="reward-amount">+50 XP</span>
+                            <span class="reward-label">Bonus reward</span>
+                        </div>
+                        <div class="challenge-timer">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M8 4V8L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <span>18h 42m left</span>
+                        </div>
+                    </div>
+                    <a href="networking/lesson-12.html" class="btn btn-success" style="width: 100%;">
+                        Accept Challenge
+                    </a>
+                </div>
+                
+                <!-- Weekly Goal Card -->
+                <div class="goal-card card">
+                    <h3 class="card-title">Weekly Goal</h3>
+                    <p class="card-subtitle">Complete 5 lessons this week</p>
+                    
+                    <div class="goal-progress">
+                        <div class="goal-circles">
+                            <div class="goal-circle completed">1</div>
+                            <div class="goal-circle completed">2</div>
+                            <div class="goal-circle completed">3</div>
+                            <div class="goal-circle current">4</div>
+                            <div class="goal-circle">5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="goal-stats">
+                        <div class="stat-small">
+                            <span class="stat-small-value">3/5</span>
+                            <span class="stat-small-label">Completed</span>
+                        </div>
+                        <div class="stat-small">
+                            <span class="stat-small-value">2</span>
+                            <span class="stat-small-label">To go</span>
+                        </div>
+                        <div class="stat-small">
+                            <span class="stat-small-value">+100 XP</span>
+                            <span class="stat-small-label">Reward</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning Paths Progress -->
+            <section class="learning-paths-section">
+                <div class="section-header-inline">
+                    <h2 class="section-title-small">Your Learning Paths</h2>
+                    <a href="index.html" class="btn btn-ghost btn-sm">Browse All</a>
+                </div>
+                
+                <div class="paths-list">
+                    <!-- Path 1: Networking -->
+                    <div class="path-item card">
+                        <div class="path-item-header">
+                            <div class="path-item-icon">🌐</div>
+                            <div class="path-item-info">
+                                <h3 class="path-item-title">Networking Fundamentals</h3>
+                                <p class="path-item-meta">22 of 26 lessons · 85% complete</p>
+                            </div>
+                            <a href="networking/lesson-01.html" class="btn btn-secondary btn-sm">Continue</a>
+                        </div>
+                        <div class="path-item-progress">
+                            <div class="xp-bar">
+                                <div class="xp-bar-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="path-item-stats">
+                            <div class="stat-badge">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M14 9L8 3L2 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 13V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                <span>+440 XP earned</span>
+                            </div>
+                            <div class="stat-badge">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 2L10 6L14 7L11 10L12 14L8 12L4 14L5 10L2 7L6 6L8 2Z" fill="currentColor"/>
+                                </svg>
+                                <span>2 badges earned</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Path 2: Backend -->
+                    <div class="path-item card">
+                        <div class="path-item-header">
+                            <div class="path-item-icon">⚙️</div>
+                            <div class="path-item-info">
+                                <h3 class="path-item-title">Backend & API Design</h3>
+                                <p class="path-item-meta">11 of 32 lessons · 34% complete</p>
+                            </div>
+                            <a href="backend/lesson-01.html" class="btn btn-secondary btn-sm">Continue</a>
+                        </div>
+                        <div class="path-item-progress">
+                            <div class="xp-bar">
+                                <div class="xp-bar-fill" style="width: 34%"></div>
+                            </div>
+                        </div>
+                        <div class="path-item-stats">
+                            <div class="stat-badge">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M14 9L8 3L2 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 13V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                <span>+220 XP earned</span>
+                            </div>
+                            <div class="stat-badge">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 2L10 6L14 7L11 10L12 14L8 12L4 14L5 10L2 7L6 6L8 2Z" fill="currentColor"/>
+                                </svg>
+                                <span>1 badge earned</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Path 3: Databases (Locked) -->
+                    <div class="path-item card path-locked">
+                        <div class="path-item-header">
+                            <div class="path-item-icon">🗄️</div>
+                            <div class="path-item-info">
+                                <h3 class="path-item-title">Databases & Data Modeling</h3>
+                                <p class="path-item-meta">Complete Backend path to unlock</p>
+                            </div>
+                            <div class="lock-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <rect x="5" y="9" width="10" height="8" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M7 9V6C7 4.34315 8.34315 3 10 3C11.6569 3 13 4.34315 13 6V9" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats and Achievements Grid -->
+            <div class="dashboard-grid">
+                
+                <!-- Stats Overview -->
+                <div class="stats-card card">
+                    <h3 class="card-title">Your Stats</h3>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-icon gradient-indigo">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M10 2L13 7L18 8L14 12L15 17L10 14.5L5 17L6 12L2 8L7 7L10 2Z" fill="white"/>
+                                </svg>
+                            </div>
+                            <div class="stat-data">
+                                <div class="stat-value-large">2,840</div>
+                                <div class="stat-label-small">Total XP</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <div class="stat-icon gradient-emerald">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M16 7L8 15L4 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="stat-data">
+                                <div class="stat-value-large">33</div>
+                                <div class="stat-label-small">Lessons Done</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <div class="stat-icon gradient-amber">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M10 2L12 6L16 7L13 10L14 14L10 12L6 14L7 10L4 7L8 6L10 2Z" fill="white"/>
+                                </svg>
+                            </div>
+                            <div class="stat-data">
+                                <div class="stat-value-large">127</div>
+                                <div class="stat-label-small">Day Streak</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <div class="stat-icon gradient-cyan">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <circle cx="10" cy="10" r="7" stroke="white" stroke-width="2"/>
+                                    <path d="M10 6V10L13 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="stat-data">
+                                <div class="stat-value-large">47h</div>
+                                <div class="stat-label-small">Time Spent</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Achievements -->
+                <div class="achievements-card card">
+                    <div class="section-header-inline">
+                        <h3 class="card-title">Achievements</h3>
+                        <a href="profile.html" class="text-link">View All</a>
+                    </div>
+                    
+                    <div class="badges-grid">
+                        <div class="badge earned" title="First Steps">
+                            <div class="badge-emoji">🎯</div>
+                        </div>
+                        <div class="badge earned" title="7-Day Streak">
+                            <div class="badge-emoji">🔥</div>
+                        </div>
+                        <div class="badge earned" title="Speed Learner">
+                            <div class="badge-emoji">⚡</div>
+                        </div>
+                        <div class="badge earned" title="Network Ninja">
+                            <div class="badge-emoji">🥷</div>
+                        </div>
+                        <div class="badge" title="Backend Master (Locked)">
+                            <div class="badge-emoji locked-emoji">🏆</div>
+                        </div>
+                        <div class="badge" title="100-Day Streak (Locked)">
+                            <div class="badge-emoji locked-emoji">💯</div>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-progress">
+                        <p class="achievement-text">4 of 12 achievements unlocked</p>
+                        <div class="xp-bar">
+                            <div class="xp-bar-fill" style="width: 33.3%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity Feed -->
+            <div class="activity-card card">
+                <h3 class="card-title">Recent Activity</h3>
+                
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon success">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M13 4L6 11L3 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="activity-content">
+                            <p class="activity-text">Completed <strong>HTTP Headers</strong></p>
+                            <p class="activity-time">2 hours ago</p>
+                        </div>
+                        <div class="activity-reward">+20 XP</div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon achievement">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M8 2L10 6L14 7L11 10L12 14L8 12L4 14L5 10L2 7L6 6L8 2Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="activity-content">
+                            <p class="activity-text">Earned badge <strong>Network Ninja 🥷</strong></p>
+                            <p class="activity-time">5 hours ago</p>
+                        </div>
+                        <div class="activity-reward badge-icon">🥷</div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon success">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M13 4L6 11L3 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="activity-content">
+                            <p class="activity-text">Completed <strong>HTTP Status Codes</strong></p>
+                            <p class="activity-time">1 day ago</p>
+                        </div>
+                        <div class="activity-reward">+20 XP</div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon streak">
+                            <span>🔥</span>
+                        </div>
+                        <div class="activity-content">
+                            <p class="activity-text"><strong>127-day streak!</strong> You're on fire!</p>
+                            <p class="activity-time">1 day ago</p>
+                        </div>
+                        <div class="activity-reward">+5 XP</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

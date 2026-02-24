@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is a Network — Lesson 1 | Networking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body class="site-wrapper">
+    <div class="progress-bar" style="width: 0%"></div>
+
+    <input type="checkbox" id="sidebar-toggle" aria-label="Toggle sidebar" />
+
+    <header class="topbar">
+      <label
+        for="sidebar-toggle"
+        class="topbar__menu-toggle"
+        aria-label="Toggle menu"
+        >☰</label
+      >
+      <div class="topbar__logo"><a href="../home.html">Learn</a></div>
+      <div class="topbar__divider"></div>
+      <nav class="topbar__breadcrumb" aria-label="Breadcrumb">
+        <a href="../home.html">Home</a>
+        <span class="sep">›</span>
+        <a href="../courses.html">Networking</a>
+        <span class="sep">›</span>
+        <span class="current">What is a Network</span>
+      </nav>
+      <div class="topbar__actions">
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-toggle__icon">🌙</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="body-content">
+      <aside class="sidebar" aria-label="Course navigation">
+        <div class="sidebar__course-title">Networking Curriculum</div>
+        <details class="sidebar__section" open>
+          <summary>
+            <span class="sidebar__section-icon">🌐</span>Networking
+          </summary>
+          <ul class="sidebar__lessons">
+            <li class="lesson-group">
+              <details class="lesson-group__details" open>
+                <summary>
+                  <span class="lesson-num">01</span>What is a Network
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="lesson-01.html" class="active">Part 1</a></li>
+                  <li><a href="lesson-01-part2.html">Part 2</a></li>
+                  <li><a href="lesson-01-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">02</span>LAN vs WAN vs Internet
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="lesson-02.html">Part 1</a></li>
+                  <li><a href="lesson-02-part2.html">Part 2</a></li>
+                  <li><a href="lesson-02-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">03</span>Public IP vs Private IP
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="lesson-03.html">Part 1</a></li>
+                  <li><a href="lesson-03-part2.html">Part 2</a></li>
+                  <li><a href="lesson-03-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </details>
+      </aside>
+
+      <main class="main-content">
+        <div class="content-container">
+          <article>
+            <h1>What is a Network?</h1>
+
+            <p>
+              A <strong>network</strong> is a collection of interconnected
+              devices that can communicate and share resources with each other.
+              These devices might be computers, smartphones, servers, printers,
+              or any other hardware capable of sending and receiving data.
+            </p>
+
+            <p>
+              Understanding networks is fundamental to modern software
+              development. Every time you load a webpage, send an email, or
+              stream a video, you're using a network. For technical interviews,
+              you need to understand not just <em>what</em> networks are, but
+              <em>how</em> they work at a deep level.
+            </p>
+
+            <h2>The Basic Concept</h2>
+
+            <p>Think of a network like a postal system. In a postal system:</p>
+
+            <ul>
+              <li>
+                You have <strong>senders</strong> (people writing letters)
+              </li>
+              <li>
+                You have <strong>receivers</strong> (people getting letters)
+              </li>
+              <li>
+                You have <strong>addresses</strong> (locations where letters go)
+              </li>
+              <li>
+                You have <strong>infrastructure</strong> (post offices, mail
+                trucks, sorting facilities)
+              </li>
+              <li>
+                You have <strong>protocols</strong> (rules about envelope sizes,
+                postage, zip codes)
+              </li>
+            </ul>
+
+            <p>
+              Computer networks work the same way, just with data instead of
+              physical letters.
+            </p>
+
+            <div class="callout callout--tip">
+              <div class="callout__icon">💡</div>
+              <div class="callout__content">
+                <p><strong>Interview Tip</strong></p>
+                <p>
+                  When explaining networking concepts in interviews, analogies
+                  like the postal system help demonstrate your ability to
+                  communicate complex ideas simply. Interviewers value clear
+                  thinking.
+                </p>
+              </div>
+            </div>
+
+            <h2>Key Components of a Network</h2>
+
+            <h3>1. Nodes (Devices)</h3>
+
+            <p>
+              A <strong>node</strong> is any device connected to a network. This
+              includes:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Computers</strong> — Desktops, laptops, workstations
+              </li>
+              <li>
+                <strong>Servers</strong> — Powerful computers that provide
+                services to other devices
+              </li>
+              <li><strong>Mobile devices</strong> — Smartphones, tablets</li>
+              <li>
+                <strong>IoT devices</strong> — Smart TVs, cameras, thermostats
+              </li>
+              <li>
+                <strong>Network hardware</strong> — Routers, switches, access
+                points
+              </li>
+            </ul>
+
+            <p>
+              Each node has a unique identifier (like an IP address) so other
+              nodes know where to send data.
+            </p>
+
+            <h3>2. Links (Connections)</h3>
+
+            <p>
+              Links are the physical or wireless pathways that connect nodes.
+              They can be:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Wired</strong> — Ethernet cables, fiber optic cables
+              </li>
+              <li>
+                <strong>Wireless</strong> — WiFi, Bluetooth, cellular networks
+              </li>
+            </ul>
+
+            <h3>3. Protocols (Rules)</h3>
+
+            <p>
+              Protocols are standardized rules that define how data is
+              formatted, transmitted, and received. Without protocols, devices
+              couldn't understand each other — like trying to have a
+              conversation where one person speaks English and another speaks
+              Japanese.
+            </p>
+
+            <p>Common protocols you'll encounter:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Protocol</th>
+                  <th>Purpose</th>
+                  <th>Layer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>HTTP/HTTPS</code></td>
+                  <td>Web page transfer</td>
+                  <td>Application</td>
+                </tr>
+                <tr>
+                  <td><code>TCP</code></td>
+                  <td>Reliable data delivery</td>
+                  <td>Transport</td>
+                </tr>
+                <tr>
+                  <td><code>IP</code></td>
+                  <td>Addressing and routing</td>
+                  <td>Network</td>
+                </tr>
+                <tr>
+                  <td><code>DNS</code></td>
+                  <td>Domain name lookup</td>
+                  <td>Application</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="callout callout--warning">
+              <div class="callout__icon">⚠️</div>
+              <div class="callout__content">
+                <p><strong>Common Mistake</strong></p>
+                <p>
+                  Don't confuse <strong>the Internet</strong> with
+                  <strong>a network</strong>. The Internet is a specific global
+                  network that connects millions of smaller networks. A network
+                  can exist completely offline (like a local home network).
+                </p>
+              </div>
+            </div>
+
+            <h2>How Data Travels</h2>
+
+            <p>
+              When you send data across a network, it doesn't travel as one big
+              chunk. Instead, it's broken into small pieces called
+              <strong>packets</strong>.
+            </p>
+
+            <p>Here's what happens when you visit a website:</p>
+
+            <pre><code class="language-text">1. Your browser creates an HTTP request
+2. Request is broken into packets
+3. Each packet gets source &amp; destination IP addresses
+4. Packets travel through multiple routers
+5. Routers determine best path for each packet
+6. Destination receives packets
+7. Packets are reassembled into original message
+8. Server sends response (repeats process in reverse)</code></pre>
+
+            <p>
+              This process happens in milliseconds, thousands of times per
+              second during a typical browsing session.
+            </p>
+
+            <h2>Example: Simple Network</h2>
+
+            <p>Let's look at a simple home network:</p>
+
+            <pre><code class="language-plaintext">Internet (ISP)
+    |
+    | (Modem)
+    |
+[Router/WiFi]
+    |
+    +--- Laptop (192.168.1.10)
+    +--- Phone (192.168.1.11)
+    +--- Smart TV (192.168.1.12)
+    +--- Desktop (192.168.1.15)</code></pre>
+
+            <p>In this setup:</p>
+
+            <ol>
+              <li>
+                The <strong>modem</strong> connects your home to your Internet
+                Service Provider (ISP)
+              </li>
+              <li>
+                The <strong>router</strong> manages your local network and
+                assigns IP addresses
+              </li>
+              <li>
+                Each device gets a <strong>private IP address</strong> on your
+                local network
+              </li>
+              <li>
+                The router has a <strong>public IP address</strong> visible to
+                the Internet
+              </li>
+            </ol>
+
+            <div class="callout callout--info">
+              <div class="callout__icon">ℹ️</div>
+              <div class="callout__content">
+                <p><strong>Quick Terminology</strong></p>
+                <ul>
+                  <li><strong>Upstream</strong> — Data you send (upload)</li>
+                  <li>
+                    <strong>Downstream</strong> — Data you receive (download)
+                  </li>
+                  <li>
+                    <strong>Bandwidth</strong> — Maximum data transfer rate
+                  </li>
+                  <li>
+                    <strong>Latency</strong> — Time delay in data transfer
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h2>Why Networks Matter for Developers</h2>
+
+            <p>As a software engineer, you'll work with networks constantly:</p>
+
+            <ul>
+              <li>
+                <strong>Web development</strong> — Client-server communication
+                via HTTP
+              </li>
+              <li>
+                <strong>API design</strong> — Building services that communicate
+                over networks
+              </li>
+              <li>
+                <strong>Database connections</strong> — Querying remote
+                databases
+              </li>
+              <li>
+                <strong>Microservices</strong> — Services communicating across
+                networks
+              </li>
+              <li>
+                <strong>Cloud computing</strong> — Everything runs on networked
+                infrastructure
+              </li>
+              <li>
+                <strong>Debugging</strong> — Network issues are common in
+                production
+              </li>
+            </ul>
+
+            <p>Understanding networks helps you:</p>
+
+            <ul>
+              <li>Debug connectivity issues</li>
+              <li>Optimize application performance</li>
+              <li>Design secure systems</li>
+              <li>Make informed architectural decisions</li>
+              <li>Ace technical interviews</li>
+            </ul>
+
+            <h2>Key Takeaways</h2>
+
+            <div class="callout callout--success">
+              <div class="callout__icon">✅</div>
+              <div class="callout__content">
+                <p><strong>Remember These Points</strong></p>
+                <ul>
+                  <li>A network is devices connected to share data</li>
+                  <li>Networks need nodes, links, and protocols</li>
+                  <li>Data travels in packets, not as single messages</li>
+                  <li>Every device on a network has an address (IP)</li>
+                  <li>Protocols define the rules for communication</li>
+                  <li>The Internet is a network of networks</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2>Coming Up Next</h2>
+
+            <p>
+              In the next lesson, we'll explore different types of networks:
+              <strong>LAN</strong> (Local Area Network),
+              <strong>WAN</strong> (Wide Area Network), and how they relate to
+              the Internet.
+            </p>
+
+            <p>
+              You'll learn the practical differences between these network types
+              and when each is used in real-world systems.
+            </p>
+          </article>
+
+          <nav class="lesson-nav">
+            <a
+              href="lesson-01-part2.html"
+              class="lesson-nav__btn lesson-nav__btn--next"
+            >
+              <span class="lesson-nav__label">Next Lesson</span>
+              <span class="lesson-nav__title">LAN vs WAN vs Internet</span>
+            </a>
+          </nav>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

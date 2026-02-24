@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[LESSON_TITLE] — [MODULE_NAME] | Technical Interview Prep</title>
+    <meta name="description" content="[LESSON_DESCRIPTION]" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body class="site-wrapper">
+    <div class="progress-bar" style="width: 0%"></div>
+
+    <input type="checkbox" id="sidebar-toggle" aria-label="Toggle sidebar" />
+
+    <header class="topbar">
+      <label
+        for="sidebar-toggle"
+        class="topbar__menu-toggle"
+        aria-label="Toggle menu"
+        >☰</label
+      >
+      <div class="topbar__logo"><a href="../home.html">Learn</a></div>
+      <div class="topbar__divider"></div>
+      <nav class="topbar__breadcrumb" aria-label="Breadcrumb">
+        <a href="../home.html">Home</a>
+        <span class="sep">›</span>
+        <a href="../courses.html">[MODULE_NAME]</a>
+        <span class="sep">›</span>
+        <span class="current">[LESSON_TITLE]</span>
+      </nav>
+      <div class="topbar__actions">
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-toggle__icon">🌙</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="body-content">
+      <aside class="sidebar" aria-label="Course navigation">
+        <div class="sidebar__course-title">[MODULE_NAME] Curriculum</div>
+
+        <!-- EXAMPLE SIDEBAR STRUCTURE - Customize per module -->
+        <details class="sidebar__section" open>
+          <summary>
+            <span class="sidebar__section-icon">[ICON]</span>[MODULE_NAME]
+          </summary>
+          <ul class="sidebar__lessons">
+            <li class="lesson-group">
+              <details class="lesson-group__details" open>
+                <summary>
+                  <span class="lesson-num">01</span>[LESSON_TITLE]
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="lesson-01.html" class="active">Part 1</a></li>
+                  <li><a href="lesson-01-part2.html">Part 2</a></li>
+                  <li><a href="lesson-01-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">02</span>[NEXT_LESSON]
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="lesson-02.html">Part 1</a></li>
+                  <li><a href="lesson-02-part2.html">Part 2</a></li>
+                  <li><a href="lesson-02-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <!-- Add more lessons as needed -->
+          </ul>
+        </details>
+      </aside>
+
+      <main class="main-content">
+        <div class="content-container">
+          <article>
+            <h1>[LESSON_TITLE]</h1>
+
+            <p>[INTRODUCTION_PARAGRAPH]</p>
+
+            <h2>[SECTION_HEADING]</h2>
+
+            <p>[CONTENT_PARAGRAPH]</p>
+
+            <h3>[SUBSECTION_HEADING]</h3>
+
+            <p>[MORE_CONTENT]</p>
+
+            <ul>
+              <li>[LIST_ITEM_1]</li>
+              <li>[LIST_ITEM_2]</li>
+              <li>[LIST_ITEM_3]</li>
+            </ul>
+
+            <!-- CALLOUT EXAMPLES -->
+
+            <!-- TIP -->
+            <div class="callout callout--tip">
+              <div class="callout__icon">💡</div>
+              <div class="callout__content">
+                <p><strong>Tip Title</strong></p>
+                <p>Helpful tip content here.</p>
+              </div>
+            </div>
+
+            <!-- WARNING -->
+            <div class="callout callout--warning">
+              <div class="callout__icon">⚠️</div>
+              <div class="callout__content">
+                <p><strong>Warning Title</strong></p>
+                <p>Important warning or common mistake.</p>
+              </div>
+            </div>
+
+            <!-- INFO -->
+            <div class="callout callout--info">
+              <div class="callout__icon">ℹ️</div>
+              <div class="callout__content">
+                <p><strong>Info Title</strong></p>
+                <p>Additional information or context.</p>
+              </div>
+            </div>
+
+            <!-- SUCCESS -->
+            <div class="callout callout--success">
+              <div class="callout__icon">✅</div>
+              <div class="callout__content">
+                <p><strong>Key Takeaways</strong></p>
+                <ul>
+                  <li>Point 1</li>
+                  <li>Point 2</li>
+                  <li>Point 3</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- CODE EXAMPLE -->
+            <h2>Code Example</h2>
+
+            <pre><code class="language-javascript">// JavaScript automatically adds copy button
+function example() {
+    const message = "Hello World";
+    console.log(message);
+    return message;
+}</code></pre>
+
+            <!-- TABLE EXAMPLE -->
+            <h2>Table Example</h2>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Column 1</th>
+                  <th>Column 2</th>
+                  <th>Column 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Data 1</td>
+                  <td>Data 2</td>
+                  <td>Data 3</td>
+                </tr>
+                <tr>
+                  <td>Data 4</td>
+                  <td>Data 5</td>
+                  <td>Data 6</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- DIAGRAM EXAMPLES -->
+            <h2>Architecture Diagrams</h2>
+
+            <h3>Option 1: ASCII Diagram (Simple)</h3>
+            <p>For simple flowcharts and architectures:</p>
+
+            <pre class="ascii-diagram">
+[Client Browser]
+      |
+      | HTTP Request
+      |
+[Load Balancer]
+      |
+      +----> [Web Server 1]
+      |
+      +----> [Web Server 2]
+      |
+      +----> [Web Server 3]
+      |
+[Database Server]
+</pre
+            >
+
+            <h3>Option 2: Image Diagram (Recommended)</h3>
+            <p>For complex diagrams, use actual images:</p>
+
+            <div class="diagram-image">
+              <img
+                src="../images/diagrams/example-architecture.svg"
+                alt="Complete system architecture diagram"
+              />
+              <p class="diagram-caption">
+                Figure 1: System Architecture Overview
+              </p>
+            </div>
+
+            <!-- To add your own images:
+            1. Create diagram using Excalidraw, Draw.io, or similar
+            2. Export as PNG (1200px width recommended)
+            3. Save to: site/images/[module-name]/your-diagram.png
+            4. Replace the src and alt attributes above
+            5. See DIAGRAM_GUIDE.md for full instructions
+            -->
+
+            <h2>Key Takeaways</h2>
+
+            <div class="callout callout--success">
+              <div class="callout__icon">✅</div>
+              <div class="callout__content">
+                <p><strong>Remember These Points</strong></p>
+                <ul>
+                  <li>Key point 1</li>
+                  <li>Key point 2</li>
+                  <li>Key point 3</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2>Coming Up Next</h2>
+
+            <p>In the next lesson, we'll explore [NEXT_TOPIC].</p>
+          </article>
+
+          <!-- NAVIGATION -->
+          <nav class="lesson-nav">
+            <!-- Previous Lesson (optional - remove if first lesson) -->
+            <a href="[PREVIOUS_LESSON_URL]" class="lesson-nav__btn">
+              <span class="lesson-nav__label">Previous Lesson</span>
+              <span class="lesson-nav__title">[PREVIOUS_LESSON_TITLE]</span>
+            </a>
+
+            <!-- Next Lesson -->
+            <a
+              href="[NEXT_LESSON_URL]"
+              class="lesson-nav__btn lesson-nav__btn--next"
+            >
+              <span class="lesson-nav__label">Next Lesson</span>
+              <span class="lesson-nav__title">[NEXT_LESSON_TITLE]</span>
+            </a>
+          </nav>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

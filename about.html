@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Learning Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .topbar {
+            position:fixed;top:0;left:0;right:0;height:64px;background:var(--bg-surface);
+            border-bottom:1px solid var(--border-subtle);display:flex;align-items:center;
+            justify-content:space-between;padding:0 var(--space-8);z-index:100;
+        }
+        .topbar-logo{display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-xl);font-weight:700;color:var(--text-primary);text-decoration:none;}
+        .topbar-nav{display:flex;align-items:center;gap:var(--space-6);}
+        .topbar-nav a{color:var(--text-secondary);text-decoration:none;font-size:var(--text-base);transition:color var(--transition-fast);}
+        .topbar-nav a:hover{color:var(--accent);}
+        .page-content{padding:100px var(--space-8) 80px;max-width:780px;margin:0 auto;}
+        @media(max-width:768px){.topbar{padding:0 var(--space-5);}.page-content{padding:90px var(--space-5) 60px;}}
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <a href="home.html" class="topbar-logo"><span>📚</span><span>Learning Hub</span></a>
+        <nav class="topbar-nav">
+            <a href="home.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" style="background:none;border:none;cursor:pointer;font-size:1.25rem;padding:4px;">
+                <span class="theme-icon">☀️</span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="page-content">
+        <h1>About This Platform</h1>
+        <p>
+            This learning platform was built with one goal: <strong>deep, focused technical learning</strong>
+            for experienced developers preparing to become architects.
+        </p>
+
+        <h2>The Philosophy</h2>
+        <p>
+            After 14+ years in software development, you don't need another tutorial that explains
+            what a variable is. You need content that connects concepts to real systems, explains
+            the <em>why</em> behind every decision, and maps directly to AWS certifications and
+            senior engineering interviews.
+        </p>
+        <p>
+            Every lesson in this platform follows a consistent structure:
+        </p>
+        <ul>
+            <li><strong>Intuition</strong> — Explained like you're 12, to build the mental model</li>
+            <li><strong>Core Technical</strong> — Precise, complete explanation with all details</li>
+            <li><strong>Real World Examples</strong> — How this appears in production systems</li>
+            <li><strong>System Design Impact</strong> — Architectural implications and decisions</li>
+            <li><strong>AWS Mapping</strong> — How this maps to AWS services and certifications</li>
+            <li><strong>Interview Prep</strong> — Common questions, answers, and traps to avoid</li>
+        </ul>
+
+        <h2>What's Covered</h2>
+        <ul>
+            <li>🌐 <strong>Networking</strong> (78 lessons) — TCP/IP, HTTP, DNS, HTTPS, CORS and more</li>
+            <li>⚙️ <strong>Backend & API Design</strong> (30 lessons) — REST, pagination, versioning</li>
+            <li>🔒 <strong>Security</strong> (26 lessons) — JWT, CSRF, XSS, rate limiting</li>
+            <li>🗄️ <strong>Databases</strong> (75 lessons) — SQL, indexing, transactions, NoSQL</li>
+            <li>🏗️ <strong>System Architecture</strong> (18 lessons) — Clean architecture, microservices</li>
+        </ul>
+
+        <h2>Technical Details</h2>
+        <p>
+            Built with pure <strong>HTML5, CSS3, and vanilla JavaScript</strong>. No frameworks.
+            No build process. No dependencies. Open any HTML file and it works — with or without
+            an internet connection (except for Google Fonts).
+        </p>
+
+        <a href="courses.html" class="btn btn-primary" style="margin-top: 2rem;">View All Courses →</a>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Status Codes - Networking | Focused Dev Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/design-system.css">
+    <link rel="stylesheet" href="../css/lessonplayer.css">
+</head>
+<body>
+
+    <!-- Minimalist Top Bar -->
+    <header class="lesson-header">
+        <div class="lesson-header-container">
+            <a href="../dashboard.html" class="back-button">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Dashboard</span>
+            </a>
+            
+            <div class="lesson-meta">
+                <span class="lesson-number">Lesson 16/26</span>
+                <span class="lesson-divider">•</span>
+                <span class="lesson-path">🌐 Networking</span>
+            </div>
+            
+            <div class="lesson-actions">
+                <button class="btn-icon" title="Bookmark lesson" id="bookmark-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 4C4 2.89543 4.89543 2 6 2H14C15.1046 2 16 2.89543 16 4V18L10 14L4 18V4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="btn-icon" title="Toggle sidebar" id="sidebar-toggle">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 10H17M3 5H17M3 15H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button class="btn-icon" title="Toggle theme" id="theme-toggle">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M17 10C16.5 13 14 15 11 15C7.5 15 5 12.5 5 9C5 6 6.5 3.5 8.5 3C8 3 7.5 3 6.5 3.5C4 5.5 4 9 6.5 11.5C9 14 13 14 15 11.5C16 10.5 16.5 10 17 10Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Progress Bar -->
+        <div class="reading-progress-bar">
+            <div class="reading-progress-fill" id="reading-progress"></div>
+        </div>
+    </header>
+
+    <!-- Sidebar (Optional, hideable) -->
+    <aside class="lesson-sidebar" id="lesson-sidebar">
+        <div class="sidebar-header">
+            <h3>Course Outline</h3>
+            <button class="btn-icon" id="sidebar-close">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <div class="section-title">🌐 Networking</div>
+                <ul class="lesson-list">
+                    <li class="lesson-item completed">
+                        <span class="lesson-check">✓</span>
+                        <a href="lesson-01.html">What is a Network</a>
+                    </li>
+                    <li class="lesson-item completed">
+                        <span class="lesson-check">✓</span>
+                        <a href="lesson-02.html">LAN vs WAN vs Internet</a>
+                    </li>
+                    <li class="lesson-item current">
+                        <span class="lesson-indicator">→</span>
+                        <a href="lesson-16.html">HTTP Status Codes</a>
+                    </li>
+                    <li class="lesson-item">
+                        <span class="lesson-lock">🔒</span>
+                        <a href="lesson-17.html">HTTP Headers</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="lesson-main">
+        <article class="lesson-content">
+            
+            <!-- Lesson Header -->
+            <header class="content-header">
+                <div class="lesson-badge">Lesson 16</div>
+                <h1 class="lesson-title">HTTP Status Codes</h1>
+                <div class="lesson-info-row">
+                    <span class="info-item">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M8 4V8L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        8 min read
+                    </span>
+                    <span class="info-item">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M8 2L10 6L14 7L11 10L12 14L8 12L4 14L5 10L2 7L6 6L8 2Z" fill="currentColor"/>
+                        </svg>
+                        +20 XP
+                    </span>
+                    <span class="info-item difficulty-medium">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 14L8 2L14 14H2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        </svg>
+                        Intermediate
+                    </span>
+                </div>
+            </header>
+
+            <!-- Learning Objectives -->
+            <div class="objectives-card">
+                <h3>What You'll Learn</h3>
+                <ul class="objectives-list">
+                    <li>Understand the 5 main categories of HTTP status codes</li>
+                    <li>Learn the most common status codes and their meanings</li>
+                    <li>Know when servers return specific status codes</li>
+                    <li>Debug HTTP issues based on status codes</li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="prose">
+                <h2>Introduction</h2>
+                <p>
+                    When a client (like a web browser) sends an HTTP request to a server, the server processes that request and sends back a response. Every HTTP response includes a <strong>status code</strong> — a three-digit number that tells the client whether the request was successful, failed, or needs further action.
+                </p>
+                <p>
+                    Understanding status codes is essential for debugging web applications and understanding how the web works.
+                </p>
+
+                <h2>The 5 Categories</h2>
+                <p>
+                    HTTP status codes are divided into 5 categories based on their first digit:
+                </p>
+
+                <div class="info-box">
+                    <div class="info-box-icon">💡</div>
+                    <div>
+                        <strong>Pro Tip:</strong> The first digit tells you the category, the last two digits give more specific information.
+                    </div>
+                </div>
+
+                <h3>1xx — Informational</h3>
+                <p>
+                    Rare in practice. Indicates that the request was received and the process is continuing.
+                </p>
+                <ul>
+                    <li><code>100 Continue</code> — Server received request headers, client can send body</li>
+                    <li><code>101 Switching Protocols</code> — Server is switching to a different protocol</li>
+                </ul>
+
+                <h3>2xx — Success</h3>
+                <p>
+                    The request was successfully received, understood, and accepted.
+                </p>
+                <ul>
+                    <li><code>200 OK</code> — Standard success response</li>
+                    <li><code>201 Created</code> — Resource was successfully created</li>
+                    <li><code>204 No Content</code> — Success but no content to return</li>
+                </ul>
+
+                <div class="code-example">
+                    <div class="code-example-header">
+                        <span>Example Response</span>
+                        <button class="copy-btn" title="Copy code">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <rect x="5" y="5" width="9" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M2 11V3C2 2.44772 2.44772 2 3 2H11" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <pre><code>HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 48
+
+{
+  "message": "User created successfully",
+  "id": 12345
+}</code></pre>
+                </div>
+
+                <h3>3xx — Redirection</h3>
+                <p>
+                    Further action is needed to complete the request, usually a redirect to another URL.
+                </p>
+                <ul>
+                    <li><code>301 Moved Permanently</code> — Resource permanently moved to new URL</li>
+                    <li><code>302 Found</code> — Resource temporarily at different URL</li>
+                    <li><code>304 Not Modified</code> — Cached version is still valid</li>
+                </ul>
+
+                <h3>4xx — Client Error</h3>
+                <p>
+                    The request contains bad syntax or cannot be fulfilled. These are mistakes on the <strong>client side</strong>.
+                </p>
+                <ul>
+                    <li><code>400 Bad Request</code> — Malformed syntax or invalid request</li>
+                    <li><code>401 Unauthorized</code> — Authentication required</li>
+                    <li><code>403 Forbidden</code> — Server refuses to fulfill request</li>
+                    <li><code>404 Not Found</code> — Resource doesn't exist</li>
+                    <li><code>429 Too Many Requests</code> — Rate limit exceeded</li>
+                </ul>
+
+                <div class="warning-box">
+                    <div class="warning-box-icon">⚠️</div>
+                    <div>
+                        <strong>Common Confusion:</strong> 401 means authentication failed (wrong/missing credentials), while 403 means you're authenticated but don't have permission.
+                    </div>
+                </div>
+
+                <h3>5xx — Server Error</h3>
+                <p>
+                    The server failed to fulfill a valid request. These are mistakes on the <strong>server side</strong>.
+                </p>
+                <ul>
+                    <li><code>500 Internal Server Error</code> — Generic server error</li>
+                    <li><code>502 Bad Gateway</code> — Invalid response from upstream server</li>
+                    <li><code>503 Service Unavailable</code> — Server temporarily overloaded or down</li>
+                    <li><code>504 Gateway Timeout</code> — Upstream server didn't respond in time</li>
+                </ul>
+
+                <h2>Real-World Example</h2>
+                <p>
+                    Let's say you're building an e-commerce site. Here's what different status codes might mean:
+                </p>
+
+                <div class="example-box">
+                    <h4>Scenario: User tries to purchase a product</h4>
+                    <table class="status-table">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Situation</th>
+                                <th>Meaning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>200</code></td>
+                                <td>Order successful</td>
+                                <td>✅ Everything worked</td>
+                            </tr>
+                            <tr>
+                                <td><code>400</code></td>
+                                <td>Missing credit card number</td>
+                                <td>❌ Client sent incomplete data</td>
+                            </tr>
+                            <tr>
+                                <td><code>401</code></td>
+                                <td>Not logged in</td>
+                                <td>❌ Authentication required</td>
+                            </tr>
+                            <tr>
+                                <td><code>403</code></td>
+                                <td>Account suspended</td>
+                                <td>❌ Access denied</td>
+                            </tr>
+                            <tr>
+                                <td><code>404</code></td>
+                                <td>Product no longer exists</td>
+                                <td>❌ Resource not found</td>
+                            </tr>
+                            <tr>
+                                <td><code>500</code></td>
+                                <td>Payment processor crashed</td>
+                                <td>❌ Server error</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Key Takeaways</h2>
+                <ul class="takeaways-list">
+                    <li><strong>2xx = Success</strong> — Everything went well</li>
+                    <li><strong>3xx = Redirect</strong> — Go somewhere else</li>
+                    <li><strong>4xx = Your fault</strong> — Client made a mistake</li>
+                    <li><strong>5xx = Server's fault</strong> — Server had a problem</li>
+                </ul>
+
+                <div class="success-box">
+                    <div class="success-box-icon">🎯</div>
+                    <div>
+                        <strong>You're doing great!</strong> Understanding status codes will make debugging API issues much easier.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Quiz (Optional) -->
+            <div class="quiz-card" id="quiz-card">
+                <h3>Quick Knowledge Check</h3>
+                <p class="quiz-question">A user tries to access a page they don't have permission to view, even though they're logged in. Which status code should the server return?</p>
+                
+                <div class="quiz-options">
+                    <button class="quiz-option" data-correct="false">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">401 Unauthorized</span>
+                    </button>
+                    <button class="quiz-option" data-correct="true">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">403 Forbidden</span>
+                    </button>
+                    <button class="quiz-option" data-correct="false">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">404 Not Found</span>
+                    </button>
+                    <button class="quiz-option" data-correct="false">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">500 Internal Server Error</span>
+                    </button>
+                </div>
+                
+                <div class="quiz-feedback" id="quiz-feedback"></div>
+            </div>
+
+        </article>
+
+        <!-- Navigation Footer -->
+        <footer class="lesson-footer">
+            <div class="lesson-footer-content">
+                <a href="lesson-15.html" class="lesson-nav-btn prev">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div>
+                        <div class="nav-label">Previous</div>
+                        <div class="nav-title">HTTP Methods</div>
+                    </div>
+                </a>
+                
+                <button class="btn btn-success btn-lg" id="complete-lesson-btn">
+                    Mark Complete & Continue
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M16 6L8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                
+                <a href="lesson-17.html" class="lesson-nav-btn next">
+                    <div>
+                        <div class="nav-label">Next</div>
+                        <div class="nav-title">HTTP Headers</div>
+                    </div>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M8 4L14 10L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Completion Modal -->
+    <div class="modal" id="completion-modal">
+        <div class="modal-content card">
+            <div class="completion-animation">
+                <div class="completion-icon">🎉</div>
+            </div>
+            <h2>Lesson Complete!</h2>
+            <p>You've earned <strong>+20 XP</strong></p>
+            
+            <div class="completion-stats">
+                <div class="completion-stat">
+                    <div class="stat-value">16/26</div>
+                    <div class="stat-label">Lessons Done</div>
+                </div>
+                <div class="completion-stat">
+                    <div class="stat-value">62%</div>
+                    <div class="stat-label">Path Progress</div>
+                </div>
+                <div class="completion-stat">
+                    <div class="stat-value">440 XP</div>
+                    <div class="stat-label">Total Earned</div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <a href="lesson-17.html" class="btn btn-primary btn-lg" style="width: 100%;">
+                    Continue to Next Lesson
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M8 4L14 10L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="../dashboard.html" class="btn btn-secondary" style="width: 100%;">
+                    Back to Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/lesson-player.js"></script>
+</body>
+</html>

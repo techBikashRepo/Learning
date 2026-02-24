@@ -1,0 +1,497 @@
+{
+  "title": "Full-Stack to AI-Architect",
+  "subtitle": "A structured path from senior engineer to systems architect",
+  "chapters": [
+    {
+      "slug": "01-networking",
+      "title": "Networking",
+      "folder": "01 - Networking",
+      "lessons": [
+        {
+          "slug": "01-what-is-a-network",
+          "title": "What is a Network",
+          "folder": "01 - What is a Network",
+          "parts": 3
+        },
+        {
+          "slug": "02-lan-vs-wan-vs-internet",
+          "title": "LAN vs WAN vs Internet",
+          "folder": "02 - LAN vs WAN vs Internet",
+          "parts": 3
+        },
+        {
+          "slug": "03-public-ip-vs-private-ip",
+          "title": "Public IP vs Private IP",
+          "folder": "03 - Public IP vs Private IP",
+          "parts": 3
+        },
+        {
+          "slug": "04-ip-address-structure",
+          "title": "IP Address Structure (IPv4 concept)",
+          "folder": "04 - IP Address Structure (IPv4 concept)",
+          "parts": 3
+        },
+        {
+          "slug": "05-ports-and-sockets",
+          "title": "Ports & Sockets",
+          "folder": "05 - Ports & Sockets",
+          "parts": 3
+        },
+        {
+          "slug": "06-router-vs-switch",
+          "title": "Router vs Switch",
+          "folder": "06 - Router vs Switch",
+          "parts": 3
+        },
+        {
+          "slug": "07-packet-switching",
+          "title": "Packet & Packet Switching",
+          "folder": "07 - Packet & Packet Switching",
+          "parts": 3
+        },
+        {
+          "slug": "08-dns-what-it-is",
+          "title": "DNS — what it is",
+          "folder": "08 - DNS — what it is",
+          "parts": 3
+        },
+        {
+          "slug": "09-dns-resolution-flow",
+          "title": "DNS Resolution Flow (step by step)",
+          "folder": "09 - DNS Resolution Flow (step by step)",
+          "parts": 3
+        },
+        {
+          "slug": "10-domain-name-vs-ip",
+          "title": "Domain Name vs IP Address",
+          "folder": "10 - Domain Name vs IP Address",
+          "parts": 3
+        },
+        {
+          "slug": "11-tcp-vs-udp",
+          "title": "TCP vs UDP",
+          "folder": "11 - TCP vs UDP",
+          "parts": 3
+        },
+        {
+          "slug": "12-tcp-3-way-handshake",
+          "title": "TCP 3-Way Handshake",
+          "folder": "12 - TCP 3-Way Handshake",
+          "parts": 3
+        },
+        {
+          "slug": "13-tcp-reliability",
+          "title": "TCP Reliability (ack, retransmission)",
+          "folder": "13 - TCP Reliability (ack, retransmission)",
+          "parts": 3
+        },
+        {
+          "slug": "14-http-protocol",
+          "title": "HTTP Protocol (request-response)",
+          "folder": "14 - HTTP Protocol (request-response)",
+          "parts": 3
+        },
+        {
+          "slug": "15-http-methods",
+          "title": "HTTP Methods",
+          "folder": "15 - HTTP Methods",
+          "parts": 3
+        },
+        {
+          "slug": "16-http-status-codes",
+          "title": "HTTP Status Codes",
+          "folder": "16 - HTTP Status Codes",
+          "parts": 3
+        },
+        {
+          "slug": "17-http-headers",
+          "title": "HTTP Headers",
+          "folder": "17 - HTTP Headers",
+          "parts": 3
+        },
+        {
+          "slug": "18-cookies-vs-sessions",
+          "title": "Cookies vs Sessions",
+          "folder": "18 - Cookies vs Sessions",
+          "parts": 3
+        },
+        {
+          "slug": "19-https-vs-http",
+          "title": "HTTPS vs HTTP",
+          "folder": "19 - HTTPS vs HTTP",
+          "parts": 3
+        },
+        {
+          "slug": "20-ssl-tls-handshake",
+          "title": "SSL TLS Handshake",
+          "folder": "20 - SSL TLS Handshake",
+          "parts": 3
+        },
+        {
+          "slug": "21-cors",
+          "title": "CORS",
+          "folder": "21 - CORS",
+          "parts": 3
+        },
+        {
+          "slug": "22-request-response-lifecycle",
+          "title": "Request-Response Lifecycle",
+          "folder": "22 - Request-Response Lifecycle",
+          "parts": 3
+        },
+        {
+          "slug": "23-latency-bandwidth-throughput",
+          "title": "Latency vs Bandwidth vs Throughput",
+          "folder": "23 - Latency vs Bandwidth vs Throughput",
+          "parts": 3
+        },
+        {
+          "slug": "24-round-trip-time",
+          "title": "Round Trip Time (RTT)",
+          "folder": "24 - Round Trip Time (RTT)",
+          "parts": 3
+        },
+        {
+          "slug": "25-cdn",
+          "title": "Content Delivery Network (CDN)",
+          "folder": "25 - Content Delivery Network (CDN)",
+          "parts": 3
+        },
+        {
+          "slug": "26-how-web-works",
+          "title": "How Web Works",
+          "folder": "26 - How Web Works",
+          "parts": 3
+        }
+      ]
+    },
+    {
+      "slug": "02-backend-api-design",
+      "title": "Backend & API Design",
+      "folder": "02 - Backend & API Design",
+      "lessons": [
+        {
+          "slug": "01-rest-architecture",
+          "title": "REST Architecture",
+          "folder": "01 - REST Architecture",
+          "parts": 3
+        },
+        {
+          "slug": "02-resource-naming",
+          "title": "Resource Naming",
+          "folder": "02 - Resource Naming",
+          "parts": 3
+        },
+        {
+          "slug": "03-path-vs-query-params",
+          "title": "Path vs Query Parameters",
+          "folder": "03 - Path vs Query Parameters",
+          "parts": 3
+        },
+        {
+          "slug": "04-idempotent-operations",
+          "title": "Idempotent Operations",
+          "folder": "04 - Idempotent Operations",
+          "parts": 3
+        },
+        {
+          "slug": "05-pagination",
+          "title": "Pagination (Offset vs Cursor)",
+          "folder": "05 - Pagination (Offset vs Cursor)",
+          "parts": 3
+        },
+        {
+          "slug": "06-filtering-sorting",
+          "title": "Filtering & Sorting",
+          "folder": "06 - Filtering & Sorting",
+          "parts": 3
+        },
+        {
+          "slug": "07-api-versioning",
+          "title": "API Versioning",
+          "folder": "07 - API Versioning",
+          "parts": 3
+        },
+        {
+          "slug": "08-standard-error-responses",
+          "title": "Standard Error Responses",
+          "folder": "08 - Standard Error Responses",
+          "parts": 3
+        },
+        {
+          "slug": "09-file-upload-flow",
+          "title": "File Upload Flow",
+          "folder": "09 - File Upload Flow",
+          "parts": 3
+        },
+        {
+          "slug": "10-swagger-openapi-basics",
+          "title": "Swagger OpenAPI Basics",
+          "folder": "10 - Swagger OpenAPI Basics",
+          "parts": 3
+        }
+      ]
+    },
+    {
+      "slug": "03-authentication-security",
+      "title": "Authentication & Security",
+      "folder": "03 - Authentication & Security",
+      "lessons": [
+        {
+          "slug": "01-authn-vs-authz",
+          "title": "Authentication vs Authorization",
+          "folder": "01 - Authentication vs Authorization",
+          "parts": 3
+        },
+        {
+          "slug": "02-session-authentication",
+          "title": "Session Authentication",
+          "folder": "02 - Session Authentication",
+          "parts": 3
+        },
+        {
+          "slug": "03-jwt-authentication",
+          "title": "JWT Authentication",
+          "folder": "03 - JWT Authentication",
+          "parts": 3
+        },
+        {
+          "slug": "04-access-vs-refresh-token",
+          "title": "Access Token vs Refresh Token",
+          "folder": "04 - Access Token vs Refresh Token",
+          "parts": 3
+        },
+        {
+          "slug": "05-password-hashing",
+          "title": "Password Hashing (bcrypt)",
+          "folder": "05 - Password Hashing (bcrypt)",
+          "parts": 3
+        },
+        {
+          "slug": "06-csrf-attack",
+          "title": "CSRF Attack",
+          "folder": "06 - CSRF Attack",
+          "parts": 3
+        },
+        {
+          "slug": "07-xss-attack",
+          "title": "XSS Attack",
+          "folder": "07 - XSS Attack",
+          "parts": 3
+        },
+        {
+          "slug": "08-input-validation",
+          "title": "Input Validation",
+          "folder": "08 - Input Validation",
+          "parts": 3
+        },
+        {
+          "slug": "09-login-rate-limiting",
+          "title": "Login Rate Limiting",
+          "folder": "09 - Login Rate Limiting",
+          "parts": 3
+        }
+      ]
+    },
+    {
+      "slug": "04-databases-data-modeling",
+      "title": "Databases & Data Modeling",
+      "folder": "04 - Databases & Data Modeling",
+      "lessons": [
+        {
+          "slug": "01-database-basics",
+          "title": "Database Basics (tables & schema)",
+          "folder": "01 - Database Basics (tables & schema)",
+          "parts": 3
+        },
+        {
+          "slug": "02-select-where",
+          "title": "SELECT & WHERE",
+          "folder": "02 - SELECT & WHERE",
+          "parts": 3
+        },
+        {
+          "slug": "03-order-by",
+          "title": "ORDER BY",
+          "folder": "03 - ORDER BY",
+          "parts": 3
+        },
+        {
+          "slug": "04-group-by-having",
+          "title": "GROUP BY & HAVING",
+          "folder": "04 - GROUP BY & HAVING",
+          "parts": 3
+        },
+        {
+          "slug": "05-aggregations",
+          "title": "Aggregations (COUNT, SUM, AVG)",
+          "folder": "05 - Aggregations (COUNT, SUM, AVG)",
+          "parts": 3
+        },
+        {
+          "slug": "06-primary-key",
+          "title": "Primary Key",
+          "folder": "06 - Primary Key",
+          "parts": 3
+        },
+        {
+          "slug": "07-foreign-key",
+          "title": "Foreign Key",
+          "folder": "07 - Foreign Key",
+          "parts": 3
+        },
+        {
+          "slug": "08-joins",
+          "title": "Joins (INNER, LEFT)",
+          "folder": "08 - Joins (INNER, LEFT)",
+          "parts": 3
+        },
+        {
+          "slug": "09-many-to-many",
+          "title": "Many-to-Many Relationships",
+          "folder": "09 - Many-to-Many Relationships",
+          "parts": 3
+        },
+        {
+          "slug": "10-constraints",
+          "title": "Constraints (NOT NULL, UNIQUE, DEFAULT)",
+          "folder": "10 - Constraints (NOT NULL, UNIQUE, DEFAULT)",
+          "parts": 3
+        },
+        {
+          "slug": "11-indexing-basics",
+          "title": "Indexing — why queries slow",
+          "folder": "11 - Indexing — why queries slow",
+          "parts": 3
+        },
+        {
+          "slug": "12-btree-index",
+          "title": "B-Tree Index",
+          "folder": "12 - B-Tree Index",
+          "parts": 3
+        },
+        {
+          "slug": "13-composite-index",
+          "title": "Composite Index",
+          "folder": "13 - Composite Index",
+          "parts": 3
+        },
+        {
+          "slug": "14-when-not-to-index",
+          "title": "When NOT to Index",
+          "folder": "14 - When NOT to Index",
+          "parts": 3
+        },
+        {
+          "slug": "15-transactions",
+          "title": "Transactions",
+          "folder": "15 - Transactions",
+          "parts": 3
+        },
+        {
+          "slug": "16-acid-properties",
+          "title": "ACID Properties",
+          "folder": "16 - ACID Properties",
+          "parts": 3
+        },
+        {
+          "slug": "17-race-conditions",
+          "title": "Race Conditions",
+          "folder": "17 - Race Conditions",
+          "parts": 3
+        },
+        {
+          "slug": "18-prevent-duplicate-payments",
+          "title": "Prevent Duplicate Payments",
+          "folder": "18 - Prevent Duplicate Payments",
+          "parts": 3
+        },
+        {
+          "slug": "19-normalization",
+          "title": "Normalization",
+          "folder": "19 - Normalization",
+          "parts": 3
+        },
+        {
+          "slug": "20-denormalization",
+          "title": "Denormalization",
+          "folder": "20 - Denormalization",
+          "parts": 3
+        },
+        {
+          "slug": "21-soft-delete",
+          "title": "Soft Delete",
+          "folder": "21 - Soft Delete",
+          "parts": 3
+        },
+        {
+          "slug": "22-audit-columns",
+          "title": "Audit Columns",
+          "folder": "22 - Audit Columns",
+          "parts": 3
+        },
+        {
+          "slug": "23-multi-tenant-data",
+          "title": "Multi-Tenant Data",
+          "folder": "23 - Multi-Tenant Data",
+          "parts": 3
+        },
+        {
+          "slug": "24-n-plus-1-query-problem",
+          "title": "N+1 Query Problem",
+          "folder": "24 - N+1 Query Problem",
+          "parts": 3
+        },
+        {
+          "slug": "25-explain-analyze",
+          "title": "EXPLAIN ANALYZE",
+          "folder": "25 - EXPLAIN ANALYZE",
+          "parts": 3
+        }
+      ]
+    },
+    {
+      "slug": "05-system-design-architecture",
+      "title": "System Design & Architecture",
+      "folder": "05 - System Design & Architecture",
+      "lessons": [
+        {
+          "slug": "01-monolith-vs-microservices",
+          "title": "Monolith vs Microservices",
+          "folder": "01 - Monolith vs Microservices",
+          "parts": 3
+        },
+        {
+          "slug": "02-layered-architecture",
+          "title": "Layered Architecture",
+          "folder": "02 - Layered Architecture",
+          "parts": 3
+        },
+        {
+          "slug": "03-controller-service-repository",
+          "title": "Controller-Service-Repository Pattern",
+          "folder": "03 - Controller-Service-Repository Pattern",
+          "parts": 3
+        },
+        {
+          "slug": "04-clean-architecture",
+          "title": "Clean Architecture Basics",
+          "folder": "04 - Clean Architecture Basics",
+          "parts": 3
+        },
+        {
+          "slug": "05-backend-for-frontend",
+          "title": "Backend-for-Frontend (BFF)",
+          "folder": "05 - Backend-for-Frontend (BFF)",
+          "parts": 3
+        },
+        {
+          "slug": "06-api-gateway",
+          "title": "API Gateway",
+          "folder": "06 - API Gateway",
+          "parts": 3
+        }
+      ]
+    }
+  ]
+}

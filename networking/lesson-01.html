@@ -1,0 +1,1828 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is a Network — Part 1 of 3 | Networking | Learning</title>
+    <meta
+      name="description"
+      content="Learn what a computer network is, how devices communicate, and the fundamentals of network connectivity."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body class="site-wrapper">
+    <div class="progress-bar" style="width: 0%"></div>
+    <input type="checkbox" id="sidebar-toggle" aria-label="Toggle sidebar" />
+
+    <header class="topbar">
+      <label
+        for="sidebar-toggle"
+        class="topbar__menu-toggle"
+        aria-label="Toggle menu"
+        >☰</label
+      >
+      <div class="topbar__logo"><a href="../index.html">Learning</a></div>
+      <div class="topbar__divider"></div>
+      <nav class="topbar__breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">›</span>
+        <a href="../networking/index.html">Networking</a>
+        <span class="sep">›</span>
+        <span class="current">What is a Network — Part 1 of 3</span>
+      </nav>
+    </header>
+
+    <div class="body-content">
+      <aside class="sidebar" aria-label="Course navigation">
+        <div class="sidebar__course-title">Learning Curriculum</div>
+        <details class="sidebar__section" open>
+          <summary>
+            <span class="sidebar__section-icon">🌐</span>01 · Networking
+          </summary>
+          <ul class="sidebar__lessons">
+            <li class="lesson-group">
+              <details class="lesson-group__details" open>
+                <summary>
+                  <span class="lesson-num">01</span>What is a Network
+                </summary>
+                <ul class="lesson-parts">
+                  <li>
+                    <a href="../networking/lesson-01.html" class="active"
+                      >Part 1</a
+                    >
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-01-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-01-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">02</span>LAN vs WAN vs Internet
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-02.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-02-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-02-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">03</span>Public IP vs Private IP
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-03.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-03-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-03-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">04</span>IP Address Structure (IPv4
+                  concept)
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-04.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-04-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-04-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">05</span>Ports &amp; Sockets
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-05.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-05-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-05-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">06</span>Router vs Switch
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-06.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-06-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-06-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">07</span>Packet &amp; Packet
+                  Switching
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-07.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-07-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-07-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">08</span>DNS — what it is
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-08.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-08-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-08-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">09</span>DNS Resolution Flow (step by
+                  step)
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-09.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-09-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-09-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">10</span>Domain Name vs IP Address
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-10.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-10-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-10-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary><span class="lesson-num">11</span>TCP vs UDP</summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-11.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-11-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-11-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">12</span>TCP 3-Way Handshake
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-12.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-12-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-12-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">13</span>TCP Reliability (ack,
+                  retransmission)
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-13.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-13-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-13-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">14</span>HTTP Protocol
+                  (request-response)
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-14.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-14-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-14-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">15</span>HTTP Methods
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-15.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-15-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-15-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">16</span>HTTP Status Codes
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-16.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-16-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-16-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">17</span>HTTP Headers
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-17.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-17-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-17-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">18</span>Cookies vs Sessions
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-18.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-18-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-18-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">19</span>HTTPS vs HTTP
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-19.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-19-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-19-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">20</span>SSL TLS Handshake
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-20.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-20-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-20-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary><span class="lesson-num">21</span>CORS</summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-21.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-21-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-21-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">22</span>Request-Response Lifecycle
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-22.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-22-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-22-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">23</span>Latency vs Bandwidth vs
+                  Throughput
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-23.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-23-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-23-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">24</span>Round Trip Time (RTT)
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-24.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-24-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-24-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">25</span>Content Delivery Network
+                  (CDN)
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-25.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-25-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-25-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">26</span>How Web Works
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../networking/lesson-26.html">Part 1</a></li>
+                  <li>
+                    <a href="../networking/lesson-26-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../networking/lesson-26-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <details class="sidebar__section">
+          <summary>
+            <span class="sidebar__section-icon">⚙️</span>02 · Backend &amp; API
+            Design
+          </summary>
+          <ul class="sidebar__lessons">
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">01</span>REST Architecture
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../backend/lesson-01.html">Part 1</a></li>
+                  <li><a href="../backend/lesson-01-part2.html">Part 2</a></li>
+                  <li><a href="../backend/lesson-01-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">02</span>Resource Naming
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../backend/lesson-02.html">Part 1</a></li>
+                  <li><a href="../backend/lesson-02-part2.html">Part 2</a></li>
+                  <li><a href="../backend/lesson-02-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">03</span>Path vs Query Parameters
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../backend/lesson-03.html">Part 1</a></li>
+                  <li><a href="../backend/lesson-03-part2.html">Part 2</a></li>
+                  <li><a href="../backend/lesson-03-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">04</span>Idempotent Operations
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../backend/lesson-04.html">Part 1</a></li>
+                  <li><a href="../backend/lesson-04-part2.html">Part 2</a></li>
+                  <li><a href="../backend/lesson-04-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">05</span>Pagination (Offset vs
+                  Cursor)
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../backend/lesson-05.html">Part 1</a></li>
+                  <li><a href="../backend/lesson-05-part2.html">Part 2</a></li>
+                  <li><a href="../backend/lesson-05-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">06</span>Filtering &amp; Sorting
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../backend/lesson-06.html">Part 1</a></li>
+                  <li><a href="../backend/lesson-06-part2.html">Part 2</a></li>
+                  <li><a href="../backend/lesson-06-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">07</span>API Versioning
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../backend/lesson-07.html">Part 1</a></li>
+                  <li><a href="../backend/lesson-07-part2.html">Part 2</a></li>
+                  <li><a href="../backend/lesson-07-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">08</span>Standard Error Responses
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../backend/lesson-08.html">Part 1</a></li>
+                  <li><a href="../backend/lesson-08-part2.html">Part 2</a></li>
+                  <li><a href="../backend/lesson-08-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">09</span>File Upload Flow
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../backend/lesson-09.html">Part 1</a></li>
+                  <li><a href="../backend/lesson-09-part2.html">Part 2</a></li>
+                  <li><a href="../backend/lesson-09-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">10</span>Swagger OpenAPI Basics
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../backend/lesson-10.html">Part 1</a></li>
+                  <li><a href="../backend/lesson-10-part2.html">Part 2</a></li>
+                  <li><a href="../backend/lesson-10-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <details class="sidebar__section">
+          <summary>
+            <span class="sidebar__section-icon">🔒</span>03 · Authentication
+            &amp; Security
+          </summary>
+          <ul class="sidebar__lessons">
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">01</span>Authentication vs
+                  Authorization
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../security/lesson-01.html">Part 1</a></li>
+                  <li><a href="../security/lesson-01-part2.html">Part 2</a></li>
+                  <li><a href="../security/lesson-01-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">02</span>Session Authentication
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../security/lesson-02.html">Part 1</a></li>
+                  <li><a href="../security/lesson-02-part2.html">Part 2</a></li>
+                  <li><a href="../security/lesson-02-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">03</span>JWT Authentication
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../security/lesson-03.html">Part 1</a></li>
+                  <li><a href="../security/lesson-03-part2.html">Part 2</a></li>
+                  <li><a href="../security/lesson-03-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">04</span>Access Token vs Refresh
+                  Token
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../security/lesson-04.html">Part 1</a></li>
+                  <li><a href="../security/lesson-04-part2.html">Part 2</a></li>
+                  <li><a href="../security/lesson-04-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">05</span>Password Hashing (bcrypt)
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../security/lesson-05.html">Part 1</a></li>
+                  <li><a href="../security/lesson-05-part2.html">Part 2</a></li>
+                  <li><a href="../security/lesson-05-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary><span class="lesson-num">06</span>CSRF Attack</summary>
+                <ul class="lesson-parts">
+                  <li><a href="../security/lesson-06.html">Part 1</a></li>
+                  <li><a href="../security/lesson-06-part2.html">Part 2</a></li>
+                  <li><a href="../security/lesson-06-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary><span class="lesson-num">07</span>XSS Attack</summary>
+                <ul class="lesson-parts">
+                  <li><a href="../security/lesson-07.html">Part 1</a></li>
+                  <li><a href="../security/lesson-07-part2.html">Part 2</a></li>
+                  <li><a href="../security/lesson-07-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">08</span>Input Validation
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../security/lesson-08.html">Part 1</a></li>
+                  <li><a href="../security/lesson-08-part2.html">Part 2</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">09</span>Login Rate Limiting
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../security/lesson-09.html">Part 1</a></li>
+                  <li><a href="../security/lesson-09-part2.html">Part 2</a></li>
+                  <li><a href="../security/lesson-09-part3.html">Part 3</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <details class="sidebar__section">
+          <summary>
+            <span class="sidebar__section-icon">🗄️</span>04 · Databases &amp;
+            Data Modeling
+          </summary>
+          <ul class="sidebar__lessons">
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">01</span>Database Basics (tables
+                  &amp; schema)
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-01.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-01-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-01-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">02</span>SELECT &amp; WHERE
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-02.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-02-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-02-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary><span class="lesson-num">03</span>ORDER BY</summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-03.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-03-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-03-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">04</span>GROUP BY &amp; HAVING
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-04.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-04-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-04-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">05</span>Aggregations (COUNT, SUM,
+                  AVG)
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-05.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-05-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-05-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary><span class="lesson-num">06</span>Primary Key</summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-06.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-06-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-06-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary><span class="lesson-num">07</span>Foreign Key</summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-07.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-07-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-07-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">08</span>Joins (INNER, LEFT)
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-08.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-08-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-08-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">09</span>Many-to-Many Relationships
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-09.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-09-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-09-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">10</span>Constraints (NOT NULL,
+                  UNIQUE, DEFAULT)
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-10.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-10-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-10-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">11</span>Indexing — why queries slow
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-11.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-11-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-11-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">12</span>B-Tree Index
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-12.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-12-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-12-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">13</span>Composite Index
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-13.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-13-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-13-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">14</span>When NOT to Index
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-14.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-14-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-14-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">15</span>Transactions
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-15.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-15-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-15-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">16</span>ACID Properties
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-16.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-16-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-16-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">17</span>Race Conditions
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-17.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-17-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-17-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">18</span>Prevent Duplicate Payments
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-18.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-18-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-18-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">19</span>Normalization
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-19.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-19-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-19-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">20</span>Denormalization
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-20.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-20-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-20-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary><span class="lesson-num">21</span>Soft Delete</summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-21.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-21-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-21-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">22</span>Audit Columns
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-22.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-22-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-22-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">23</span>Multi-Tenant Data
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-23.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-23-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-23-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">24</span>N+1 Query Problem
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-24.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-24-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-24-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">25</span>EXPLAIN ANALYZE
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../databases/lesson-25.html">Part 1</a></li>
+                  <li>
+                    <a href="../databases/lesson-25-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../databases/lesson-25-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <details class="sidebar__section">
+          <summary>
+            <span class="sidebar__section-icon">🏗️</span>05 · System Design
+            &amp; Architecture
+          </summary>
+          <ul class="sidebar__lessons">
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">01</span>Monolith vs Microservices
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../architecture/lesson-01.html">Part 1</a></li>
+                  <li>
+                    <a href="../architecture/lesson-01-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../architecture/lesson-01-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">02</span>Layered Architecture
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../architecture/lesson-02.html">Part 1</a></li>
+                  <li>
+                    <a href="../architecture/lesson-02-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../architecture/lesson-02-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">03</span
+                  >Controller-Service-Repository Pattern
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../architecture/lesson-03.html">Part 1</a></li>
+                  <li>
+                    <a href="../architecture/lesson-03-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../architecture/lesson-03-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">04</span>Clean Architecture Basics
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../architecture/lesson-04.html">Part 1</a></li>
+                  <li>
+                    <a href="../architecture/lesson-04-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../architecture/lesson-04-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary>
+                  <span class="lesson-num">05</span>Backend-for-Frontend (BFF)
+                </summary>
+                <ul class="lesson-parts">
+                  <li><a href="../architecture/lesson-05.html">Part 1</a></li>
+                  <li>
+                    <a href="../architecture/lesson-05-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../architecture/lesson-05-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li class="lesson-group">
+              <details class="lesson-group__details">
+                <summary><span class="lesson-num">06</span>API Gateway</summary>
+                <ul class="lesson-parts">
+                  <li><a href="../architecture/lesson-06.html">Part 1</a></li>
+                  <li>
+                    <a href="../architecture/lesson-06-part2.html">Part 2</a>
+                  </li>
+                  <li>
+                    <a href="../architecture/lesson-06-part3.html">Part 3</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </details>
+      </aside>
+
+      <main class="main">
+        <article class="lesson-content">
+          <header class="lesson-header">
+            <div class="lesson-header__meta">
+              <span class="lesson-header__part">Networking</span>
+              <span class="lesson-header__num">Lesson 01 · Part 1 of 3</span>
+            </div>
+          </header>
+
+          <div class="lesson-body">
+            <h1 id="what-is-a-network-part-1-of-3">
+              What is a Network — Part 1 of 3<a
+                href="#what-is-a-network-part-1-of-3"
+                class="anchor"
+                >#</a
+              >
+            </h1>
+            <h3
+              id="topic-foundations-intuition-core-concepts-architecture-data-flow"
+            >
+              Topic: Foundations — Intuition, Core Concepts, Architecture &amp;
+              Data Flow<a
+                href="#topic-foundations-intuition-core-concepts-architecture-data-flow"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+            <p>
+              <strong>Series:</strong> Networking Fundamentals → System Design →
+              AWS Solutions Architect <strong>Audience:</strong> 14-Year
+              Experienced Full-Stack Developer → Becoming an Architect
+              <strong>Sections Covered:</strong> 1, 2, 3, 4
+            </p>
+            <hr />
+            <h2 id="section-1-intuition-explain-like-a-12-year-old">
+              SECTION 1 — Intuition: Explain Like a 12-Year-Old<a
+                href="#section-1-intuition-explain-like-a-12-year-old"
+                class="anchor"
+                >#</a
+              >
+            </h2>
+            <p>
+              Imagine you live in a big apartment building. Every apartment has
+              people living in it. Now, what if person in apartment 101 wants to
+              talk to someone in apartment 305?
+            </p>
+            <p>
+              They can't just magically teleport their voice. They either pick
+              up a phone, shout through the corridor, or pass a written note
+              through someone.
+            </p>
+            <p>
+              Now imagine thousands of apartments — not just in one building,
+              but across the entire city. Millions of people. Everyone wants to
+              talk to everyone else. You need a system. A connected system. A
+              way to send and receive messages reliably.
+            </p>
+            <p>
+              That system — that connected structure — is a
+              <strong>Network</strong>.
+            </p>
+            <p>
+              A computer network is exactly the same idea. Instead of people in
+              apartments, you have devices — laptops, phones, servers, smart
+              TVs, ATMs, cars. Instead of notes and phone calls, you have data
+              packets. Instead of corridors and postal services, you have
+              cables, routers, switches, and wireless signals.
+            </p>
+            <p>
+              When you open Instagram on your phone and a photo loads in less
+              than a second — that photo travelled from a server in California,
+              passed through dozens of routers, crossed the ocean through
+              underwater cables, reached a tower near your home, and arrived on
+              your screen. All of that happened because of a
+              <strong>network</strong>.
+            </p>
+            <p>
+              A network is simply:
+              <strong>devices connected together to share information.</strong>
+            </p>
+            <p>
+              It does not matter if those devices are two computers on your desk
+              connected by a wire, or two billion smartphones communicating
+              through the internet. The fundamental idea is the same —
+              connection + communication.
+            </p>
+            <hr />
+            <h2 id="section-2-core-technical-explanation">
+              SECTION 2 — Core Technical Explanation<a
+                href="#section-2-core-technical-explanation"
+                class="anchor"
+                >#</a
+              >
+            </h2>
+            <h3 id="what-is-a-network">
+              What is a Network?<a href="#what-is-a-network" class="anchor"
+                >#</a
+              >
+            </h3>
+            <p>
+              A <strong>computer network</strong> is a system of two or more
+              interconnected devices (called <strong>nodes</strong>) that can
+              communicate and share data, resources, and services with each
+              other.
+            </p>
+            <p>
+              Networks solve a very fundamental problem in computing:
+              <strong>isolation</strong>. Without networks, every computer is an
+              island. You cannot share files, load a webpage, send an email,
+              stream a video, or call someone online. Every useful thing a
+              computer does today relies on a network.
+            </p>
+            <hr />
+            <h3 id="why-does-a-network-exist">
+              Why Does a Network Exist?<a
+                href="#why-does-a-network-exist"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+            <p>Networks exist to solve these real problems:</p>
+            <ol>
+              <li>
+                <strong>Resource Sharing</strong> — One printer can be used by
+                50 people. One database can serve millions of users.
+              </li>
+              <li>
+                <strong>Communication</strong> — Email, video calls, messaging
+                apps all run on network communication.
+              </li>
+              <li>
+                <strong>Data Access</strong> — You can access your files from
+                anywhere in the world.
+              </li>
+              <li>
+                <strong>Reliability</strong> — If one path breaks, data can be
+                rerouted through another path.
+              </li>
+              <li>
+                <strong>Scalability</strong> — Systems can grow to serve more
+                users by adding more nodes to the network.
+              </li>
+            </ol>
+            <hr />
+            <h3 id="core-components-of-a-network">
+              Core Components of a Network<a
+                href="#core-components-of-a-network"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+            <p>
+              Every network — whether it is your home Wi-Fi or the global
+              internet — has these essential building blocks:
+            </p>
+            <p>
+              <strong>1. Nodes (End Devices)</strong> These are the devices that
+              send or receive data. Your laptop, phone, server, smart TV, IoT
+              sensor, ATM — all are nodes. They are the source and destination
+              of all communication.
+            </p>
+            <p>
+              <strong>2. Network Interface Card (NIC)</strong> Every device that
+              connects to a network needs a NIC — either physically built in or
+              as a chip. It assigns the device a permanent hardware identity
+              called a <strong>MAC address</strong> (Media Access Control
+              address). This is like a device's fingerprint — it never changes.
+            </p>
+            <p>
+              <strong>3. Switches</strong> Switches are devices that connect
+              multiple devices inside the same local network (LAN). When your
+              laptop sends data to your printer, a switch makes sure the data
+              goes only to the printer and not to every other device on the
+              network. Switches work at <strong>Layer 2</strong> (Data Link
+              Layer) using MAC addresses.
+            </p>
+            <p>
+              <strong>4. Routers</strong> Routers connect different networks
+              together. Your home router connects your home network to the
+              internet. Routers work at <strong>Layer 3</strong> (Network Layer)
+              using <strong>IP addresses</strong>. Routers decide the best path
+              for data to travel across multiple networks.
+            </p>
+            <p>
+              <strong>5. Access Points (Wi-Fi)</strong> Access points extend the
+              network wirelessly. They allow devices to join the network without
+              a physical cable. Your home Wi-Fi router is both a router and an
+              access point combined.
+            </p>
+            <p>
+              <strong>6. Transmission Medium</strong> This is the physical or
+              wireless channel through which data travels. Examples:
+            </p>
+            <ul>
+              <li>Ethernet cables (copper)</li>
+              <li>Fiber optic cables (light pulses)</li>
+              <li>Wi-Fi radio waves (2.4 GHz / 5 GHz)</li>
+              <li>Cellular networks (4G / 5G)</li>
+            </ul>
+            <p>
+              <strong>7. Protocols</strong> Protocols are the agreed-upon rules
+              that devices follow to communicate. Without protocols, devices
+              cannot understand each other. Key protocols include:
+            </p>
+            <ul>
+              <li>
+                <strong>TCP/IP</strong> — the foundation of internet
+                communication
+              </li>
+              <li>
+                <strong>HTTP/HTTPS</strong> — how browsers and servers talk
+              </li>
+              <li>
+                <strong>DNS</strong> — how domain names are resolved to IP
+                addresses
+              </li>
+              <li>
+                <strong>DHCP</strong> — how devices automatically get an IP
+                address
+              </li>
+            </ul>
+            <p>
+              <strong>8. IP Address</strong> Every device on a network gets an
+              IP address — a unique numerical identity used for routing data
+              across networks. Think of it as a mailing address. Without it,
+              data doesn't know where to go.
+            </p>
+            <hr />
+            <h3 id="types-of-networks-by-scale">
+              Types of Networks (by Scale)<a
+                href="#types-of-networks-by-scale"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Full Form</th>
+                  <th>Coverage</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>PAN</td>
+                  <td>Personal Area Network</td>
+                  <td>~10 meters</td>
+                  <td>Bluetooth headphones</td>
+                </tr>
+                <tr>
+                  <td>LAN</td>
+                  <td>Local Area Network</td>
+                  <td>A building or campus</td>
+                  <td>Office network</td>
+                </tr>
+                <tr>
+                  <td>MAN</td>
+                  <td>Metropolitan Area Network</td>
+                  <td>A city</td>
+                  <td>City Wi-Fi network</td>
+                </tr>
+                <tr>
+                  <td>WAN</td>
+                  <td>Wide Area Network</td>
+                  <td>Country or globe</td>
+                  <td>The Internet</td>
+                </tr>
+                <tr>
+                  <td>VPN</td>
+                  <td>Virtual Private Network</td>
+                  <td>Secure overlay</td>
+                  <td>Remote work tunnel</td>
+                </tr>
+              </tbody>
+            </table>
+            <hr />
+            <h3 id="how-does-a-network-work-internally">
+              How Does a Network Work — Internally?<a
+                href="#how-does-a-network-work-internally"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+            <p>
+              When data travels across a network, it does not travel as one
+              giant blob. It is broken into small pieces called
+              <strong>packets</strong>. Each packet contains:
+            </p>
+            <ul>
+              <li>Source IP address (where it came from)</li>
+              <li>Destination IP address (where it's going)</li>
+              <li>Sequence number (so packets can be reassembled in order)</li>
+              <li>The actual data (payload)</li>
+              <li>Error-checking information</li>
+            </ul>
+            <p>
+              This approach is called <strong>packet switching</strong>. It
+              replaced older circuit switching (where a dedicated path was
+              reserved for the entire duration of a call, like old telephone
+              lines). Packet switching is more efficient because many packets
+              from different conversations can share the same network path.
+            </p>
+            <p>
+              Each packet independently travels through routers, may take
+              different paths, and gets reassembled at the destination. If a
+              packet is lost, only that small chunk is retransmitted — not the
+              entire data.
+            </p>
+            <hr />
+            <h2 id="section-3-architecture-diagram">
+              SECTION 3 — Architecture Diagram<a
+                href="#section-3-architecture-diagram"
+                class="anchor"
+                >#</a
+              >
+            </h2>
+            <p>
+              Below is the architecture of a typical request from a user's
+              browser to a web application server.
+            </p>
+            <pre class="ascii-diagram">
+[User's Device]
+      |
+      |  (Wi-Fi / Ethernet)
+      |
+[Home Router / Access Point]
+      |
+      |  (ISP Connection — Fiber / Cable)
+      |
+[ISP Network]
+      |
+      |  (Internet Backbone — Fiber)
+      |
+[ISP Gateway Router]
+      |
+      |
+[Internet Core Routers]  ←→  [Other Networks / Paths]
+      |
+      |
+[Data Center Edge Router]
+      |
+[Load Balancer]
+      |
+[Web Application Server]
+      |
+[Database Server]
+</pre
+            >
+            <hr />
+            <h3 id="component-by-component-role-explanation">
+              Component-by-Component Role Explanation<a
+                href="#component-by-component-role-explanation"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+            <p>
+              <strong>User's Device</strong> The origin of the request. When you
+              type <code>www.amazon.com</code> in your browser and press Enter,
+              this device initiates the entire chain.
+            </p>
+            <p>
+              <strong>Home Router / Access Point</strong> Your router has two
+              jobs: (1) connect all your home devices into a LAN, and (2)
+              forward your data to your ISP. It uses NAT (Network Address
+              Translation) to map your private IP address to a public IP
+              address.
+            </p>
+            <p>
+              <strong>ISP Network</strong> Your Internet Service Provider's
+              infrastructure. This includes regional routers, fiber lines, and
+              peering points with other ISPs.
+            </p>
+            <p>
+              <strong>Internet Core Routers</strong> High-speed routers that
+              form the backbone of the internet. They make routing decisions in
+              microseconds, forwarding millions of packets per second.
+            </p>
+            <p>
+              <strong>Data Center Edge Router</strong> The first router inside
+              Amazon's (or any company's) infrastructure. It receives your
+              packet from the internet and begins routing it internally.
+            </p>
+            <p>
+              <strong>Load Balancer</strong> Distributes incoming requests to
+              multiple servers so no single server is overwhelmed. If one server
+              is down, the load balancer redirects traffic to healthy servers.
+            </p>
+            <p>
+              <strong>Web Application Server</strong> Processes your request —
+              runs business logic, queries the database, builds the response.
+            </p>
+            <p>
+              <strong>Database Server</strong> Stores and retrieves persistent
+              data — user accounts, product catalog, order history, etc.
+            </p>
+            <hr />
+            <h2 id="section-4-request-flow-step-by-step-data-journey">
+              SECTION 4 — Request Flow: Step-by-Step Data Journey<a
+                href="#section-4-request-flow-step-by-step-data-journey"
+                class="anchor"
+                >#</a
+              >
+            </h2>
+            <p>
+              Let's trace exactly what happens when you type
+              <code>https://www.amazon.com</code> and press Enter on your
+              laptop.
+            </p>
+            <hr />
+            <p>
+              <strong>Step 1 — You Press Enter</strong> Your browser needs the
+              IP address of <code>www.amazon.com</code>. It doesn't know it yet.
+            </p>
+            <p>
+              <strong>Step 2 — DNS Resolution</strong> Your OS checks its local
+              DNS cache. If not found, it asks your router. Router checks its
+              cache. If not found, it asks your ISP's DNS server. ISP DNS
+              eventually queries Amazon's authoritative DNS server and returns
+              <code>www.amazon.com = 54.239.28.85</code> (example IP).
+            </p>
+            <p>
+              <em>Where failure can occur:</em> DNS misconfiguration or DNS
+              server downtime causes "Page Not Found" errors even when the
+              server is up.
+            </p>
+            <p>
+              <strong>Step 3 — TCP Handshake</strong> Your browser initiates a
+              TCP connection to Amazon's IP on port 443 (HTTPS). This involves a
+              3-way handshake:
+            </p>
+            <ul>
+              <li>Client → SYN → Server</li>
+              <li>Server → SYN-ACK → Client</li>
+              <li>Client → ACK → Server</li>
+            </ul>
+            <p>
+              <em>Where delay occurs:</em> Each round trip adds latency. For a
+              user in India connecting to a US server, this alone adds ~200ms of
+              delay.
+            </p>
+            <p>
+              <strong>Step 4 — TLS Handshake (for HTTPS)</strong> Before any
+              data is sent, TLS negotiation happens to establish an encrypted
+              channel. Certificates are exchanged and validated. This adds
+              another 1-2 round trips.
+            </p>
+            <p>
+              <strong>Step 5 — HTTP Request Sent</strong> Your browser sends an
+              HTTP GET request: <code>GET / HTTP/1.1 Host: www.amazon.com</code>
+            </p>
+            <p>
+              <strong>Step 6 — Data Travels Through the Network</strong> The
+              request is broken into packets. Each packet independently travels
+              through your router → ISP → internet backbone → Amazon's data
+              center. Different packets may take different paths.
+            </p>
+            <p>
+              <em>Where failure occurs:</em> Packet loss, high latency,
+              congestion at any router along the path.
+            </p>
+            <p>
+              <strong>Step 7 — Load Balancer Receives Request</strong> Amazon's
+              load balancer receives your request and decides which of its
+              thousands of web servers should handle it based on current load,
+              geographic proximity, and health status.
+            </p>
+            <p>
+              <strong>Step 8 — Application Server Processes</strong> The
+              selected server processes your request — fetches your account,
+              personalizes the homepage, checks inventory, and builds the HTML
+              response.
+            </p>
+            <p>
+              <em>Where failure occurs:</em> Application bugs, memory issues,
+              slow DB queries, or downstream service timeouts.
+            </p>
+            <p>
+              <strong>Step 9 — Database Query</strong> The server queries one or
+              more databases for product listings, user data, personalization
+              signals, etc.
+            </p>
+            <p>
+              <em>Where delay occurs:</em> Unindexed queries, connection pool
+              exhaustion, replication lag.
+            </p>
+            <p>
+              <strong>Step 10 — Response Travels Back</strong> The HTML/JSON
+              response is broken into packets and sent back through the same
+              network infrastructure in reverse.
+            </p>
+            <p>
+              <strong>Step 11 — Browser Renders Page</strong> Your browser
+              reassembles the packets, decrypts the TLS-encrypted response, and
+              renders the page.
+            </p>
+            <hr />
+            <h3 id="where-latency-and-failure-happen-summary">
+              Where Latency and Failure Happen — Summary<a
+                href="#where-latency-and-failure-happen-summary"
+                class="anchor"
+                >#</a
+              >
+            </h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Step</th>
+                  <th>Failure Risk</th>
+                  <th>Latency Impact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>DNS Resolution</td>
+                  <td>High — if DNS is down, nothing works</td>
+                  <td>Low–Medium (cached)</td>
+                </tr>
+                <tr>
+                  <td>TCP Handshake</td>
+                  <td>Medium — packet loss retries</td>
+                  <td>Medium (geographic distance)</td>
+                </tr>
+                <tr>
+                  <td>TLS Handshake</td>
+                  <td>Low</td>
+                  <td>Medium (1-2 extra round trips)</td>
+                </tr>
+                <tr>
+                  <td>Network Transit</td>
+                  <td>Medium — congestion, packet loss</td>
+                  <td>High (if routing inefficient)</td>
+                </tr>
+                <tr>
+                  <td>Load Balancer</td>
+                  <td>Low — usually redundant</td>
+                  <td>Very Low</td>
+                </tr>
+                <tr>
+                  <td>Application Server</td>
+                  <td>High — most bugs live here</td>
+                  <td>High (business logic complexity)</td>
+                </tr>
+                <tr>
+                  <td>Database</td>
+                  <td>High — slowest tier</td>
+                  <td>High (disk I/O, lock contention)</td>
+                </tr>
+              </tbody>
+            </table>
+            <hr />
+            <h2 id="file-summary">
+              File Summary<a href="#file-summary" class="anchor">#</a>
+            </h2>
+            <p>This file covered the absolute foundation of networking:</p>
+            <ul>
+              <li>What a network is, explained intuitively and technically</li>
+              <li>
+                All the core components: nodes, NICs, switches, routers,
+                protocols, IP addresses
+              </li>
+              <li>
+                A complete ASCII architecture diagram of a real request path
+              </li>
+              <li>
+                A step-by-step data flow from browser to database and back
+              </li>
+              <li>
+                Where latency, failure, and bottlenecks occur at each step
+              </li>
+            </ul>
+            <p>
+              <strong>Continue to File 02</strong> for Real-World Examples,
+              System Design Importance, AWS Mapping, and Interview Questions.
+            </p>
+          </div>
+
+          <nav class="lesson-nav" aria-label="Lesson navigation">
+            <div class="lesson-nav__empty"></div>
+            <a
+              href="lesson-01-part2.html"
+              class="lesson-nav__btn lesson-nav__btn--next"
+              aria-label="Next lesson"
+            >
+              <span class="lesson-nav__direction"
+                ><span class="lesson-nav__arrow">›</span> Next</span
+              >
+              <span class="lesson-nav__title"
+                >What is a Network — Part 2 of 3</span
+              >
+            </a>
+          </nav>
+        </article>
+
+        <footer class="site-footer">
+          &copy; 2026 Learning &middot; Pure HTML &amp; CSS &middot; Hosted on
+          AWS S3
+        </footer>
+      </main>
+    </div>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

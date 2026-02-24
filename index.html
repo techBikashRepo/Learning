@@ -1,0 +1,207 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Learning Platform | Technical Interview Prep</title>
+    <meta
+      name="description"
+      content="Complete technical interview preparation platform with 200+ lessons on networking, backend, databases, security, and system design."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+      .hero {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+      }
+      .hero__content {
+        max-width: 800px;
+      }
+      .hero__title {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--link) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .hero__subtitle {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        margin-bottom: 3rem;
+        line-height: 1.8;
+      }
+      .modules {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 4rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .module-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-lg);
+        padding: 2rem;
+        transition: all var(--transition-base);
+      }
+      .module-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+      }
+      .module-card__title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--accent);
+      }
+      .module-card__desc {
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+      }
+      .module-card__count {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+      }
+      .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: var(--accent);
+        color: white;
+        border-radius: var(--radius-md);
+        font-weight: 600;
+        transition: all var(--transition-base);
+      }
+      .btn:hover {
+        background: var(--accent-hover);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+        color: white;
+      }
+      @media (max-width: 768px) {
+        .hero__title {
+          font-size: 2.5rem;
+        }
+        .modules {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress-bar"></div>
+
+    <div class="site-wrapper">
+      <header class="topbar">
+        <div class="topbar__brand">📚 Learning Platform</div>
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-toggle__icon">☀️</span>
+        </button>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero__content">
+            <h1 class="hero__title">Master Technical Interviews</h1>
+            <p class="hero__subtitle">
+              A comprehensive learning platform with 200+ lessons covering
+              networking, backend development, databases, security, and system
+              design. Built for engineers preparing for technical interviews.
+            </p>
+            <a href="#modules" class="btn">Explore Modules →</a>
+          </div>
+        </section>
+
+        <section id="modules" class="modules">
+          <article class="module-card">
+            <h2 class="module-card__title">🌐 Networking</h2>
+            <p class="module-card__desc">
+              From basic network concepts to advanced protocols. Learn TCP/IP,
+              HTTP/HTTPS, DNS, CDN, and everything you need for networking
+              interviews.
+            </p>
+            <p class="module-card__count">77 lessons</p>
+          </article>
+
+          <article class="module-card">
+            <h2 class="module-card__title">⚙️ Backend & APIs</h2>
+            <p class="module-card__desc">
+              REST architecture, API design patterns, pagination, filtering,
+              versioning, and best practices for building scalable backend
+              systems.
+            </p>
+            <p class="module-card__count">30 lessons</p>
+          </article>
+
+          <article class="module-card">
+            <h2 class="module-card__title">🔐 Security</h2>
+            <p class="module-card__desc">
+              Authentication, authorization, JWT, OAuth, password hashing, XSS,
+              CSRF, and security best practices every developer must know.
+            </p>
+            <p class="module-card__count">27 lessons</p>
+          </article>
+
+          <article class="module-card">
+            <h2 class="module-card__title">🗄️ Databases</h2>
+            <p class="module-card__desc">
+              SQL fundamentals, joins, indexing, query optimization,
+              transactions, and database design patterns for interview success.
+            </p>
+            <p class="module-card__count">78 lessons</p>
+          </article>
+
+          <article class="module-card">
+            <h2 class="module-card__title">🏗️ System Design</h2>
+            <p class="module-card__desc">
+              Scalability, caching, load balancing, microservices, clean
+              architecture, and architectural patterns for designing large-scale
+              systems.
+            </p>
+            <p class="module-card__count">18 lessons</p>
+          </article>
+        </section>
+
+        <section
+          style="
+            text-align: center;
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+          "
+        >
+          <h2 style="margin-bottom: 1rem">Curriculum in Development</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem">
+            Individual lesson pages are being generated from the comprehensive
+            curriculum. Check back soon for the complete interactive experience
+            with 227 detailed lessons.
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.875rem">
+            Built with HTML, CSS, and vanilla JavaScript • No frameworks •
+            Lightning fast
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

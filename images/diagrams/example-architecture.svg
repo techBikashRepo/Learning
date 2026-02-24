@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#1a1c23">
+    Example Architecture Diagram
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="80" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#6c757d">
+    Replace this placeholder with your actual diagram
+  </text>
+  
+  <!-- Browser Box -->
+  <rect x="50" y="120" width="120" height="80" fill="#4f46e5" stroke="#3730a3" stroke-width="2" rx="8"/>
+  <text x="110" y="150" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    Browser
+  </text>
+  <text x="110" y="170" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    (Client)
+  </text>
+  
+  <!-- Arrow 1 -->
+  <line x1="170" y1="160" x2="320" y2="160" stroke="#6c757d" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="245" y="150" font-family="Arial, sans-serif" font-size="12" fill="#495057">HTTP Request</text>
+  
+  <!-- Server Box -->
+  <rect x="340" y="120" width="120" height="80" fill="#10b981" stroke="#059669" stroke-width="2" rx="8"/>
+  <text x="400" y="150" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    Web Server
+  </text>
+  <text x="400" y="170" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    (Backend)
+  </text>
+  
+  <!-- Arrow 2 -->
+  <line x1="460" y1="160" x2="610" y2="160" stroke="#6c757d" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="535" y="150" font-family="Arial, sans-serif" font-size="12" fill="#495057">SQL Query</text>
+  
+  <!-- Database Box -->
+  <rect x="630" y="120" width="120" height="80" fill="#f59e0b" stroke="#d97706" stroke-width="2" rx="8"/>
+  <text x="690" y="150" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    Database
+  </text>
+  <text x="690" y="170" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    (Storage)
+  </text>
+  
+  <!-- Instructions Box -->
+  <rect x="50" y="250" width="700" height="120" fill="white" stroke="#dee2e6" stroke-width="2" rx="8"/>
+  
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1a1c23">
+    📐 How to Replace This Diagram
+  </text>
+  
+  <text x="80" y="310" font-family="Arial, sans-serif" font-size="13" fill="#495057">
+    1. Create your diagram using Excalidraw (excalidraw.com) or Draw.io (app.diagrams.net)
+  </text>
+  
+  <text x="80" y="335" font-family="Arial, sans-serif" font-size="13" fill="#495057">
+    2. Export as PNG (1200px width recommended)
+  </text>
+  
+  <text x="80" y="360" font-family="Arial, sans-serif" font-size="13" fill="#495057">
+    3. Save to site/images/[module-name]/ and update the src attribute in HTML
+  </text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#6c757d"/>
+    </marker>
+  </defs>
+</svg>
